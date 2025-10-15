@@ -15,7 +15,7 @@ protected:
 std::fstream Archivo;
 std::string ruta;
 char FileType;
-Tp2_Act_1::Trans_Rec* Mje; // puntero a Trans_Rec, como pediste
+Tp2_Act_1::Trans_Rec* Mje; 
 public:
 File(std::fstream& Archivo, std::string ruta, char FileType, Tp2_Act_1::Trans_Rec*
 Mje);
