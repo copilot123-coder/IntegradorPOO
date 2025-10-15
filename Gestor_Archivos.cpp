@@ -1,5 +1,6 @@
 #include "Gestor_Archivos.h"
 #include <iostream>
+#include <iomanip>
 #include <sstream>
 #include <vector>
 #include <sys/stat.h>
