@@ -4,7 +4,7 @@
 using namespace std;
 
 
-struct Dato_145 {
+struct Dato {
 string nombre;
 string valor;
 };

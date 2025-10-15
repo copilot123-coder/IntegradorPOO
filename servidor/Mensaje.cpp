@@ -1,32 +1,32 @@
-#include "Mensaje_145.h"
+#include "Mensaje.h"
 #include <iostream>
 #include <fstream>
 
 
-Mensaje_145::Mensaje_145() {
+Mensaje::Mensaje() {
   codigoOperacion = 0;
 }
 
 
-void Mensaje_145::setCodigoOperacion(int c) {
+void Mensaje::setCodigoOperacion(int c) {
   codigoOperacion = c;
 }
 
 
-int Mensaje_145::getCodigoOperacion() {
+int Mensaje::getCodigoOperacion() {
   return codigoOperacion;
 }
 
 
-void Mensaje_145::agregarDato(string nombre, string valor) {
-  Dato_145 d;
+void Mensaje::agregarDato(string nombre, string valor) {
+  Dato d;
   d.nombre = nombre;
   d.valor = valor;
   datos.push_back(d);
 }
 
 
-string Mensaje_145::obtenerDato(string nombre) {
+string Mensaje::obtenerDato(string nombre) {
   for (size_t i = 0; i < datos.size(); i++) {
     if (datos[i].nombre == nombre) {
       return datos[i].valor;
@@ -36,12 +36,12 @@ string Mensaje_145::obtenerDato(string nombre) {
 }
 
 
-void Mensaje_145::limpiarDatos() {
+void Mensaje::limpiarDatos() {
   datos.clear();
 }
 
 
-bool Mensaje_145::guardarDatosEnArchivo(string ruta) {
+bool Mensaje::guardarDatosEnArchivo(string ruta) {
   ofstream out(ruta.c_str());
   if (!out.is_open()) return false;
   // una línea por dato -> nombre=valor
@@ -53,12 +53,12 @@ return true;
 }
 
 
-vector<Dato_145> Mensaje_145::obtenerTodosLosDatos() {
+vector<Dato> Mensaje::obtenerTodosLosDatos() {
   return datos; 
 }
 
 
-bool Mensaje_145::cargarDatosDeArchivo(string ruta) {
+bool Mensaje::cargarDatosDeArchivo(string ruta) {
   ifstream in(ruta.c_str());
   if (!in.is_open()) return false;
   datos.clear();
@@ -80,7 +80,7 @@ bool Mensaje_145::cargarDatosDeArchivo(string ruta) {
 }
 
 
-void Mensaje_145::imprimir() {
+void Mensaje::imprimir() {
   cout << "Codigo de operacion: " << codigoOperacion << endl;
   cout << "Datos (" << datos.size() << "):" << endl;
   for (size_t i = 0; i < datos.size(); i++) {

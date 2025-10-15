@@ -2,21 +2,21 @@
 #define MENSAJE_H
 #include <vector>
 #include <string>
-#include "Dato_145.h"
+#include "Dato.h"
 using namespace std;
 
 
-class Mensaje_145 {
+class Mensaje {
     private:
         int codigoOperacion;
-        vector<Dato_145> datos;
+        vector<Dato> datos;
     public:
-        Mensaje_145();
+        Mensaje();
         void setCodigoOperacion(int c);
         int getCodigoOperacion();
         void agregarDato(string nombre, string valor);
         string obtenerDato(string nombre);
-        vector<Dato_145> obtenerTodosLosDatos();
+        vector<Dato> obtenerTodosLosDatos();
         void limpiarDatos();
 
 
