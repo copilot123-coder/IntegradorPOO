@@ -416,10 +416,54 @@ void File_P::Leer_Linea(int N_linea){
 
 void File_P::Borrar_Archivo(){
 
+    // Cerrar stream si está abierto
+    if (fs.is_open()) {
+        fs.close();
+    }
+
+    // Intentar borrar el archivo físico
+    if (!ruta.empty()) {
+        if (std::remove(ruta.c_str()) == 0) {
+            std::cout << "Archivo '" << ruta << "' borrado correctamente.\n";
+        } else {
+            std::perror((std::string("No se pudo borrar el archivo '") + ruta + "'").c_str());
+        }
+    } else {
+        std::cout << "Ruta vacía: no hay archivo que borrar.\n";
+    }
+
+    // Limpiar estado interno
+    V_dato.clear();
+    FileType = 'n';
 }
 
 void File_P::MostrarDatos(){
+    if (V_dato.empty()){
+        std::cout << "No hay datos cargados para mostrar.\n";
+        return;
+    }
 
+    // Encabezado
+    std::cout << std::left << std::setw(6) << "#" << std::setw(12) << "TIPO" << "VALOR\n";
+    std::cout << std::string(40, '-') << "\n";
+
+    for (size_t i = 0; i < V_dato.size(); ++i){
+        const auto &d = V_dato[i];
+        std::string tipo = QueTipoEs(d);
+        std::cout << std::left << std::setw(6) << (i+1) << std::setw(12) << tipo;
+
+        if (tipo == "int"){
+            std::cout << std::get<int>(d);
+        } else if (tipo == "double"){
+            std::cout << std::fixed << std::setprecision(4) << std::get<double>(d);
+        } else if (tipo == "string"){
+            std::cout << std::get<std::string>(d);
+        } else {
+            std::cout << "<desconocido>";
+        }
+
+        std::cout << "\n";
+    }
 }
 
 void File_P::MostrarArchivo(){
@@ -431,6 +475,7 @@ void File_P::MostrarArchivo(){
         contenido += linea_aux + "\n";
     }
     std::cout << contenido << std::endl;
+    if (fs.is_open()) fs.close();
 }
 
 
