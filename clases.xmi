@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://schema.omg.org/spec/UML/2.1">
+  <xmi:Documentation exporter="umbrello uml modeller 2.38.5 (Applications 23.08.5) http://umbrello.kde.org" exporterVersion="2.0.4"/>
+  <uml:Model xmi:id="m1" name="TP3_Iter2_Model">
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="folder" name="folder"/>
+    <packagedElement xmi:type="uml:Stereotype" xmi:id="dataType" name="dataType"/>
+    <packagedElement xmi:type="uml:Model" xmi:id="Logical_View" name="Logical View">
+      <uml:Package xmi:id="Datatypes" name="Datatypes" stereotype="folder">
+        <packagedElement xmi:type="uml:DataType" xmi:id="dt_int" name="int" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="dt_string" name="string" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="dt_bool" name="bool" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="dt_double" name="double" stereotype="dataType"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="dt_void" name="void" stereotype="dataType"/>
+      </uml:Package>
+      <packagedElement xmi:type="uml:Package" xmi:id="Servidor_31b31852" name="Servidor">
+        <packagedElement xmi:type="uml:Class" xmi:id="GestorArchivos_04129c2f" name="GestorArchivos">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="attr_1781cf8e" name="filename" visibility="private" type="dt_string"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="attr_3e4de8ae" name="owner" visibility="private" type="dt_string"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_be16fd83" name="open">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_703c89a3" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_09c5c359" name="path" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_8fd84416" name="close">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_9448ad55" type="dt_void" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_9ba5a5d2" name="readAll">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_23c36e92" type="dt_string" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_3f24a6d9" name="writeLine">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_578e5cd8" type="dt_void" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_72f84dc4" name="line" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_a8339d65" name="fileExists">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_64ac5e88" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_e2b9bf49" name="path" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_aa191751" name="imprimirTablaCSV">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_2a1aac9b" type="dt_void" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_4a136f4e" name="csv" type="dt_string" value=""/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_1d84f12e" name="N" type="dt_int" value=""/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="GestorBBDD_32a88356" name="GestorBBDD">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_02bf0203" name="conectar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_a40a591a" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_4d79286e" name="connStr" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_370212ac" name="desconectar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_40a92f37" type="dt_void" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_5486898d" name="ejecutarConsulta">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_ad306d6b" type="dt_string" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_af4c67a1" name="sql" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_37d59008" name="ejecutarComando">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_d9db6d67" type="dt_int" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_5d831c30" name="sql" type="dt_string" value=""/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="GestorUsuarios_4d413285" name="GestorUsuarios">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_e210d5c3" name="agregar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_2683fcfe" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_4cd4b6d5" name="usuario" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_b156cbba" name="eliminar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_491ad74f" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_6f1c6c7e" name="id" type="dt_int" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_a364e350" name="validar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_4ebe3ba0" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_4f81efce" name="nombre" type="dt_string" value=""/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_98be5df7" name="clave" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_0b826875" name="buscarPorNombre">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_1edf8c4e" type="dt_string" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_947712f8" name="nombre" type="dt_string" value=""/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="GestorReportes_4576bd08" name="GestorReportes">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_e9e83cf0" name="reporteGeneral">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_d4fb4f41" type="dt_string" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_7ef6650a" name="reporteAdmin">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_a034526c" type="dt_string" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_83663825" name="idAdmin" type="dt_int" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_abc4f742" name="reporteLog">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_12934e4d" type="dt_string" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_6d57e96a" name="fechaDesde" type="dt_string" value=""/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_7bde04d7" name="fechaHasta" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_532e3b5b" name="filtrar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_af61a3cf" type="dt_string" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_89dc16fb" name="filtro" type="dt_string" value=""/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="G_estor_094167fd" name="G_estor">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_bdcb717b" name="cargarArchivoGCode">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_cebafb86" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_d9979efb" name="path" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_6d68c1a4" name="enviarLinea">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_0753f1b2" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_9bd9bcd3" name="gcode" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_50466771" name="listaComandos">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_7cf268f8" type="dt_string" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_7e0c18b5" name="modoManual">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_8487df91" type="dt_void" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_92896a03" name="habilitar" type="dt_bool" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_96b43c0a" name="modoAutomatico">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_48a52ef5" type="dt_void" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="Usuario_037cc384" name="Usuario">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="attr_f7af15e4" name="id" visibility="private" type="dt_int"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="attr_fa2d94b6" name="nombre" visibility="private" type="dt_string"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="attr_953b7a38" name="clave" visibility="private" type="dt_string"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="attr_91413eee" name="privilegios" visibility="private" type="dt_string"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_c2acd25d" name="validar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_7722a3e9" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_987907ce" name="clave" type="dt_string" value=""/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="Admin_c17a7c2e" name="Admin">
+          <generalization xmi:type="uml:Generalization" xmi:id="gen_98ba81af" general="Usuario_037cc384"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_442b99e9" name="habilitarUsuario">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_150ede3c" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_84278cb9" name="id" type="dt_int" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_f27d5c8e" name="deshabilitarUsuario">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_93bd0b13" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_ca80322f" name="id" type="dt_int" value=""/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="EfectorFinal_84546d05" name="EfectorFinal">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_17429b69" name="activar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_cc37e144" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_e42c35bb" name="tipo" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_90e01585" name="desactivar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_475c81fc" type="dt_bool" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="Articulacion_0d192d47" name="Articulacion">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_db6040bb" name="moverA">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_95787ac6" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_64a7327e" name="angulo" type="dt_double" value=""/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_a2238cc4" name="velocidad" type="dt_double" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_cfc08c80" name="setVelocidadMax">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_828d220c" type="dt_void" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_5df92c7a" name="v" type="dt_double" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_17f7b4e8" name="getAngulo">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_78478518" type="dt_double" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="Robot_274beb53" name="Robot">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_8f31692c" name="conectar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_03e1b0d4" type="dt_bool" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_6f78f2cd" name="desconectar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_fb0cceb3" type="dt_void" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_2c30ac5a" name="irAOrigen">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_18720155" type="dt_bool" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_b10c5622" name="moverXYZ">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_e60a894b" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_ecba8195" name="x" type="dt_double" value=""/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_07008cbb" name="y" type="dt_double" value=""/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_3bce1172" name="z" type="dt_double" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_a126a462" name="setVelocidad">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_04129750" type="dt_void" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_b0ca23e1" name="v" type="dt_double" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_f4fdaa57" name="getPosicion">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_5b48831a" type="dt_string" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_beb2b61c" name="activarMotores">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_aabb8f6d" type="dt_bool" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_dc5404d2" name="desactivarMotores">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_0efab9ae" type="dt_bool" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="Serial_3315a9af" name="Serial">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="attr_07aff1f9" name="baudRate" visibility="private" type="dt_int"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="attr_edc132eb" name="puerto" visibility="private" type="dt_string"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_c572ef99" name="abrirPuerto">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_94fa34a0" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_ad15cfeb" name="puerto" type="dt_string" value=""/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_5e5c423a" name="baudRate" type="dt_int" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_c662b5ae" name="cerrarPuerto">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_5a3ae2a9" type="dt_void" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_dafb7c98" name="leerPuerto">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_601c926f" type="dt_string" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_a0009521" name="timeoutMs" type="dt_int" value=""/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="Conexion_237ae3a1" name="Conexion">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_a40edabd" name="conectar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_8e00d57b" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_aad7f5f1" name="url" type="dt_string" value=""/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_c81f78b4" name="token" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_e0847203" name="desconectar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_d9f0447c" type="dt_void" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_9e8a887b" name="enviarRequest">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_e30bab5b" type="dt_string" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_597fbe0b" name="endpoint" type="dt_string" value=""/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_bf067855" name="payload" type="dt_string" value=""/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_de5397cd" name="method" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_886fbf3e" name="estado">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_7637e873" type="dt_string" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="MensajeSrv_9fb48a78" name="Mensaje">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="attr_c648d4d2" name="codigoOperacion" visibility="private" type="dt_string"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="attr_bc015278" name="datos" visibility="private" type="dt_string"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_69a53151" name="agregarDato">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_4ab166c7" type="dt_void" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_24e1c62c" name="nombre" type="dt_string" value=""/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_ed773655" name="dato" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_7c77c0e6" name="obtenerDato">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_f99d3b5d" type="dt_string" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_909e88a8" name="nombre" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_3a520290" name="obtenerTodosLosDatos">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_0bf29013" type="dt_string" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_9c624a63" name="limpiarDatos">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_7af96db5" type="dt_void" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_272c6885" name="serializar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_73d23a5e" type="dt_string" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_9be987de" name="deserializar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_580790e6" type="dt_void" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_840e6e2b" name="texto" type="dt_string" value=""/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="TransporteSrv_f07db72c" name="Transporte">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_1c0542a2" name="enviar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_635adc1c" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_875ff760" name="mensaje" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_2d74a218" name="leer">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_a2391ab3" type="dt_string" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="DatoSrv_fe100d3b" name="Dato">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="attr_f484440b" name="nombre" visibility="private" type="dt_string"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="attr_79ad017e" name="dato" visibility="private" type="dt_string"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="Cliente_84354f18" name="Cliente">
+        <packagedElement xmi:type="uml:Class" xmi:id="Interfaz_3482553d" name="Interfaz">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_394ea47e" name="login">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_d42f31cc" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_8b1ca42d" name="usuario" type="dt_string" value=""/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_dda37f5f" name="clave" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_e025451b" name="mostrarPanel">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_1dc5e89b" type="dt_void" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_0352d4d9" name="enviarComando">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_b5d77599" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_e6fc3fab" name="cmd" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_abc93ed5" name="subirArchivoGCode">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_d498da8e" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_800e8f97" name="path" type="dt_string" value=""/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="MensajeCli_29e53143" name="Mensaje">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="attr_b9fff5e4" name="codigoOperacion" visibility="private" type="dt_string"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="attr_b9fcc6e4" name="datos" visibility="private" type="dt_string"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_113d412d" name="agregarDato">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_6ec6e759" type="dt_void" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_597c57fa" name="nombre" type="dt_string" value=""/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_245cf13c" name="dato" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_f02f1158" name="obtenerDato">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_a22c3c1d" type="dt_string" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_4c7206a4" name="nombre" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_31ba7731" name="obtenerTodosLosDatos">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_e46c2d5f" type="dt_string" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_18e07c33" name="limpiarDatos">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_b9a4106d" type="dt_void" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_7f740b11" name="serializar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_be668a04" type="dt_string" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_4fea9b88" name="deserializar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_23fc7b96" type="dt_void" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_ca6d8b65" name="texto" type="dt_string" value=""/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="TransporteCli_62c70860" name="Transporte">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_0f566288" name="enviar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_e394caa2" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_c6911132" name="mensaje" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_3de8d2fd" name="leer">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_a4ac23b7" type="dt_string" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="ConexionCli_149bfa7c" name="Conexion">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_b7f35ce3" name="conectar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_7a7dc1e1" type="dt_bool" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_7c6922e3" name="url" type="dt_string" value=""/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_24f92722" name="token" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_b9562a7d" name="desconectar">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_a38823fb" type="dt_void" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_509bed4b" name="enviarRequest">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_fa23a833" type="dt_string" direction="return"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_1c7bcd82" name="endpoint" type="dt_string" value=""/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_0da3c843" name="payload" type="dt_string" value=""/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="pa_cd49ecd0" name="method" type="dt_string" value=""/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="op_330cec43" name="estado">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="ret_1d5a7dbb" type="dt_string" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="DatoCli_d21c2c01" name="Dato">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="attr_41af8348" name="nombre" visibility="private" type="dt_string"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="attr_cafb752c" name="dato" visibility="private" type="dt_string"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Robot_Articulacion_a86c83e9" name="Robot_Articulacion">
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_9b95b383" name="" type="Robot_274beb53" multiplicity="1" aggregation="composite" isNavigable="true" changeability="changeable"/>
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_4d4989c2" name="" type="Articulacion_0d192d47" multiplicity="3" aggregation="none" isNavigable="true" changeability="changeable"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Robot_Efector_c5021b1f" name="Robot_Efector">
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_40d21f6a" name="" type="Robot_274beb53" multiplicity="1" aggregation="composite" isNavigable="true" changeability="changeable"/>
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_b1697d2e" name="" type="EfectorFinal_84546d05" multiplicity="1" aggregation="none" isNavigable="true" changeability="changeable"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Robot_Serial_d58828af" name="Robot_Serial">
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_53b0180f" name="" type="Robot_274beb53" multiplicity="1" aggregation="none" isNavigable="true" changeability="changeable"/>
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_c6ea179d" name="" type="Serial_3315a9af" multiplicity="1" aggregation="none" isNavigable="true" changeability="changeable"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="GU_GBBDD_8d977cf1" name="GU_GBBDD">
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_b308d919" name="" type="GestorUsuarios_4d413285" aggregation="none" isNavigable="true" changeability="changeable"/>
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_8ed3b62c" name="" type="GestorBBDD_32a88356" aggregation="none" isNavigable="true" changeability="changeable"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="GU_Usuario_64ad7981" name="GU_Usuario">
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_3a99cd24" name="" type="GestorUsuarios_4d413285" multiplicity="1" aggregation="none" isNavigable="true" changeability="changeable"/>
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_7e013170" name="" type="Usuario_037cc384" multiplicity="0..*" aggregation="none" isNavigable="true" changeability="changeable"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="GR_GA_419c6fe9" name="GR_GA">
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_a697664b" name="" type="GestorReportes_4576bd08" aggregation="none" isNavigable="true" changeability="changeable"/>
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_f1f4ea8f" name="" type="GestorArchivos_04129c2f" aggregation="none" isNavigable="true" changeability="changeable"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="GR_GB_5b25ddfd" name="GR_GB">
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_bec11a97" name="" type="GestorReportes_4576bd08" aggregation="none" isNavigable="true" changeability="changeable"/>
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_b54fbbbf" name="" type="GestorBBDD_32a88356" aggregation="none" isNavigable="true" changeability="changeable"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="GE_Robot_dfb089ab" name="GE_Robot">
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_a02f4810" name="" type="G_estor_094167fd" aggregation="none" isNavigable="true" changeability="changeable"/>
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_d466301a" name="" type="Robot_274beb53" aggregation="none" isNavigable="true" changeability="changeable"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="GE_GA_75791d99" name="GE_GA">
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_89c828dd" name="" type="G_estor_094167fd" aggregation="none" isNavigable="true" changeability="changeable"/>
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_7ea6d859" name="" type="GestorArchivos_04129c2f" aggregation="none" isNavigable="true" changeability="changeable"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="TSrv_MSrv_eaac055b" name="TSrv_MSrv">
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_9e52c4c3" name="" type="TransporteSrv_f07db72c" aggregation="none" isNavigable="true" changeability="changeable"/>
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_a8afd8ab" name="" type="MensajeSrv_9fb48a78" aggregation="none" isNavigable="true" changeability="changeable"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="MSrv_Dato_846d386e" name="MSrv_Dato">
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_d4a91562" name="" type="MensajeSrv_9fb48a78" multiplicity="1" aggregation="none" isNavigable="true" changeability="changeable"/>
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_cb2aebc1" name="" type="DatoSrv_fe100d3b" multiplicity="0..*" aggregation="none" isNavigable="true" changeability="changeable"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="TCli_MCli_2e3a09ba" name="TCli_MCli">
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_a0fc493a" name="" type="TransporteCli_62c70860" aggregation="none" isNavigable="true" changeability="changeable"/>
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_524b92d5" name="" type="MensajeCli_29e53143" aggregation="none" isNavigable="true" changeability="changeable"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="MCli_Dato_7ab616ff" name="MCli_Dato">
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_44263c72" name="" type="MensajeCli_29e53143" multiplicity="1" aggregation="none" isNavigable="true" changeability="changeable"/>
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_4b14d555" name="" type="DatoCli_d21c2c01" multiplicity="0..*" aggregation="none" isNavigable="true" changeability="changeable"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Interfaz_TCli_bf97b2cf" name="Interfaz_TCli">
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_8d32fad7" name="" type="Interfaz_3482553d" aggregation="none" isNavigable="true" changeability="changeable"/>
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_cf5328c2" name="" type="TransporteCli_62c70860" aggregation="none" isNavigable="true" changeability="changeable"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="TCli_ConCli_26cac543" name="TCli_ConCli">
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_a20defae" name="" type="TransporteCli_62c70860" aggregation="none" isNavigable="true" changeability="changeable"/>
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_0d0966d2" name="" type="ConexionCli_149bfa7c" aggregation="none" isNavigable="true" changeability="changeable"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="TSrv_Con_5e1fbb7f" name="TSrv_Con">
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_37a54911" name="" type="TransporteSrv_f07db72c" aggregation="none" isNavigable="true" changeability="changeable"/>
+        <ownedEnd xmi:type="uml:AssociationEnd" xmi:id="end_5518faf2" name="" type="Conexion_237ae3a1" aggregation="none" isNavigable="true" changeability="changeable"/>
+      </packagedElement>
+      <xmi:Extension extender="umbrello">
+        <diagrams>
+          <diagram xmi.id="uEjVMQoz23ZF2" name="class diagram" type="1" documentation="" backgroundcolor="#ffffff" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" griddotcolor="#d3d3d3" linecolor="#990000" linewidth="0" textcolor="#000000" usefillcolor="1" showattribassocs="1" showatts="1" showattsig="1" showops="1" showopsig="1" showpackage="1" showpubliconly="0" showscope="1" showstereotype="2" localid="-1" showgrid="0" snapgrid="0" snapcsgrid="0" snapx="25" snapy="25" zoom="32.6902" canvasheight="800" canvaswidth="1100" isopen="1">
+            <widgets>
+              <classwidget xmi.id="GestorBBDD_32a88356" localid="uXk7hBfVe7Fcj" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="-33.9155" y="160.3" width="264" height="99" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="DatoCli_d21c2c01" localid="uod1NmovPvW8f" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="-916.552" y="58.5191" width="121" height="63" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="Articulacion_0d192d47" localid="uL3YgDsSjeZyX" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="349.206" y="914.793" width="357" height="81" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="EfectorFinal_84546d05" localid="ubr65fWBePqab" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="800.595" y="909.821" width="194" height="63" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="Admin_c17a7c2e" localid="u42dPRnWUPO9L" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="349.446" y="181.02" width="244" height="63" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="DatoSrv_fe100d3b" localid="uki5VkbOLbXBS" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="803.806" y="125.538" width="121" height="63" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="Conexion_237ae3a1" localid="uJPnBAGXHrcZh" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0,Regular" autoresize="1" x="1234.17" y="304.591" width="508" height="99" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="GestorArchivos_04129c2f" localid="uLUyd6odyWDp0" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="-26.9195" y="512.459" width="268" height="162" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="G_estor_094167fd" localid="uzCUpxkwDx03x" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="-36.7291" y="739.069" width="291" height="117" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="GestorReportes_4576bd08" localid="ubd7dG4gio1JH" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="-104.18" y="333.832" width="418" height="99" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="GestorUsuarios_4d413285" localid="uFEWNF3Hm9bvY" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="-57.6412" y="18.4786" width="310" height="99" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="MensajeSrv_9fb48a78" localid="uEnJiExalPRGQ" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="982.888" y="78.6102" width="307" height="162" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="Robot_274beb53" localid="uWR9OAvlbupn8" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="495.577" y="686.371" width="351" height="171" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="Serial_3315a9af" localid="uhojWjYXQ6tWf" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="986.557" y="720.146" width="346" height="108" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="TransporteSrv_f07db72c" localid="u9pfEXTm9qyZo" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="1380" y="135.343" width="219" height="63" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="Usuario_037cc384" localid="uErJLL8PCaIP5" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="368.052" y="14.0681" width="201" height="108" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="TransporteCli_62c70860" localid="uTtEoxPCVo22X" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="-615.934" y="306.361" width="219" height="63" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="ConexionCli_149bfa7c" localid="uX13kVpbWbtsq" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="-747.824" y="545.08" width="508" height="99" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="Interfaz_3482553d" localid="uNUwXSwvApIHu" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="-1015.14" y="293.513" width="296" height="99" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+              <classwidget xmi.id="MensajeCli_29e53143" localid="unCnIItBWf8RB" textcolor="#000000" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="0" usesdiagramusefillcolor="0" fillcolor="#ffffc0" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="-657.537" y="9.02412" width="307" height="162" isinstance="0" showstereotype="2" showoperations="1" showpubliconly="0" showopsigs="601" showpackage="1" showscope="1" showattributes="1" showattsigs="601"/>
+            </widgets>
+            <messages/>
+            <associations>
+              <assocwidget xmi.id="GU_GBBDD_8d977cf1" localid="uwG1PV4D3ZBIG" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="503" widgetaid="GestorUsuarios_4d413285" widgetbid="GestorBBDD_32a88356" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <floatingtext xmi.id="u3Iz7crV96Yyw" localid="uRfvPMwYW5ilS" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="73.7376" y="268.374" width="86" height="22" isinstance="0" showstereotype="2" text="GU_GBBDD" pretext="" posttext="" role="703"/>
+                <linepath layout="Direct">
+                  <startpoint startx="97.6121" starty="117.479"/>
+                  <endpoint endx="97.8312" endy="160.3"/>
+                </linepath>
+              </assocwidget>
+              <assocwidget xmi.id="GR_GB_5b25ddfd" localid="ukibXdM2YIWqx" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="503" widgetaid="GestorReportes_4576bd08" widgetbid="GestorBBDD_32a88356" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <floatingtext xmi.id="u5i6ZFmzTf8li" localid="u4JD1ecLonYUH" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="77.9662" y="393.71" width="54" height="22" isinstance="0" showstereotype="2" text="GR_GB" pretext="" posttext="" role="703"/>
+                <linepath layout="Direct">
+                  <startpoint startx="102.899" starty="333.832"/>
+                  <endpoint endx="100.006" endy="259.3"/>
+                </linepath>
+              </assocwidget>
+              <assocwidget xmi.id="GR_GA_419c6fe9" localid="uuHbtUOCNOo6l" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="503" widgetaid="GestorReportes_4576bd08" widgetbid="GestorArchivos_04129c2f" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <floatingtext xmi.id="uchcqmwQvOBe5" localid="uVOyZeGEh8hJc" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="140.628" y="556.452" width="54" height="22" isinstance="0" showstereotype="2" text="GR_GA" pretext="" posttext="" role="703"/>
+                <linepath layout="Direct">
+                  <startpoint startx="105.353" starty="432.832"/>
+                  <endpoint endx="106.209" endy="512.459"/>
+                </linepath>
+              </assocwidget>
+              <assocwidget xmi.id="GE_GA_75791d99" localid="ulEwTTMkkFIrq" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="503" widgetaid="G_estor_094167fd" widgetbid="GestorArchivos_04129c2f" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <floatingtext xmi.id="uRdRUgw3Rtbxx" localid="ukgntWqsRsjlk" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="219.043" y="751.594" width="53" height="22" isinstance="0" showstereotype="2" text="GE_GA" pretext="" posttext="" role="703"/>
+                <linepath layout="Direct">
+                  <startpoint startx="108.286" starty="739.069"/>
+                  <endpoint endx="107.751" endy="674.459"/>
+                </linepath>
+              </assocwidget>
+              <assocwidget xmi.id="Robot_Efector_c5021b1f" localid="ujc6BXw1zPvla" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="510" widgetaid="Robot_274beb53" widgetbid="EfectorFinal_84546d05" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <floatingtext xmi.id="uLpxWBAwruJmo" localid="uGAwWqxfJiDAR" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="762" y="741" width="16" height="22" isinstance="0" showstereotype="2" text="1" pretext="" posttext="" role="701"/>
+                <floatingtext xmi.id="uvnGqVlKO0SV8" localid="u23fJmtlIHb3p" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="874" y="825" width="16" height="22" isinstance="0" showstereotype="2" text="1" pretext="" posttext="" role="702"/>
+                <floatingtext xmi.id="u2wUAvWhIr43E" localid="ua3h9v34SVumT" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="761.221" y="811.595" width="106" height="22" isinstance="0" showstereotype="2" text="Robot_Efector" pretext="" posttext="" role="703"/>
+                <linepath layout="Direct">
+                  <startpoint startx="785.372" starty="857.371"/>
+                  <endpoint endx="855.486" endy="909.821"/>
+                </linepath>
+              </assocwidget>
+              <assocwidget xmi.id="GE_Robot_dfb089ab" localid="u0y6gI4NNMloQ" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="503" widgetaid="G_estor_094167fd" widgetbid="Robot_274beb53" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <floatingtext xmi.id="uiC74WF6Vb8Qr" localid="u0jrqU1MERksD" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="462.166" y="674.771" width="75" height="22" isinstance="0" showstereotype="2" text="GE_Robot" pretext="" posttext="" role="703"/>
+                <linepath layout="Direct">
+                  <startpoint startx="254.271" starty="790.92"/>
+                  <endpoint endx="495.577" endy="779.892"/>
+                </linepath>
+              </assocwidget>
+              <assocwidget xmi.id="Robot_Articulacion_a86c83e9" localid="uPPdARz0ottja" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="510" widgetaid="Robot_274beb53" widgetbid="Articulacion_0d192d47" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <floatingtext xmi.id="utBqicnsKDQdY" localid="uf3iyCuhfHKrk" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="597.026" y="847.726" width="16" height="22" isinstance="0" showstereotype="2" text="1" pretext="" posttext="" role="701"/>
+                <floatingtext xmi.id="uxmN80CS5KLSi" localid="uo4byH3si1xGz" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="-3191.13" y="1059.16" width="16" height="22" isinstance="0" showstereotype="2" text="3" pretext="" posttext="" role="702"/>
+                <floatingtext xmi.id="uuCt2JpHueXRs" localid="uNlGN4eNJcaTx" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="-988.322" y="865.314" width="137" height="22" isinstance="0" showstereotype="2" text="Robot_Articulacion" pretext="" posttext="" role="703"/>
+                <linepath layout="Direct">
+                  <startpoint startx="604.247" starty="857.371"/>
+                  <endpoint endx="559.363" endy="914.793"/>
+                </linepath>
+              </assocwidget>
+              <assocwidget xmi.id="MSrv_Dato_846d386e" localid="uQpaISK9e7exZ" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="503" widgetaid="MensajeSrv_9fb48a78" widgetbid="DatoSrv_fe100d3b" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <floatingtext xmi.id="u6UECbF4i6uKG" localid="u3KIqaSpV945X" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="954.368" y="161.022" width="16" height="22" isinstance="0" showstereotype="2" text="1" pretext="" posttext="" role="701"/>
+                <floatingtext xmi.id="uctmyOh25aHhO" localid="uqdau9vFWGEQV" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="909.827" y="173.747" width="31" height="22" isinstance="0" showstereotype="2" text="0..*" pretext="" posttext="" role="702"/>
+                <floatingtext xmi.id="u8G6hsDVFL97s" localid="up8qjRuG6N3Ma" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="808.144" y="286.406" width="82" height="22" isinstance="0" showstereotype="2" text="MSrv_Dato" pretext="" posttext="" role="703"/>
+                <linepath layout="Direct">
+                  <startpoint startx="982.888" starty="158.159"/>
+                  <endpoint endx="924.806" endy="157.61"/>
+                </linepath>
+              </assocwidget>
+              <assocwidget xmi.id="Robot_Serial_d58828af" localid="uLKo8iMq0Z4Hi" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="503" widgetaid="Robot_274beb53" widgetbid="Serial_3315a9af" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <floatingtext xmi.id="uPPwkuRHxZZeG" localid="udWpJy8K6OLNw" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="826.014" y="697.876" width="16" height="22" isinstance="0" showstereotype="2" text="1" pretext="" posttext="" role="701"/>
+                <floatingtext xmi.id="u4z5BqyUK11Ca" localid="uvy5WHBFpuVjg" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="995" y="705" width="16" height="22" isinstance="0" showstereotype="2" text="1" pretext="" posttext="" role="702"/>
+                <floatingtext xmi.id="ukDdIybrx7xXO" localid="uSEA6m8Zr7rw8" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="932.01" y="686.561" width="94" height="22" isinstance="0" showstereotype="2" text="Robot_Serial" pretext="" posttext="" role="703"/>
+                <linepath layout="Direct">
+                  <startpoint startx="846.577" starty="772.688"/>
+                  <endpoint endx="986.557" endy="773.34"/>
+                </linepath>
+              </assocwidget>
+              <assocwidget xmi.id="TSrv_MSrv_eaac055b" localid="uQmjrzFyV3J4O" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="503" widgetaid="TransporteSrv_f07db72c" widgetbid="MensajeSrv_9fb48a78" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <floatingtext xmi.id="ucUCZysVjohYW" localid="uEg5Gn3EV6IrS" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="1243.74" y="321.279" width="79" height="22" isinstance="0" showstereotype="2" text="TSrv_MSrv" pretext="" posttext="" role="703"/>
+                <linepath layout="Direct">
+                  <startpoint startx="1289.89" starty="162.754"/>
+                  <endpoint endx="1380" endy="164.6"/>
+                </linepath>
+              </assocwidget>
+              <assocwidget xmi.id="gen_98ba81af" localid="uWlR3lxrs9Gjj" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="500" widgetaid="Admin_c17a7c2e" widgetbid="Usuario_037cc384" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <linepath layout="Direct">
+                  <startpoint startx="470.815" starty="181.02"/>
+                  <endpoint endx="469.634" endy="122.068"/>
+                </linepath>
+              </assocwidget>
+              <assocwidget xmi.id="TSrv_Con_5e1fbb7f" localid="upGVMrAVJbesI" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="503" widgetaid="TransporteSrv_f07db72c" widgetbid="Conexion_237ae3a1" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <floatingtext xmi.id="uPTepinSj3xsY" localid="uiCFD0yT2EpyO" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="1096.31" y="222.074" width="71" height="22" isinstance="0" showstereotype="2" text="TSrv_Con" pretext="" posttext="" role="703"/>
+                <linepath layout="Direct">
+                  <startpoint startx="1488.52" starty="304.591"/>
+                  <endpoint endx="1489.28" endy="198.343"/>
+                </linepath>
+              </assocwidget>
+              <assocwidget xmi.id="MCli_Dato_7ab616ff" localid="uPZsCGWeQMMYB" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="503" widgetaid="MensajeCli_29e53143" widgetbid="DatoCli_d21c2c01" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <floatingtext xmi.id="uoNik6uTyf4u6" localid="uaRZoqbC0JQdD" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="-688.467" y="35.2883" width="16" height="22" isinstance="0" showstereotype="2" text="1" pretext="" posttext="" role="701"/>
+                <floatingtext xmi.id="uSJh67eVaSMph" localid="uaJjEU5jH6u3N" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="-829.857" y="52.7436" width="31" height="22" isinstance="0" showstereotype="2" text="0..*" pretext="" posttext="" role="702"/>
+                <floatingtext xmi.id="uxWTrsUTKYQg8" localid="uLc58igpYVcel" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="-775.912" y="57.5159" width="78" height="22" isinstance="0" showstereotype="2" text="MCli_Dato" pretext="" posttext="" role="703"/>
+                <linepath layout="Direct">
+                  <startpoint startx="-657.537" starty="90.0219"/>
+                  <endpoint endx="-795.552" endy="90.02"/>
+                </linepath>
+              </assocwidget>
+              <assocwidget xmi.id="TCli_MCli_2e3a09ba" localid="u3nsHJDTcqw3I" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="503" widgetaid="TransporteCli_62c70860" widgetbid="MensajeCli_29e53143" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <floatingtext xmi.id="uyjF46VwwWAWD" localid="uyLK6ei3DCDL6" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="2391.04" y="357.446" width="70" height="22" isinstance="0" showstereotype="2" text="TCli_MCli" pretext="" posttext="" role="703"/>
+                <linepath layout="Direct">
+                  <startpoint startx="-504.82" starty="171.024"/>
+                  <endpoint endx="-506.13" endy="306.361"/>
+                </linepath>
+              </assocwidget>
+              <assocwidget xmi.id="TCli_ConCli_26cac543" localid="uXok6tvijsiC8" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="503" widgetaid="TransporteCli_62c70860" widgetbid="ConexionCli_149bfa7c" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <floatingtext xmi.id="uoShqfhq8VpHx" localid="ugvv0OYXbwwN9" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="-501.541" y="408.325" width="83" height="22" isinstance="0" showstereotype="2" text="TCli_ConCli" pretext="" posttext="" role="703"/>
+                <linepath layout="Direct">
+                  <startpoint startx="-504.887" starty="369.361"/>
+                  <endpoint endx="-496.256" endy="545.08"/>
+                </linepath>
+              </assocwidget>
+              <assocwidget xmi.id="GU_Usuario_64ad7981" localid="uAfRcKtFxn0uJ" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="503" widgetaid="GestorUsuarios_4d413285" widgetbid="Usuario_037cc384" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <floatingtext xmi.id="uOxagbUUIE6Fu" localid="uQjnh4b7NLHNz" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="248.153" y="116.888" width="16" height="22" isinstance="0" showstereotype="2" text="1" pretext="" posttext="" role="701"/>
+                <floatingtext xmi.id="uUhcjm0woTRR3" localid="u4ZPIluWQr5Ta" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="341.252" y="66.3299" width="31" height="22" isinstance="0" showstereotype="2" text="0..*" pretext="" posttext="" role="702"/>
+                <floatingtext xmi.id="ufoi6fgCyxx20" localid="uDLmInIzzkJqG" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="318.452" y="126.109" width="87" height="22" isinstance="0" showstereotype="2" text="GU_Usuario" pretext="" posttext="" role="703"/>
+                <linepath layout="Direct">
+                  <startpoint startx="252.359" starty="68.016"/>
+                  <endpoint endx="368.052" endy="68.0439"/>
+                </linepath>
+              </assocwidget>
+              <assocwidget xmi.id="Interfaz_TCli_bf97b2cf" localid="uaFKOM6pNpfcP" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" seqnum="" type="503" widgetaid="Interfaz_3482553d" widgetbid="TransporteCli_62c70860" indexa="0" totalcounta="0" indexb="0" totalcountb="0">
+                <floatingtext xmi.id="uWn1y7rH8jZ1W" localid="ubtm380Bn5u9E" textcolor="none" linecolor="#990000" linewidth="0" usefillcolor="1" usesdiagramfillcolor="1" usesdiagramusefillcolor="1" fillcolor="none" font="Ubuntu Sans,11,-1,5,50,0,0,0,0,0" autoresize="1" x="-655.004" y="304.061" width="93" height="22" isinstance="0" showstereotype="2" text="Interfaz_TCli" pretext="" posttext="" role="703"/>
+                <linepath layout="Direct">
+                  <startpoint startx="-719.137" starty="340.899"/>
+                  <endpoint endx="-615.934" endy="339.425"/>
+                </linepath>
+              </assocwidget>
+            </associations>
+          </diagram>
+        </diagrams>
+      </xmi:Extension>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="Use_Case_View" name="Use Case View"/>
+    <packagedElement xmi:type="uml:Model" xmi:id="Component_View" name="Component View"/>
+    <packagedElement xmi:type="uml:Model" xmi:id="Deployment_View" name="Deployment View"/>
+    <packagedElement xmi:type="uml:Model" xmi:id="Entity_Relationship_Model" name="Entity Relationship Model"/>
+  </uml:Model>
+  <xmi:Extension extender="umbrello">
+    <docsettings viewid="uEjVMQoz23ZF2" documentation="" uniqueid="ugvv0OYXbwwN9"/>
+    <listview>
+      <listitem id="Views" type="800" open="1">
+        <listitem id="Component_View" type="821" open="1"/>
+        <listitem id="Deployment_View" type="827" open="1"/>
+        <listitem id="Entity_Relationship_Model" type="836" open="1"/>
+        <listitem id="Logical_View" type="801" open="1">
+          <listitem id="uEjVMQoz23ZF2" type="807" label="class diagram" open="0"/>
+          <listitem id="Cliente_84354f18" type="818" open="1">
+            <listitem id="ConexionCli_149bfa7c" type="813" open="0">
+              <listitem id="op_b7f35ce3" type="815" open="0"/>
+              <listitem id="op_b9562a7d" type="815" open="0"/>
+              <listitem id="op_509bed4b" type="815" open="0"/>
+              <listitem id="op_330cec43" type="815" open="0"/>
+            </listitem>
+            <listitem id="DatoCli_d21c2c01" type="813" open="0">
+              <listitem id="attr_cafb752c" type="814" open="0"/>
+              <listitem id="attr_41af8348" type="814" open="0"/>
+            </listitem>
+            <listitem id="Interfaz_3482553d" type="813" open="0">
+              <listitem id="op_0352d4d9" type="815" open="0"/>
+              <listitem id="op_394ea47e" type="815" open="0"/>
+              <listitem id="op_e025451b" type="815" open="0"/>
+              <listitem id="op_abc93ed5" type="815" open="0"/>
+            </listitem>
+            <listitem id="MensajeCli_29e53143" type="813" open="0">
+              <listitem id="op_113d412d" type="815" open="0"/>
+              <listitem id="attr_b9fff5e4" type="814" open="0"/>
+              <listitem id="attr_b9fcc6e4" type="814" open="0"/>
+              <listitem id="op_4fea9b88" type="815" open="0"/>
+              <listitem id="op_18e07c33" type="815" open="0"/>
+              <listitem id="op_f02f1158" type="815" open="0"/>
+              <listitem id="op_31ba7731" type="815" open="0"/>
+              <listitem id="op_7f740b11" type="815" open="0"/>
+            </listitem>
+            <listitem id="TransporteCli_62c70860" type="813" open="0">
+              <listitem id="op_0f566288" type="815" open="0"/>
+              <listitem id="op_3de8d2fd" type="815" open="0"/>
+            </listitem>
+          </listitem>
+          <listitem id="Datatypes" type="830" open="0">
+            <listitem id="dt_bool" type="829" open="0"/>
+            <listitem id="dt_double" type="829" open="0"/>
+            <listitem id="dt_void" type="829" open="0"/>
+          </listitem>
+          <listitem id="Servidor_31b31852" type="818" open="1">
+            <listitem id="Admin_c17a7c2e" type="813" open="0">
+              <listitem id="op_f27d5c8e" type="815" open="0"/>
+              <listitem id="op_442b99e9" type="815" open="0"/>
+            </listitem>
+            <listitem id="Articulacion_0d192d47" type="813" open="0">
+              <listitem id="op_17f7b4e8" type="815" open="0"/>
+              <listitem id="op_db6040bb" type="815" open="0"/>
+              <listitem id="op_cfc08c80" type="815" open="0"/>
+            </listitem>
+            <listitem id="Conexion_237ae3a1" type="813" open="0">
+              <listitem id="op_a40edabd" type="815" open="0"/>
+              <listitem id="op_e0847203" type="815" open="0"/>
+              <listitem id="op_9e8a887b" type="815" open="0"/>
+              <listitem id="op_886fbf3e" type="815" open="0"/>
+            </listitem>
+            <listitem id="DatoSrv_fe100d3b" type="813" open="0">
+              <listitem id="attr_79ad017e" type="814" open="0"/>
+              <listitem id="attr_f484440b" type="814" open="0"/>
+            </listitem>
+            <listitem id="EfectorFinal_84546d05" type="813" open="0">
+              <listitem id="op_17429b69" type="815" open="0"/>
+              <listitem id="op_90e01585" type="815" open="0"/>
+            </listitem>
+            <listitem id="G_estor_094167fd" type="813" open="0">
+              <listitem id="op_bdcb717b" type="815" open="0"/>
+              <listitem id="op_6d68c1a4" type="815" open="0"/>
+              <listitem id="op_50466771" type="815" open="0"/>
+              <listitem id="op_96b43c0a" type="815" open="0"/>
+              <listitem id="op_7e0c18b5" type="815" open="0"/>
+            </listitem>
+            <listitem id="GestorArchivos_04129c2f" type="813" open="0">
+              <listitem id="op_8fd84416" type="815" open="0"/>
+              <listitem id="op_a8339d65" type="815" open="0"/>
+              <listitem id="attr_1781cf8e" type="814" open="0"/>
+              <listitem id="op_aa191751" type="815" open="0"/>
+              <listitem id="op_be16fd83" type="815" open="0"/>
+              <listitem id="attr_3e4de8ae" type="814" open="0"/>
+              <listitem id="op_9ba5a5d2" type="815" open="0"/>
+              <listitem id="op_3f24a6d9" type="815" open="0"/>
+            </listitem>
+            <listitem id="GestorBBDD_32a88356" type="813" open="0">
+              <listitem id="op_02bf0203" type="815" open="0"/>
+              <listitem id="op_370212ac" type="815" open="0"/>
+              <listitem id="op_37d59008" type="815" open="0"/>
+              <listitem id="op_5486898d" type="815" open="0"/>
+            </listitem>
+            <listitem id="GestorReportes_4576bd08" type="813" open="0">
+              <listitem id="op_532e3b5b" type="815" open="0"/>
+              <listitem id="op_7ef6650a" type="815" open="0"/>
+              <listitem id="op_e9e83cf0" type="815" open="0"/>
+              <listitem id="op_abc4f742" type="815" open="0"/>
+            </listitem>
+            <listitem id="GestorUsuarios_4d413285" type="813" open="0">
+              <listitem id="op_e210d5c3" type="815" open="0"/>
+              <listitem id="op_0b826875" type="815" open="0"/>
+              <listitem id="op_b156cbba" type="815" open="0"/>
+              <listitem id="op_a364e350" type="815" open="0"/>
+            </listitem>
+            <listitem id="MensajeSrv_9fb48a78" type="813" open="0">
+              <listitem id="op_69a53151" type="815" open="0"/>
+              <listitem id="attr_c648d4d2" type="814" open="0"/>
+              <listitem id="attr_bc015278" type="814" open="0"/>
+              <listitem id="op_9be987de" type="815" open="0"/>
+              <listitem id="op_9c624a63" type="815" open="0"/>
+              <listitem id="op_7c77c0e6" type="815" open="0"/>
+              <listitem id="op_3a520290" type="815" open="0"/>
+              <listitem id="op_272c6885" type="815" open="0"/>
+            </listitem>
+            <listitem id="Robot_274beb53" type="813" open="0">
+              <listitem id="op_beb2b61c" type="815" open="0"/>
+              <listitem id="op_8f31692c" type="815" open="0"/>
+              <listitem id="op_dc5404d2" type="815" open="0"/>
+              <listitem id="op_6f78f2cd" type="815" open="0"/>
+              <listitem id="op_f4fdaa57" type="815" open="0"/>
+              <listitem id="op_2c30ac5a" type="815" open="0"/>
+              <listitem id="op_b10c5622" type="815" open="0"/>
+              <listitem id="op_a126a462" type="815" open="0"/>
+            </listitem>
+            <listitem id="Serial_3315a9af" type="813" open="0">
+              <listitem id="op_c572ef99" type="815" open="0"/>
+              <listitem id="attr_07aff1f9" type="814" open="0"/>
+              <listitem id="op_c662b5ae" type="815" open="0"/>
+              <listitem id="op_dafb7c98" type="815" open="0"/>
+              <listitem id="attr_edc132eb" type="814" open="0"/>
+            </listitem>
+            <listitem id="TransporteSrv_f07db72c" type="813" open="0">
+              <listitem id="op_1c0542a2" type="815" open="0"/>
+              <listitem id="op_2d74a218" type="815" open="0"/>
+            </listitem>
+            <listitem id="Usuario_037cc384" type="813" open="0">
+              <listitem id="attr_953b7a38" type="814" open="0"/>
+              <listitem id="attr_f7af15e4" type="814" open="0"/>
+              <listitem id="attr_fa2d94b6" type="814" open="0"/>
+              <listitem id="attr_91413eee" type="814" open="0"/>
+              <listitem id="op_c2acd25d" type="815" open="0"/>
+            </listitem>
+          </listitem>
+        </listitem>
+        <listitem id="Use_Case_View" type="802" open="1"/>
+      </listitem>
+    </listview>
+  </xmi:Extension>
+</xmi:XMI>
