@@ -8,7 +8,7 @@
 using namespace std::chrono_literals;
 
 Robot::Robot()
-: x_(0.0), y_(0.0), z_(0.0), velocidad_(1.0), connected_(false), motorsEnabled_(false)
+: x_(0.0), y_(0.0), z_(0.0), velocidad_(1.0), connected_(false), motorsEnabled_(false), serial_(nullptr)
 {}
 
 Robot::~Robot() {
@@ -97,4 +97,28 @@ std::string Robot::formatPos(double x, double y, double z) {
     oss.setf(std::ios::fixed); oss.precision(3);
     oss << x << "," << y << "," << z;
     return oss.str();
+}
+
+void Robot::SetSerial(tp2::Serial* s) {
+    serial_ = s;
+}
+
+tp2::Serial* Robot::GetSerial() const {
+    return serial_;
+}
+
+Articulacion& Robot::GetArticulacion1() {
+    return articulacion1_;
+}
+
+Articulacion& Robot::GetArticulacion2() {
+    return articulacion2_;
+}
+
+Articulacion& Robot::GetArticulacion3() {
+    return articulacion3_;
+}
+
+EfectorFinal& Robot::GetEfector() {
+    return efector_;
 }

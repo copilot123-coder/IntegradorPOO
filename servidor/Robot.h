@@ -43,7 +43,9 @@ public:
     tp2::Serial* GetSerial() const;
 
     // Acceso a componentes por composición
-    Articulacion& GetArticulacion();
+    Articulacion& GetArticulacion1();
+    Articulacion& GetArticulacion2();
+    Articulacion& GetArticulacion3();
     EfectorFinal& GetEfector();
 
 private:
@@ -54,7 +56,9 @@ private:
     std::atomic<bool> motorsEnabled_;
 
     // componentes (composición)
-    Articulacion articulacion_;
+    Articulacion articulacion1_;
+    Articulacion articulacion2_;
+    Articulacion articulacion3_;
     EfectorFinal efector_;
 
     // asociación con Serial (no propietario)
