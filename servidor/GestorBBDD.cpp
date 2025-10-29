@@ -17,7 +17,13 @@ bool GestorBBDD::inicializar() {
         return false;
     }
     conectado_ = true;
-    return crearTablas();
+    
+    if (!crearTablas()) {
+        return false;
+    }
+    
+    // Crear usuarios por defecto si no existen
+    return crearUsuariosPorDefecto();
 }
 
 bool GestorBBDD::crearTablas() {
@@ -43,11 +49,32 @@ bool GestorBBDD::ejecutarSQL(const std::string& sql) {
 }
 
 bool GestorBBDD::agregarUsuario(const Usuario& usuario) {
-    std::string sql = "INSERT INTO usuarios (nombre, clave, tipo) VALUES ('" +
-                     escaparComillas(usuario.getNombre()) + "', '" +
-                     escaparComillas("clave_temp") + "', '" +
-                     escaparComillas(usuario.getTipo()) + "');";
-    return ejecutarSQL(sql);
+    sqlite3_stmt* stmt;
+    std::string sql = "INSERT INTO usuarios (nombre, clave, tipo) VALUES (?, ?, ?);";
+    
+    std::cout << "Insertando usuario - Nombre: '" << usuario.getNombre() 
+              << "', Clave: '" << usuario.getClave() << "', Tipo: '" << usuario.getTipo() << "'" << std::endl;
+    
+    if (sqlite3_prepare_v2(db_, sql.c_str(), -1, &stmt, 0) != SQLITE_OK) {
+        std::cerr << "Error preparando SQL: " << sqlite3_errmsg(db_) << std::endl;
+        return false;
+    }
+    
+    // Usar SQLITE_TRANSIENT para copiar las strings en lugar de SQLITE_STATIC
+    sqlite3_bind_text(stmt, 1, usuario.getNombre().c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(stmt, 2, usuario.getClave().c_str(), -1, SQLITE_TRANSIENT);
+    sqlite3_bind_text(stmt, 3, usuario.getTipo().c_str(), -1, SQLITE_TRANSIENT);
+    
+    int result = sqlite3_step(stmt);
+    sqlite3_finalize(stmt);
+    
+    if (result == SQLITE_DONE) {
+        std::cout << "Usuario insertado exitosamente." << std::endl;
+        return true;
+    } else {
+        std::cerr << "Error insertando usuario: " << sqlite3_errmsg(db_) << std::endl;
+        return false;
+    }
 }
 
 bool GestorBBDD::eliminarUsuario(int id) {
@@ -168,4 +195,40 @@ std::string GestorBBDD::escaparComillas(const std::string& str) {
         pos += 2;
     }
     return resultado;
+}
+
+bool GestorBBDD::crearUsuariosPorDefecto() {
+    // Verificar si ya existen usuarios
+    std::vector<Usuario> usuarios = obtenerTodosUsuarios();
+    if (!usuarios.empty()) {
+        std::cout << "Usuarios ya existen en la base de datos:" << std::endl;
+        for (const auto& u : usuarios) {
+            std::cout << "  ID: " << u.getId() << ", Nombre: '" << u.getNombre() 
+                      << "', Clave: '" << u.getClave() << "', Tipo: '" << u.getTipo() << "'" << std::endl;
+        }
+        return true; // Ya hay usuarios, no crear por defecto
+    }
+    
+    std::cout << "Creando usuarios por defecto..." << std::endl;
+    
+    // Crear usuario administrador por defecto con contraseñas simples
+    Usuario admin(0, "admin", "admin", "admin");
+    std::cout << "Creando admin - Nombre: '" << admin.getNombre() 
+              << "', Clave: '" << admin.getClave() << "', Tipo: '" << admin.getTipo() << "'" << std::endl;
+    if (!agregarUsuario(admin)) {
+        std::cerr << "Error creando usuario admin por defecto" << std::endl;
+        return false;
+    }
+    
+    // Crear usuario normal por defecto con contraseñas simples
+    Usuario user(0, "user", "user", "normal");
+    std::cout << "Creando user - Nombre: '" << user.getNombre() 
+              << "', Clave: '" << user.getClave() << "', Tipo: '" << user.getTipo() << "'" << std::endl;
+    if (!agregarUsuario(user)) {
+        std::cerr << "Error creando usuario normal por defecto" << std::endl;
+        return false;
+    }
+    
+    std::cout << "Usuarios por defecto creados: admin/admin, user/user" << std::endl;
+    return true;
 }

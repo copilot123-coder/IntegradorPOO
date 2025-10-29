@@ -33,6 +33,6 @@ servidor_robot: $(SERVIDOR_OBJS) main_servidor.cpp
 
 # Limpiar
 clean:
-	rm -f *.o test_bbdd test_reportes test_gcodeg servidor_robot usuarios.db *.gcode
+	rm -f *.o test_bbdd test_reportes test_gcodeg servidor_robot 
 
 .PHONY: all clean

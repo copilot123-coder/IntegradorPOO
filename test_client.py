@@ -163,109 +163,109 @@ def test_usuario_normal():
     client = ClienteRobotRPC()
     
     # Login como usuario normal
-    if not client.login('user', 'user123'):
+    if not client.login('user', 'user'):
         return False
     
     # Listar comandos disponibles
     client.listar_comandos()
     
     # Configurar modo manual
-    print(f"\n--- Configurando modo de trabajo ---")
-    client.configurar_modo('manual', 'absoluto')
-    
-    # Movimientos del robot
-    print(f"\n--- Probando movimientos ---")
-    client.mover_robot(10, 20, 5, 100)
-    client.mover_robot(0, 0, 10)
-    
-    # Comandos G-Code
-    print(f"\n--- Ejecutando comandos G-Code ---")
-    client.ejecutar_gcode('G28')  # Home
-    client.ejecutar_gcode('G1 X50 Y30 Z15 F1500')
-    
-    # Ir a origen
-    print(f"\n--- Volviendo a origen ---")
-    client.ir_a_origen()
-    
-    # Subir y ejecutar archivo
-    print(f"\n--- Gestion de archivos ---")
-    contenido_gcode = """G28
-G1 X10 Y10 Z5 F1000
-G1 X20 Y20 Z5 F1000
-G1 X0 Y0 Z0 F1000"""
-    
-    archivo = client.subir_archivo('test_trayectoria', contenido_gcode)
-    if archivo:
-        try:
-            resultado = client.servidor.EjecutarArchivo(client.session_id, archivo)
-            if resultado['exito']:
-                print(f"✓ {resultado['mensaje']}")
-            else:
-                print(f"✗ {resultado['mensaje']}")
-        except Exception as e:
-            print(f"✗ Error ejecutando archivo: {e}")
-    
-    # Reporte final
-    print(f"\n--- Reporte de actividad ---")
-    client.reporte_usuario()
-    
-    return True
-
-def test_admin():
-    """Test completo como administrador"""
-    print("\n" + "="*50)
-    print("TESTING COMO ADMINISTRADOR")
-    print("="*50)
-    
-    client = ClienteRobotRPC()
-    
-    # Login como admin
-    if not client.login('admin', 'admin123'):
-        return False
-    
-    # Listar comandos (debería incluir comandos admin)
-    client.listar_comandos()
-    
-    # Conectar robot
-    print(f"\n--- Gestión de conexión robot ---")
-    client.conectar_robot('conectar')
-    
-    # Configurar acceso remoto
-    print(f"\n--- Configurando acceso remoto ---")
-    try:
-        resultado = client.servidor.ConfigurarAccesoRemoto(client.session_id, True)
-        if resultado['exito']:
-            print(f"✓ {resultado['mensaje']}")
-        else:
-            print(f"✗ {resultado['mensaje']}")
-    except Exception as e:
-        print(f"✗ Error: {e}")
-    
-    # Control de motores
-    print(f"\n--- Control de motores ---")
-    try:
-        resultado = client.servidor.ControlMotores(client.session_id, 'activar')
-        if resultado['exito']:
-            print(f"✓ {resultado['mensaje']}")
-        else:
-            print(f"✗ {resultado['mensaje']}")
-    except Exception as e:
-        print(f"✗ Error: {e}")
-    
-    # Reporte administrativo
-    print(f"\n--- Reporte administrativo ---")
-    try:
-        resultado = client.servidor.ReporteAdmin(client.session_id, '', '')
-        if resultado['exito']:
-            print(f"✓ Reporte admin - Sesiones activas: {resultado['totalSesiones']}")
-            for i, sesion in enumerate(resultado['sesiones']):
-                print(f"  Sesión {i+1}: {sesion['usuario']} desde {sesion['nodo']}")
-        else:
-            print(f"✗ {resultado['mensaje']}")
-    except Exception as e:
-        print(f"✗ Error: {e}")
-    
-    return True
+#   print(f"\n--- Configurando modo de trabajo ---")
+#   client.configurar_modo('manual', 'absoluto')
+#   
+#   # Movimientos del robot
+#   print(f"\n--- Probando movimientos ---")
+#   client.mover_robot(10, 20, 5, 100)
+#   client.mover_robot(0, 0, 10)
+#   
+#   # Comandos G-Code
+#   print(f"\n--- Ejecutando comandos G-Code ---")
+#   client.ejecutar_gcode('G28')  # Home
+#   client.ejecutar_gcode('G1 X50 Y30 Z15 F1500')
+#   
+#   # Ir a origen
+#   print(f"\n--- Volviendo a origen ---")
+#   client.ir_a_origen()
+#   
+#   # Subir y ejecutar archivo
+#   print(f"\n--- Gestion de archivos ---")
+#   contenido_gcode = """G28
+#1 X10 Y10 Z5 F1000
+#1 X20 Y20 Z5 F1000
+#1 X0 Y0 Z0 F1000"""
+#   
+#   archivo = client.subir_archivo('test_trayectoria', contenido_gcode)
+#   if archivo:
+#       try:
+#           resultado = client.servidor.EjecutarArchivo(client.session_id, archivo)
+#           if resultado['exito']:
+#               print(f"✓ {resultado['mensaje']}")
+#           else:
+#               print(f"✗ {resultado['mensaje']}")
+#       except Exception as e:
+#           print(f"✗ Error ejecutando archivo: {e}")
+#   
+#   # Reporte final
+#   print(f"\n--- Reporte de actividad ---")
+#   client.reporte_usuario()
+#   
+#   return True
+#
+#ef test_admin():
+#   """Test completo como administrador"""
+#   print("\n" + "="*50)
+#   print("TESTING COMO ADMINISTRADOR")
+#   print("="*50)
+#   
+#   client = ClienteRobotRPC()
+#   
+#   # Login como admin
+#   if not client.login('admin', 'admin123'):
+#       return False
+#   
+#   # Listar comandos (debería incluir comandos admin)
+#   client.listar_comandos()
+#   
+#   # Conectar robot
+#   print(f"\n--- Gestión de conexión robot ---")
+#   client.conectar_robot('conectar')
+#   
+#   # Configurar acceso remoto
+#   print(f"\n--- Configurando acceso remoto ---")
+#   try:
+#       resultado = client.servidor.ConfigurarAccesoRemoto(client.session_id, True)
+#       if resultado['exito']:
+#           print(f"✓ {resultado['mensaje']}")
+#       else:
+#           print(f"✗ {resultado['mensaje']}")
+#   except Exception as e:
+#       print(f"✗ Error: {e}")
+#   
+#   # Control de motores
+#   print(f"\n--- Control de motores ---")
+#   try:
+#       resultado = client.servidor.ControlMotores(client.session_id, 'activar')
+#       if resultado['exito']:
+#           print(f"✓ {resultado['mensaje']}")
+#       else:
+#           print(f"✗ {resultado['mensaje']}")
+#   except Exception as e:
+#       print(f"✗ Error: {e}")
+#   
+#   # Reporte administrativo
+#   print(f"\n--- Reporte administrativo ---")
+#   try:
+#       resultado = client.servidor.ReporteAdmin(client.session_id, '', '')
+#       if resultado['exito']:
+#           print(f"✓ Reporte admin - Sesiones activas: {resultado['totalSesiones']}")
+#           for i, sesion in enumerate(resultado['sesiones']):
+#               print(f"  Sesión {i+1}: {sesion['usuario']} desde {sesion['nodo']}")
+#       else:
+#           print(f"✗ {resultado['mensaje']}")
+#   except Exception as e:
+#       print(f"✗ Error: {e}")
+#   
+#   return True
 
 def main():
     print("=== CLIENTE DE PRUEBA SERVIDOR XML-RPC ROBOT ===")

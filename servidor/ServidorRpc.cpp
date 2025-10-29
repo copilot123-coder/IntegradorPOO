@@ -101,16 +101,19 @@ bool ServidorRpc::validarUsuario(const std::string& usuario, const std::string& 
         return false;
     }
     
-    // Validación simple - mejorará con integración completa
-    if (usuario == "admin" && clave == "admin123") {
-        return true;
-    }
-    if (usuario == "user" && clave == "user123") {
-        return true;
+    // Validar contra la base de datos
+    auto usuarioObj = gestorBBDD->obtenerUsuarioPorNombre(usuario);
+    if (!usuarioObj) {
+        registrarEvento("Usuario no encontrado: " + usuario, usuario, nodoOrigen);
+        return false;
     }
     
-    registrarEvento("Credenciales inválidas para: " + usuario, usuario, nodoOrigen);
-    return false;
+    if (!usuarioObj->validar(clave)) {
+        registrarEvento("Credenciales inválidas para: " + usuario, usuario, nodoOrigen);
+        return false;
+    }
+    
+    return true;
 }
 
 bool ServidorRpc::esAdministrador(const std::string& sessionId) {
@@ -118,7 +121,14 @@ bool ServidorRpc::esAdministrador(const std::string& sessionId) {
     if (it == sesionesActivas.end()) {
         return false;
     }
-    return it->second.esAdmin;
+    
+    // Verificar contra la base de datos para mayor seguridad
+    auto usuarioObj = gestorBBDD->obtenerUsuarioPorNombre(it->second.usuario);
+    if (!usuarioObj) {
+        return false;
+    }
+    
+    return usuarioObj->getTipo() == "admin";
 }
 
 void ServidorRpc::registrarEvento(const std::string& evento, const std::string& usuario, const std::string& nodo) {
@@ -152,10 +162,14 @@ void MetodoLogin::execute(XmlRpcValue& params, XmlRpcValue& result) {
     if (servidor->validarUsuario(usuario, clave, nodoOrigen)) {
         std::string sessionId = servidor->generarSessionId(usuario, nodoOrigen);
         
+        // Obtener información del usuario desde la base de datos
+        auto usuarioObj = servidor->gestorBBDD->obtenerUsuarioPorNombre(usuario);
+        bool esAdmin = usuarioObj && (usuarioObj->getTipo() == "admin");
+        
         SesionUsuario sesion;
         sesion.usuario = usuario;
         sesion.nodoOrigen = nodoOrigen;
-        sesion.esAdmin = (usuario == "admin");
+        sesion.esAdmin = esAdmin;
         sesion.tiempoConexion = std::chrono::system_clock::now();
         sesion.comandosEjecutados = 0;
         sesion.comandosErroneos = 0;
@@ -164,7 +178,7 @@ void MetodoLogin::execute(XmlRpcValue& params, XmlRpcValue& result) {
         
         result["exito"] = true;
         result["sessionId"] = sessionId;
-        result["tipoUsuario"] = sesion.esAdmin ? "admin" : "normal";
+        result["tipoUsuario"] = esAdmin ? "admin" : "normal";
         result["mensaje"] = "Autenticación exitosa";
         
         servidor->registrarEvento("Login exitoso", usuario, nodoOrigen);

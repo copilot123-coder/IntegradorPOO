@@ -12,6 +12,7 @@ public:
     // Getters
     int getId() const { return id_; }
     std::string getNombre() const { return nombre_; }
+    std::string getClave() const { return clave_; }
     std::string getTipo() const { return tipo_; }
 
 private:

@@ -15,6 +15,9 @@ public:
 
     // Inicializa la base de datos y crea las tablas si no existen
     bool inicializar();
+    
+    // Crear usuarios por defecto si no existen
+    bool crearUsuariosPorDefecto();
 
     // Gestión de usuarios
     bool agregarUsuario(const Usuario& usuario);
