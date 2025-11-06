@@ -3,7 +3,6 @@
 #include <sstream>
 #include <fstream>
 #include <vector>
-#include "Gestor_Archivos.h"
 
 static std::vector<std::vector<std::string>> readCSV(const std::string &path) {
     std::vector<std::vector<std::string>> rows;

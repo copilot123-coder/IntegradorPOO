@@ -1,16 +1,21 @@
-#ifndef GESTOR_REPORTES_H
-#define GESTOR_REPORTES_H
+#ifndef GESTORREPORTES_H
+#define GESTORREPORTES_H
 
 #include <string>
 
 class GestorReportes {
 public:
-    GestorReportes() = default;
+    // Genera un CSV resumen con información de users.csv y logs.csv
+    static std::string ReporteGeneral();
 
-    std::string ReporteGeneral();
-    std::string ReporteAdmin(int idAdmin);
-    std::string ReporteLog(const std::string &FechaDesde, const std::string &FechaHasta);
-    std::string Filtrar(const std::string &filtro);
+    // Genera un CSV con los usuarios asociados al admin dado
+    static std::string ReporteAdmin(int idAdmin);
+
+    // Genera un CSV con logs entre las fechas (inclusive)
+    static std::string ReporteLog(const std::string &FechaDesde, const std::string &FechaHasta);
+
+    // Filtra users.csv y logs.csv por el texto dado
+    static std::string Filtrar(const std::string &filtro);
 };
 
-#endif // GESTOR_REPORTES_H
+#endif // GESTORREPORTES_H
