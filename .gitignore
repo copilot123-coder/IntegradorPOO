@@ -1,0 +1,19 @@
+# Archivos compilados de C++
+*.o
+servidor_robot
+test_gestor
+
+# Base de datos
+*.db
+
+# Logs y archivos de prueba
+*.log
+*.csv
+*.gcode
+
+# Archivos de Python
+__pycache__/
+*.pyc
+
+# Archivos del sistema
+.DS_Store
