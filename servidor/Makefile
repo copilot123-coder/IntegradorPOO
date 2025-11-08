@@ -1,37 +1,84 @@
+# --- Variables de Compilación ---
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -I../inc -I../lib
+# Agregamos -MMD -MP para la generación automática de dependencias
+CXXFLAGS = -std=c++17 -Wall -Wextra -I../inc -I../lib -MMD -MP
+
+# --- Librerías ---
+# La línea de LIBS que ya corregimos, apuntando a los .o de la librería
 LIBS = -lsqlite3 ../lib/XmlRpcClient.o ../lib/XmlRpcDispatch.o ../lib/XmlRpcServer.o ../lib/XmlRpcServerConnection.o ../lib/XmlRpcServerMethod.o ../lib/XmlRpcSocket.o ../lib/XmlRpcSource.o ../lib/XmlRpcUtil.o ../lib/XmlRpcValue.o
-# Archivos objeto
-OBJS = Usuario.o GestorBBDD.o
-REPORTES_OBJS = GestorArchivos.o GestorReportes.o
-GCODEG_OBJS = Serial.o GestorArchivos.o GestorCodigoG.o
-SERVIDOR_OBJS = Usuario.o GestorBBDD.o GestorArchivos.o GestorReportes.o Serial.o GestorCodigoG.o ServidorRpc.o
 
-# Objetivos principales
-all: test_bbdd test_reportes test_gcodeg servidor_robot
+# --- Archivos Fuente (.cpp) ---
+# Lista de todos los .cpp que SÍ son parte del servidor
+# (Excluimos los backups y otros .cpp que no se usan)
+SERVER_SRCS := main_servidor.cpp \
+               ServidorRpc.cpp \
+               GestorCodigoG.cpp \
+               Serial.cpp \
+               GestorReportes.cpp \
+               GestorArchivos.cpp \
+               GestorBBDD.cpp \
+               Usuario.cpp
 
-# Compilar objetos
-%.o: %.cpp %.h
+# --- Archivos Fuente (.cpp) para los tests ---
+TEST_BBDD_SRCS := test_bbdd.cpp GestorBBDD.cpp Usuario.cpp
+TEST_REPORTES_SRCS := test_reportes.cpp GestorReportes.cpp GestorArchivos.cpp
+TEST_GCODEG_SRCS := test_gcodeg.cpp GestorCodigoG.cpp Serial.cpp GestorArchivos.cpp
+
+# --- Generación Automática de Archivos Objeto (.o) ---
+# Convierte todas las listas de .cpp a .o
+SERVER_OBJS := $(patsubst %.cpp,%.o,$(SERVER_SRCS))
+TEST_BBDD_OBJS := $(patsubst %.cpp,%.o,$(TEST_BBDD_SRCS))
+TEST_REPORTES_OBJS := $(patsubst %.cpp,%.o,$(TEST_REPORTES_SRCS))
+TEST_GCODEG_OBJS := $(patsubst %.cpp,%.o,$(TEST_GCODEG_SRCS))
+
+# --- Objetivos (Targets) ---
+TARGETS = servidor_robot test_bbdd test_reportes test_gcodeg
+
+# El objetivo 'all' (por defecto) compila todo
+all: $(TARGETS)
+
+# --- Reglas de Enlazado (Linking) ---
+# Regla para construir el servidor principal
+servidor_robot: $(SERVER_OBJS)
+	@echo "Enlazando $@..."
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
+
+# Regla para construir el test de BBDD
+test_bbdd: $(TEST_BBDD_OBJS)
+	@echo "Enlazando $@..."
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
+
+# Regla para construir el test de Reportes
+test_reportes: $(TEST_REPORTES_OBJS)
+	@echo "Enlazando $@..."
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
+
+# Regla para construir el test de G-Code
+test_gcodeg: $(TEST_GCODEG_OBJS)
+	@echo "Enlazando $@..."
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
+
+# --- Regla de Compilación Genérica ---
+# Esta regla compila CUALQUIER .cpp a un .o
+# (No necesita el .h)
+%.o: %.cpp
+	@echo "Compilando $<..."
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Programa de prueba BBDD
-test_bbdd: $(OBJS) test_bbdd.cpp
-	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
-
-# Programa de prueba Reportes
-test_reportes: $(REPORTES_OBJS) test_reportes.cpp
-	$(CXX) $(CXXFLAGS) -o $@ $^
-
-# Programa de prueba GestorCodigoG
-test_gcodeg: $(GCODEG_OBJS) test_gcodeg.cpp
-	$(CXX) $(CXXFLAGS) -o $@ $^
-
-# Servidor Robot completo
-servidor_robot: $(SERVIDOR_OBJS) main_servidor.cpp
-	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
-
-# Limpiar
+# --- Limpieza ---
+# El 'clean' ahora también borra los archivos de dependencia (.d)
 clean:
-	rm -f *.o test_bbdd test_reportes test_gcodeg servidor_robot 
+	@echo "Limpiando archivos compilados..."
+	rm -f $(TARGETS) *.o *.d
 
+# --- Inclusión de Dependencias ---
+# Incluye todos los archivos .d (listas de dependencias de headers)
+# que generó el compilador.
+# Si un .h cambia, 'make' ahora lo sabrá.
+-include $(SERVER_OBJS:.o=.d)
+-include $(TEST_BBDD_OBJS:.o=.d)
+-include $(TEST_REPORTES_OBJS:.o=.d)
+-include $(TEST_GCODEG_OBJS:.o=.d)
+
+# Declara los objetivos que no son archivos (son "falsos")
 .PHONY: all clean
