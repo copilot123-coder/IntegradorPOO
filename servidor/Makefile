@@ -5,7 +5,7 @@ CXXFLAGS = -std=c++17 -Wall -Wextra -I../inc -I../lib -MMD -MP
 
 # --- Librerías ---
 # La línea de LIBS que ya corregimos, apuntando a los .o de la librería
-LIBS = -lsqlite3 ../lib/XmlRpcClient.o ../lib/XmlRpcDispatch.o ../lib/XmlRpcServer.o ../lib/XmlRpcServerConnection.o ../lib/XmlRpcServerMethod.o ../lib/XmlRpcSocket.o ../lib/XmlRpcSource.o ../lib/XmlRpcUtil.o ../lib/XmlRpcValue.o
+LIBS = -lsqlite3 
 
 # --- Archivos Fuente (.cpp) ---
 # Lista de todos los .cpp que SÍ son parte del servidor
