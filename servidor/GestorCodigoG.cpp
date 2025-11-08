@@ -39,18 +39,18 @@ bool GestorCodigoG::conectarRobot() {
         return false;
     }
     
-    std::cout << "Esperando inicialización del robot (4 segundos)..." << std::endl;
-    std::this_thread::sleep_for(std::chrono::seconds(4));
+    std::cout << "Esperando inicialización del robot (5 segundos)..." << std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(5));
     
     // Leer mensaje inicial del robot si está disponible
-    std::string mensajeInicial = serial_->leerPuerto(1000);
+    std::string mensajeInicial = serial_->leerPuerto(2000);
     if (!mensajeInicial.empty()) {
         std::cout << "Mensaje inicial del robot: " << mensajeInicial << std::endl;
     }
     
     // Realizar homing primero (G28) - es crítico
     std::cout << "Realizando homing (G28)..." << std::endl;
-    if (!enviarComandoConEspera("G28", 4000)) { // 4 segundos para homing
+    if (!enviarComandoConEspera("G28", 5000)) { // 4 segundos para homing
         std::cerr << "Error: No se pudo realizar homing" << std::endl;
         return false;
     }

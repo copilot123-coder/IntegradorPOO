@@ -17,8 +17,12 @@ Serial::~Serial() {
 bool Serial::abrirPuerto() {
     fd = open("/dev/ttyACM0", O_RDWR | O_NOCTTY);
     if (fd < 0) {
-        std::cerr << "Error abriendo puerto serie: " << strerror(errno) << std::endl;
-        return false;
+        // Intentar con /dev/ttyUSB0 si /dev/ttyACM0 falla
+        fd = open("/dev/ttyUSB0", O_RDWR | O_NOCTTY);
+        if (fd < 0) {
+            std::cerr << "Error abriendo puerto serie (probé /dev/ttyACM0 y /dev/ttyUSB0): " << strerror(errno) << std::endl;
+            return false;
+        }
     }
     
     // Es vital esperar a que el Arduino se reinicie después de abrir el puerto
