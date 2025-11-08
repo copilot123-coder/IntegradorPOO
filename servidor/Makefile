@@ -1,7 +1,6 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -Wextra -I../inc -I../lib
-LIBS = -lsqlite3 -L../lib -lxmlrpc
-
+LIBS = -lsqlite3 ../lib/XmlRpcClient.o ../lib/XmlRpcDispatch.o ../lib/XmlRpcServer.o ../lib/XmlRpcServerConnection.o ../lib/XmlRpcServerMethod.o ../lib/XmlRpcSocket.o ../lib/XmlRpcSource.o ../lib/XmlRpcUtil.o ../lib/XmlRpcValue.o
 # Archivos objeto
 OBJS = Usuario.o GestorBBDD.o
 REPORTES_OBJS = GestorArchivos.o GestorReportes.o

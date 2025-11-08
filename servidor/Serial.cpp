@@ -15,7 +15,7 @@ Serial::~Serial() {
 }
 
 bool Serial::abrirPuerto() {
-    fd = open("/dev/ttyUSB0", O_RDWR | O_NOCTTY);
+    fd = open("/dev/ttyACM0", O_RDWR | O_NOCTTY);
     if (fd < 0) {
         std::cerr << "Error abriendo puerto serie: " << strerror(errno) << std::endl;
         return false;
