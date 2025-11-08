@@ -9,7 +9,7 @@ test_gestor
 # Logs y archivos de prueba
 *.log
 *.csv
-*.gcode
+# *.gcode
 
 # Archivos de Python
 __pycache__/
