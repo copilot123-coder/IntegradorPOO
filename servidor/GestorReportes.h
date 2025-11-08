@@ -2,20 +2,29 @@
 #define GESTORREPORTES_H
 
 #include <string>
+#include <fstream>
+#include <vector> // <--- AÑADIR ESTE INCLUDE
 
 class GestorReportes {
+private:
+    std::string archivoLog;
+    std::ofstream fileStream;
+
 public:
-    // Genera un CSV resumen con información de users.csv y logs.csv
-    static std::string ReporteGeneral();
+    GestorReportes(const std::string& archivo = "servidor_log.csv");
+    ~GestorReportes();
 
-    // Genera un CSV con los usuarios asociados al admin dado
-    static std::string ReporteAdmin(int idAdmin);
+    void registrarEvento(const std::string& evento, const std::string& usuario, const std::string& nodo, const std::string& modulo = "ServidorRPC");
 
-    // Genera un CSV con logs entre las fechas (inclusive)
-    static std::string ReporteLog(const std::string &FechaDesde, const std::string &FechaHasta);
-
-    // Filtra users.csv y logs.csv por el texto dado
-    static std::string Filtrar(const std::string &filtro);
+    // --- NUEVA FUNCION A AGREGAR ---
+    /**
+     * @brief Filtra el archivo de log CSV y devuelve las líneas coincidentes.
+     * @param filtro1 Criterio de búsqueda 1 (ej: "admin")
+     * @param filtro2 Criterio de búsqueda 2 (ej: "Error")
+     * @return Vector de strings, cada string es una línea del CSV.
+     */
+    std::vector<std::string> filtrarLog(const std::string& filtro1, const std::string& filtro2);
+    // --- FIN DE LA NUEVA FUNCION ---
 };
 
 #endif // GESTORREPORTES_H

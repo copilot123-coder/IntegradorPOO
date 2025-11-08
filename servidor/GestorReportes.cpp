@@ -1,105 +1,103 @@
 #include "GestorReportes.h"
 #include <iostream>
+#include <chrono>
+#include <iomanip>
 #include <sstream>
-#include <fstream>
+
+// Para la nueva función
 #include <vector>
+#include <fstream>
 
-static std::vector<std::vector<std::string>> readCSV(const std::string &path) {
-    std::vector<std::vector<std::string>> rows;
-    std::ifstream ifs(path);
-    if (!ifs.is_open()) return rows;
-    std::string line;
-    while (std::getline(ifs, line)) {
-        std::vector<std::string> cols;
-        std::istringstream ss(line);
-        std::string cell;
-        while (std::getline(ss, cell, ',')) cols.push_back(cell);
-        rows.push_back(cols);
+GestorReportes::GestorReportes(const std::string& archivo) : archivoLog(archivo) {
+// ... (código existente del constructor) ...
+// ... (DEJA EL CONSTRUCTOR COMO ESTÁ) ...
+    fileStream.open(archivoLog, std::ios_base::app); // Abrir en modo 'append'
+    if (!fileStream.is_open()) {
+        std::cerr << "Error al abrir el archivo de log: " << archivoLog << std::endl;
     }
-    return rows;
 }
 
-static std::string csv_join_row(const std::vector<std::string> &r) {
-    std::ostringstream oss;
-    for (size_t i = 0; i < r.size(); ++i) {
-        if (i) oss << ',';
-        oss << r[i];
+GestorReportes::~GestorReportes() {
+// ... (código existente del destructor) ...
+// ... (DEJA EL DESTRUCTOR COMO ESTÁ) ...
+    if (fileStream.is_open()) {
+        fileStream.close();
     }
-    return oss.str();
 }
 
-std::string GestorReportes::ReporteGeneral(){
-    // Leer users.csv y logs.csv (si existen) y construir un CSV resumen
-    const std::string usersPath = "users.csv";
-    const std::string logsPath = "logs.csv";
-
-    auto users = readCSV(usersPath);
-    auto logs = readCSV(logsPath);
-
-    std::ostringstream out;
-    out << "tipo,valor\n";
-    out << "total_usuarios," << users.size() << "\n";
-    out << "total_logs," << logs.size() << "\n";
-
-    // Añadir cabecera lista de usuarios (id,nombre,privilegios,activo)
-    out << "usuarios_id,nombre,privilegios,activo\n";
-    for (const auto &u : users) {
-        out << csv_join_row(u) << "\n";
+void GestorReportes::registrarEvento(const std::string& evento, const std::string& usuario, const std::string& nodo, const std::string& modulo) {
+// ... (código existente de registrarEvento) ...
+// ... (DEJA LA FUNCIÓN COMO ESTÁ) ...
+    if (!fileStream.is_open()) {
+        std::cerr << "Error: El stream del log no está abierto." << std::endl;
+        return;
     }
 
-    return out.str();
+    // Obtener timestamp actual
+    auto now = std::chrono::system_clock::now();
+    auto time_t = std::chrono::system_clock::to_time_t(now);
+    
+    std::ostringstream ss_time;
+    ss_time << std::put_time(std::localtime(&time_t), "%Y-%m-%d %H:%M:%S");
+    
+    // Formatear la línea CSV
+    std::ostringstream ss_csv;
+    ss_csv << "\"" << ss_time.str() << "\","
+           << "\"" << modulo << "\","
+           << "\"" << evento << "\","
+           << "\"" << usuario << "\","
+           << "\"" << nodo << "\"";
+
+    fileStream << ss_csv.str() << std::endl;
 }
 
-std::string GestorReportes::ReporteAdmin(int idAdmin){
-    const std::string usersPath = "users.csv";
-    auto users = readCSV(usersPath);
-    std::ostringstream out;
-    out << "id_admin," << idAdmin << "\n";
-    out << "usuarios_asociados\n";
-    for (const auto &u : users) {
-        // Asumimos que si la columna privilegios contiene "admin:" seguida
-        // por el id o contiene 'admin' entonces está asociado.
-        if (u.size() >= 3) {
-            const std::string &priv = u[2];
-            if (priv.find("admin") != std::string::npos || priv.find(std::to_string(idAdmin)) != std::string::npos) {
-                out << csv_join_row(u) << "\n";
-            }
+// --- IMPLEMENTACION DE LA NUEVA FUNCION (AÑADIR AL FINAL) ---
+std::vector<std::string> GestorReportes::filtrarLog(const std::string& filtro1, const std::string& filtro2) {
+    std::vector<std::string> resultados;
+    
+    // Cerramos temporalmente el stream de escritura para poder leer
+    if (fileStream.is_open()) {
+        fileStream.close();
+    }
+
+    std::ifstream logFile(this->archivoLog);
+    if (!logFile.is_open()) {
+        // No podemos usar registrarEvento aquí porque cerraría el logFile que acabamos de fallar en abrir
+        std::cerr << "Error al abrir el log para lectura: " << this->archivoLog << std::endl;
+        
+        // Reabrimos para escritura
+        fileStream.open(this->archivoLog, std::ios_base::app);
+        return resultados; // Retorna vector vacío
+    }
+
+    std::string linea;
+    while (std::getline(logFile, linea)) {
+        // Lógica de filtro simple: la línea debe contener ambos filtros
+        // (Si un filtro está vacío, se ignora)
+        // Convertimos todo a minúsculas para un filtro case-insensitive
+        
+        std::string linea_lower = linea;
+        std::string f1_lower = filtro1;
+        std::string f2_lower = filtro2;
+        
+        // (Esta es una forma simple de hacerlo, idealmente se usaría std::transform)
+        for (char &c : linea_lower) c = std::tolower(c);
+        for (char &c : f1_lower) c = std::tolower(c);
+        for (char &c : f2_lower) c = std::tolower(c);
+
+        bool match1 = filtro1.empty() || (linea_lower.find(f1_lower) != std::string::npos);
+        bool match2 = filtro2.empty() || (linea_lower.find(f2_lower) != std::string::npos);
+
+        if (match1 && match2) {
+            resultados.push_back(linea);
         }
     }
-    return out.str();
-}
 
-std::string GestorReportes::ReporteLog(const std::string &FechaDesde, const std::string &FechaHasta){
-    const std::string logsPath = "logs.csv";
-    auto logs = readCSV(logsPath);
-    std::ostringstream out;
-    out << "fecha,resto...\n";
-    for (const auto &r : logs) {
-        if (r.empty()) continue;
-        const std::string &fecha = r[0];
-        // Suponemos formato ISO YYYY-MM-DD para comparacion lexicografica
-        if (fecha >= FechaDesde && fecha <= FechaHasta) {
-            out << csv_join_row(r) << "\n";
-        }
-    }
-    return out.str();
+    logFile.close();
+    
+    // Reabrimos el stream para futuras escrituras
+    fileStream.open(this->archivoLog, std::ios_base::app);
+    
+    return resultados;
 }
-
-std::string GestorReportes::Filtrar(const std::string &filtro){
-    std::ostringstream out;
-    // Buscar en users.csv y logs.csv
-    auto users = readCSV("users.csv");
-    auto logs = readCSV("logs.csv");
-
-    out << "matches_users\n";
-    for (const auto &u : users) {
-        std::string row = csv_join_row(u);
-        if (row.find(filtro) != std::string::npos) out << row << "\n";
-    }
-    out << "matches_logs\n";
-    for (const auto &r : logs) {
-        std::string row = csv_join_row(r);
-        if (row.find(filtro) != std::string::npos) out << row << "\n";
-    }
-    return out.str();
-}
+// --- FIN DE LA IMPLEMENTACION ---

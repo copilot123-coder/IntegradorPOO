@@ -1,5 +1,5 @@
 # Archivos compilados de C++
-*.o
+#*.o
 servidor_robot
 test_gestor
 
