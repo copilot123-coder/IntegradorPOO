@@ -3,9 +3,19 @@
 #include <sstream>
 #include <chrono>
 #include <iomanip>
+#include <algorithm>
+#include <iostream>
 
 GestorReportes::GestorReportes(const std::string &logPath) : logPath(logPath) {
     tiempoInicio = nowTimestamp();
+    fileStream.open(this->logPath, std::ios::app);
+    if (!fileStream.is_open()) {
+        std::cerr << "Warning: could not open log file: " << this->logPath << std::endl;
+    }
+}
+
+GestorReportes::~GestorReportes() {
+    if (fileStream.is_open()) fileStream.close();
 }
 
 std::string GestorReportes::nowTimestamp() {
@@ -18,9 +28,14 @@ std::string GestorReportes::nowTimestamp() {
 
 void GestorReportes::appendLogLine(const std::string &line) {
     std::lock_guard<std::mutex> lk(mtx);
-    std::ofstream ofs(logPath, std::ios::app);
-    if (!ofs.is_open()) return;
-    ofs << line << "\n";
+    if (fileStream.is_open()) {
+        fileStream << line << "\n";
+        fileStream.flush();
+    } else {
+        // Fallback: write directly
+        std::ofstream ofs(logPath, std::ios::app);
+        if (ofs.is_open()) ofs << line << "\n";
+    }
 }
 
 void GestorReportes::actualizarEstadoConexion(const std::string &estado) {
@@ -41,13 +56,12 @@ void GestorReportes::actualizarEstadoActividad(const std::string &act) {
 
 void GestorReportes::registrarPeticion(const std::string &detalle, const std::string &usuario,
                                        const std::string &nodo, const std::string &codigo) {
-    std::ostringstream csv;
-    csv << "\"" << nowTimestamp() << "\",\"REQUEST\",\"" << detalle << "\",\"" << usuario << "\",\"" << nodo << "\",\"" << codigo << "\"";
-    appendLogLine(csv.str());
+    std::ostringstream line;
+    line << "\"" << nowTimestamp() << "\",\"REQUEST\",\"" << detalle << "\",\"" << usuario << "\",\"" << nodo << "\",\"" << codigo << "\"";
+    appendLogLine(line.str());
 
     std::lock_guard<std::mutex> lk(mtx);
-    Orden o; o.detalle = detalle; o.resultado = codigo;
-    // store per-user
+    Orden o{detalle, codigo};
     ordenesPorUsuario[usuario].push_back(o);
 }
 
@@ -59,7 +73,8 @@ std::string GestorReportes::reporteGeneral(const std::string &usuario) {
     out << "posicion," << posicion << "\n";
     out << "estadoActividad," << estadoActividad << "\n";
     std::string inicio = tiempoInicio;
-    if (tiempoInicioPorUsuario.find(usuario) != tiempoInicioPorUsuario.end()) inicio = tiempoInicioPorUsuario[usuario];
+    auto itInicio = tiempoInicioPorUsuario.find(usuario);
+    if (itInicio != tiempoInicioPorUsuario.end()) inicio = itInicio->second;
     out << "inicioActividad," << inicio << "\n";
 
     int total = 0, errores = 0;
@@ -67,7 +82,7 @@ std::string GestorReportes::reporteGeneral(const std::string &usuario) {
     auto it = ordenesPorUsuario.find(usuario);
     if (it != ordenesPorUsuario.end()) {
         for (const auto &o : it->second) {
-            out << "\"" << o.detalle << "\"," << o.resultado << "\n";
+            out << '"' << o.detalle << "\"," << o.resultado << "\n";
             ++total;
             if (o.resultado != "200" && o.resultado != "OK") ++errores;
         }
@@ -105,8 +120,8 @@ std::string GestorReportes::reporteLog(const std::string &desde, const std::stri
         if (p2 == std::string::npos) continue;
         std::string ts = line.substr(p1+1, p2-p1-1);
         if (ts < desde || ts > hasta) continue;
-        if (!usuarioFilter.empty() && line.find("\"" + usuarioFilter + "\"") == std::string::npos) continue;
-        if (!codigoFilter.empty() && line.find("\"" + codigoFilter + "\"") == std::string::npos) continue;
+        if (!usuarioFilter.empty() && line.find(std::string("\"") + usuarioFilter + "\"") == std::string::npos) continue;
+        if (!codigoFilter.empty() && line.find(std::string("\"") + codigoFilter + "\"") == std::string::npos) continue;
         out << line << "\n";
     }
     return out.str();
@@ -121,15 +136,28 @@ std::string GestorReportes::reporteAdminPorCodigo(const std::string &codigo) {
 }
 
 void GestorReportes::registrarEvento(const std::string &mensaje, const std::string &usuario, const std::string &nodo, const std::string &modulo) {
-    std::ostringstream csv;
-    csv << "\"" << nowTimestamp() << "\",";
-    csv << "\"EVENTO\",";
-    csv << "\"" << mensaje << "\",";
-    csv << "\"" << usuario << "\",";
-    csv << "\"" << nodo << "\",";
-    csv << "\"\""; // codigo vacio
+    std::ostringstream line;
+    line << "\"" << nowTimestamp() << "\",\"EVENTO\",\"" << mensaje << "\",\"" << usuario << "\",\"" << nodo << "\",\"\"";
     if (!modulo.empty()) {
-        csv << "," << modulo;
+        line << "," << modulo;
     }
-    appendLogLine(csv.str());
+    appendLogLine(line.str());
+}
+
+std::vector<std::string> GestorReportes::filtrarLog(const std::string &filtro1, const std::string &filtro2) {
+    std::vector<std::string> resultados;
+    std::ifstream ifs(logPath);
+    if (!ifs.is_open()) return resultados;
+    std::string linea;
+    std::string f1 = filtro1; std::string f2 = filtro2;
+    std::transform(f1.begin(), f1.end(), f1.begin(), ::tolower);
+    std::transform(f2.begin(), f2.end(), f2.begin(), ::tolower);
+    while (std::getline(ifs, linea)) {
+        std::string low = linea;
+        std::transform(low.begin(), low.end(), low.begin(), ::tolower);
+        bool m1 = f1.empty() || (low.find(f1) != std::string::npos);
+        bool m2 = f2.empty() || (low.find(f2) != std::string::npos);
+        if (m1 && m2) resultados.push_back(linea);
+    }
+    return resultados;
 }

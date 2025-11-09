@@ -5,6 +5,7 @@
 #include <vector>
 #include <unordered_map>
 #include <mutex>
+#include <fstream>
 
 struct Orden {
     std::string detalle;
@@ -13,7 +14,9 @@ struct Orden {
 
 class GestorReportes {
 public:
-    explicit GestorReportes(const std::string &logPath);
+    // Constructor: acepta ruta de log por defecto
+    explicit GestorReportes(const std::string &logPath = "servidor_log.csv");
+    ~GestorReportes();
 
     // Estado en memoria (para reportes por usuario)
     void actualizarEstadoConexion(const std::string &estado);
@@ -36,20 +39,30 @@ public:
     // Métodos de ayuda para administrador (filtros por usuario o código)
     std::string reporteAdminPorUsuario(const std::string &usuario);
     std::string reporteAdminPorCodigo(const std::string &codigo);
+
     // Registrar eventos de servidor (persisten en CSV)
     void registrarEvento(const std::string &mensaje, const std::string &usuario = "", const std::string &nodo = "", const std::string &modulo = "");
 
+    // Utilidad de filtrado (devuelve líneas coincidentes)
+    std::vector<std::string> filtrarLog(const std::string &filtro1, const std::string &filtro2);
+
 private:
+    // path del log y stream para escritura
     std::string logPath;
+    std::ofstream fileStream;
+
+    // in-memory state
     std::mutex mtx;
     std::string estadoConexion;
     std::string posicion;
     std::string estadoActividad;
     std::string tiempoInicio; // fallback global
+
     // track per-user data
     std::unordered_map<std::string, std::vector<Orden>> ordenesPorUsuario;
     std::unordered_map<std::string, std::string> tiempoInicioPorUsuario;
 
+    // helpers
     std::string nowTimestamp();
     void appendLogLine(const std::string &line);
 };

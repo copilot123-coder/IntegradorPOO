@@ -225,6 +225,23 @@ namespace Rpc {
         std::string help();
     };
 
+    // --- NUEVA CLASE RPC A AGREGAR ---
+    /**
+     * @class MetodoReporteLogCsv
+     * @brief Método RPC para obtener el log CSV filtrado.
+     */
+    class MetodoReporteLogCsv : public XmlRpc::XmlRpcServerMethod {
+    private:
+        ServidorRpc* servidor;
+    public:
+        MetodoReporteLogCsv(XmlRpc::XmlRpcServer* s, ServidorRpc* srv)
+            : XmlRpc::XmlRpcServerMethod("ReporteLogCsv", s), servidor(srv) {}
+
+        void execute(XmlRpc::XmlRpcValue& params, XmlRpc::XmlRpcValue& result);
+        std::string help();
+    };
+    // --- FIN DE LA NUEVA CLASE ---
+
 } // namespace Rpc
 
 #endif
