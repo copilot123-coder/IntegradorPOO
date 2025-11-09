@@ -1,234 +1,70 @@
 #include "GestorBBDD.h"
-#include "Usuario.h"
-#include <sqlite3.h>
 #include <iostream>
 
-GestorBBDD::GestorBBDD(const std::string& dbPath) : db_(nullptr), dbPath_(dbPath), conectado_(false) {
-}
+GestorBBDD::GestorBBDD(const std::string& dbPath) : dbPath(dbPath), db(nullptr) {}
 
 GestorBBDD::~GestorBBDD() {
-    cerrar();
+    if (db) sqlite3_close(db);
 }
 
-bool GestorBBDD::inicializar() {
-    int rc = sqlite3_open(dbPath_.c_str(), &db_);
-    if (rc) {
-        std::cerr << "Error al abrir BD: " << sqlite3_errmsg(db_) << std::endl;
-        return false;
-    }
-    conectado_ = true;
-    
-    if (!crearTablas()) {
-        return false;
-    }
-    
-    // Crear usuarios por defecto si no existen
-    return crearUsuariosPorDefecto();
-}
-
-bool GestorBBDD::crearTablas() {
-    std::string sql = 
-        "CREATE TABLE IF NOT EXISTS usuarios ("
-        "id INTEGER PRIMARY KEY AUTOINCREMENT,"
-        "nombre TEXT NOT NULL UNIQUE,"
-        "clave TEXT NOT NULL,"
-        "tipo TEXT NOT NULL);";
-    
-    return ejecutarSQL(sql);
-}
-
-bool GestorBBDD::ejecutarSQL(const std::string& sql) {
-    char* errMsg = 0;
-    int rc = sqlite3_exec(db_, sql.c_str(), 0, 0, &errMsg);
+void GestorBBDD::inicializar() {
+    int rc = sqlite3_open(dbPath.c_str(), &db);
     if (rc != SQLITE_OK) {
-        std::cerr << "Error SQL: " << errMsg << std::endl;
-        sqlite3_free(errMsg);
-        return false;
+        std::cerr << "GestorBBDD: no se pudo abrir DB: " << (db?sqlite3_errmsg(db):"(null)") << std::endl;
+        if (db) sqlite3_close(db);
+        db = nullptr;
+        return;
     }
-    return true;
+
+    const char* sql_create =
+        "CREATE TABLE IF NOT EXISTS users ("
+        "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        "nombre TEXT UNIQUE NOT NULL,"
+        "clave TEXT NOT NULL,"
+        "tipo TEXT NOT NULL"
+        ");";
+    char* err = nullptr;
+    rc = sqlite3_exec(db, sql_create, nullptr, nullptr, &err);
+    if (rc != SQLITE_OK) {
+        std::cerr << "GestorBBDD: error creando tabla: " << (err?err:"") << std::endl;
+        sqlite3_free(err);
+    }
+
+    ensureAdmin();
 }
 
-bool GestorBBDD::agregarUsuario(const Usuario& usuario) {
-    sqlite3_stmt* stmt;
-    std::string sql = "INSERT INTO usuarios (nombre, clave, tipo) VALUES (?, ?, ?);";
-    
-    std::cout << "Insertando usuario - Nombre: '" << usuario.getNombre() 
-              << "', Clave: '" << usuario.getClave() << "', Tipo: '" << usuario.getTipo() << "'" << std::endl;
-    
-    if (sqlite3_prepare_v2(db_, sql.c_str(), -1, &stmt, 0) != SQLITE_OK) {
-        std::cerr << "Error preparando SQL: " << sqlite3_errmsg(db_) << std::endl;
-        return false;
-    }
-    
-    // Usar SQLITE_TRANSIENT para copiar las strings en lugar de SQLITE_STATIC
-    sqlite3_bind_text(stmt, 1, usuario.getNombre().c_str(), -1, SQLITE_TRANSIENT);
-    sqlite3_bind_text(stmt, 2, usuario.getClave().c_str(), -1, SQLITE_TRANSIENT);
-    sqlite3_bind_text(stmt, 3, usuario.getTipo().c_str(), -1, SQLITE_TRANSIENT);
-    
-    int result = sqlite3_step(stmt);
-    sqlite3_finalize(stmt);
-    
-    if (result == SQLITE_DONE) {
-        std::cout << "Usuario insertado exitosamente." << std::endl;
-        return true;
-    } else {
-        std::cerr << "Error insertando usuario: " << sqlite3_errmsg(db_) << std::endl;
-        return false;
+void GestorBBDD::ensureAdmin() {
+    if (!db) return;
+    const char* sql_insert =
+        "INSERT OR IGNORE INTO users (nombre, clave, tipo) VALUES ('admin','admin123','admin');";
+    char* err = nullptr;
+    int rc = sqlite3_exec(db, sql_insert, nullptr, nullptr, &err);
+    if (rc != SQLITE_OK) {
+        std::cerr << "GestorBBDD: error insert admin: " << (err?err:"") << std::endl;
+        sqlite3_free(err);
     }
 }
 
-bool GestorBBDD::eliminarUsuario(int id) {
-    std::string sql = "DELETE FROM usuarios WHERE id = " + std::to_string(id) + ";";
-    return ejecutarSQL(sql);
-}
-
-std::unique_ptr<Usuario> GestorBBDD::obtenerUsuario(int id) {
-    sqlite3_stmt* stmt;
-    std::string sql = "SELECT id, nombre, clave, tipo FROM usuarios WHERE id = ?;";
-    
-    if (sqlite3_prepare_v2(db_, sql.c_str(), -1, &stmt, 0) != SQLITE_OK) {
+std::shared_ptr<Usuario> GestorBBDD::obtenerUsuarioPorNombre(const std::string& nombre) {
+    if (!db) return nullptr;
+    const char* sql = "SELECT id, nombre, clave, tipo FROM users WHERE nombre = ? LIMIT 1;";
+    sqlite3_stmt* stmt = nullptr;
+    if (sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr) != SQLITE_OK) {
         return nullptr;
     }
-    
-    sqlite3_bind_int(stmt, 1, id);
-    
-    if (sqlite3_step(stmt) == SQLITE_ROW) {
-        auto usuario = std::make_unique<Usuario>(
-            sqlite3_column_int(stmt, 0),
-            reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1)),
-            reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2)),
-            reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3))
-        );
-        sqlite3_finalize(stmt);
-        return usuario;
+    sqlite3_bind_text(stmt, 1, nombre.c_str(), -1, SQLITE_TRANSIENT);
+    std::shared_ptr<Usuario> res = nullptr;
+    int rc = sqlite3_step(stmt);
+    if (rc == SQLITE_ROW) {
+        int id = sqlite3_column_int(stmt, 0);
+        const unsigned char* nombre_c = sqlite3_column_text(stmt, 1);
+        const unsigned char* clave_c = sqlite3_column_text(stmt, 2);
+        const unsigned char* tipo_c  = sqlite3_column_text(stmt, 3);
+        std::string nombre_s = nombre_c ? reinterpret_cast<const char*>(nombre_c) : "";
+        std::string clave_s  = clave_c  ? reinterpret_cast<const char*>(clave_c)  : "";
+        std::string tipo_s   = tipo_c   ? reinterpret_cast<const char*>(tipo_c)   : "";
+        res = std::make_shared<Usuario>(id, nombre_s, clave_s, tipo_s);
     }
-    
     sqlite3_finalize(stmt);
-    return nullptr;
-}
-
-std::unique_ptr<Usuario> GestorBBDD::obtenerUsuarioPorNombre(const std::string& nombre) {
-    sqlite3_stmt* stmt;
-    std::string sql = "SELECT id, nombre, clave, tipo FROM usuarios WHERE nombre = ?;";
-    
-    if (sqlite3_prepare_v2(db_, sql.c_str(), -1, &stmt, 0) != SQLITE_OK) {
-        return nullptr;
-    }
-    
-    sqlite3_bind_text(stmt, 1, nombre.c_str(), -1, SQLITE_STATIC);
-    
-    if (sqlite3_step(stmt) == SQLITE_ROW) {
-        auto usuario = std::make_unique<Usuario>(
-            sqlite3_column_int(stmt, 0),
-            reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1)),
-            reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2)),
-            reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3))
-        );
-        sqlite3_finalize(stmt);
-        return usuario;
-    }
-    
-    sqlite3_finalize(stmt);
-    return nullptr;
-}
-
-std::vector<Usuario> GestorBBDD::obtenerTodosUsuarios() {
-    std::vector<Usuario> usuarios;
-    sqlite3_stmt* stmt;
-    std::string sql = "SELECT id, nombre, clave, tipo FROM usuarios;";
-    
-    if (sqlite3_prepare_v2(db_, sql.c_str(), -1, &stmt, 0) == SQLITE_OK) {
-        while (sqlite3_step(stmt) == SQLITE_ROW) {
-            usuarios.emplace_back(
-                sqlite3_column_int(stmt, 0),
-                reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1)),
-                reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2)),
-                reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3))
-            );
-        }
-        sqlite3_finalize(stmt);
-    }
-    
-    return usuarios;
-}
-
-bool GestorBBDD::existeAdmin() {
-    sqlite3_stmt* stmt;
-    std::string sql = "SELECT COUNT(*) FROM usuarios WHERE tipo = 'admin';";
-    
-    if (sqlite3_prepare_v2(db_, sql.c_str(), -1, &stmt, 0) == SQLITE_OK) {
-        if (sqlite3_step(stmt) == SQLITE_ROW) {
-            int count = sqlite3_column_int(stmt, 0);
-            sqlite3_finalize(stmt);
-            return count > 0;
-        }
-        sqlite3_finalize(stmt);
-    }
-    
-    return false;
-}
-
-bool GestorBBDD::cambiarTipoUsuario(int id, const std::string& nuevoTipo) {
-    // Solo permitir un admin
-    if (nuevoTipo == "admin" && existeAdmin()) {
-        return false;
-    }
-    
-    std::string sql = "UPDATE usuarios SET tipo = '" + escaparComillas(nuevoTipo) + 
-                     "' WHERE id = " + std::to_string(id) + ";";
-    return ejecutarSQL(sql);
-}
-
-void GestorBBDD::cerrar() {
-    if (db_) {
-        sqlite3_close(db_);
-        db_ = nullptr;
-        conectado_ = false;
-    }
-}
-
-std::string GestorBBDD::escaparComillas(const std::string& str) {
-    std::string resultado = str;
-    size_t pos = 0;
-    while ((pos = resultado.find("'", pos)) != std::string::npos) {
-        resultado.replace(pos, 1, "''");
-        pos += 2;
-    }
-    return resultado;
-}
-
-bool GestorBBDD::crearUsuariosPorDefecto() {
-    // Verificar si ya existen usuarios
-    std::vector<Usuario> usuarios = obtenerTodosUsuarios();
-    if (!usuarios.empty()) {
-        std::cout << "Usuarios ya existen en la base de datos:" << std::endl;
-        for (const auto& u : usuarios) {
-            std::cout << "  ID: " << u.getId() << ", Nombre: '" << u.getNombre() 
-                      << "', Clave: '" << u.getClave() << "', Tipo: '" << u.getTipo() << "'" << std::endl;
-        }
-        return true; // Ya hay usuarios, no crear por defecto
-    }
-    
-    std::cout << "Creando usuarios por defecto..." << std::endl;
-    
-    // Crear usuario administrador por defecto con contraseñas simples
-    Usuario admin(0, "admin", "admin", "admin");
-    std::cout << "Creando admin - Nombre: '" << admin.getNombre() 
-              << "', Clave: '" << admin.getClave() << "', Tipo: '" << admin.getTipo() << "'" << std::endl;
-    if (!agregarUsuario(admin)) {
-        std::cerr << "Error creando usuario admin por defecto" << std::endl;
-        return false;
-    }
-    
-    // Crear usuario normal por defecto con contraseñas simples
-    Usuario user(0, "user", "user", "normal");
-    std::cout << "Creando user - Nombre: '" << user.getNombre() 
-              << "', Clave: '" << user.getClave() << "', Tipo: '" << user.getTipo() << "'" << std::endl;
-    if (!agregarUsuario(user)) {
-        std::cerr << "Error creando usuario normal por defecto" << std::endl;
-        return false;
-    }
-    
-    std::cout << "Usuarios por defecto creados: admin/admin, user/user" << std::endl;
-    return true;
+    return res;
 }

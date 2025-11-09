@@ -1,23 +1,28 @@
-#pragma once
+#ifndef USUARIO_H
+#define USUARIO_H
 
 #include <string>
 
 class Usuario {
 public:
-    Usuario(int id, const std::string& nombre, const std::string& clave, const std::string& tipo);
-    ~Usuario();
+    Usuario() {}
+    Usuario(int id, const std::string &nombre, const std::string &claveHash, const std::string &tipo)
+        : id(id), nombre(nombre), claveHash(claveHash), tipo(tipo) {}
 
-    bool validar(const std::string& clave) const;
+    int getId() const { return id; }
+    const std::string& getNombre() const { return nombre; }
+    const std::string& getTipo() const { return tipo; }
 
-    // Getters
-    int getId() const { return id_; }
-    std::string getNombre() const { return nombre_; }
-    std::string getClave() const { return clave_; }
-    std::string getTipo() const { return tipo_; }
+    // Para simplicidad usamos comparación directa de texto para la clave
+    bool validar(const std::string &clave) const {
+        return clave == claveHash; // en producción sustituir por hash/salt
+    }
 
 private:
-    int id_;
-    std::string nombre_;
-    std::string clave_;
-    std::string tipo_;  // "admin" o "normal"
+    int id = 0;
+    std::string nombre;
+    std::string claveHash;
+    std::string tipo; // "admin" o "normal"
 };
+
+#endif // USUARIO_H
