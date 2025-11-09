@@ -12,10 +12,11 @@ using namespace XmlRpc;
 ServidorRpc::ServidorRpc() : servidor(nullptr), puerto(0), accesoRemotoHabilitado(true) {
     servidor = new XmlRpcServer();
     
-    // Inicializar gestores
-    gestorBBDD = std::make_unique<GestorBBDD>();
-    gestorReportes = std::make_unique<GestorReportes>();
-    gestorRobot = std::make_unique<GestorCodigoG>();
+    // Inicializar gestores (compatible C++11)
+    gestorBBDD.reset(new GestorBBDD());
+    // Crear gestor de reportes apuntando al CSV dentro de la carpeta servidor
+    gestorReportes.reset(new GestorReportes("servidor_log.csv"));
+    gestorRobot.reset(new GestorCodigoG());
     
     // Inicializar base de datos
     gestorBBDD->inicializar();
@@ -139,6 +140,12 @@ void ServidorRpc::registrarEvento(const std::string& evento, const std::string& 
     ss << std::put_time(std::localtime(&time_t), "%Y-%m-%d %H:%M:%S");
     
     std::cout << "[" << ss.str() << "] " << evento << " (Usuario: " << usuario << ", Nodo: " << nodo << ")" << std::endl;
+    // Persistir evento en el CSV de reportes
+    try {
+        if (gestorReportes) gestorReportes->registrarEvento(evento, usuario, nodo, "SERVIDOR");
+    } catch (const std::exception &e) {
+        std::cerr << "Error al persistir evento en GestorReportes: " << e.what() << std::endl;
+    }
 }
 
 std::string ServidorRpc::generarSessionId(const std::string& usuario, const std::string& nodo) {
@@ -182,6 +189,12 @@ void MetodoLogin::execute(XmlRpcValue& params, XmlRpcValue& result) {
         result["mensaje"] = "Autenticación exitosa";
         
         servidor->registrarEvento("Login exitoso", usuario, nodoOrigen);
+        // Notificar al GestorReportes sobre la nueva conexión del usuario
+        try {
+            if (servidor->gestorReportes) servidor->gestorReportes->registrarConexionUsuario(usuario);
+        } catch (const std::exception &e) {
+            std::cerr << "Error registrarConexionUsuario: " << e.what() << std::endl;
+        }
     } else {
         result["exito"] = false;
         result["mensaje"] = "Credenciales inválidas o acceso denegado";
@@ -224,6 +237,12 @@ void MetodoConectarRobot::execute(XmlRpcValue& params, XmlRpcValue& result) {
     
     result["exito"] = exito;
     servidor->registrarEvento("Robot " + accion, servidor->sesionesActivas[sessionId].usuario, servidor->sesionesActivas[sessionId].nodoOrigen);
+    // Registrar petición en gestor de reportes
+    try {
+        if (servidor->gestorReportes) servidor->gestorReportes->registrarPeticion("Robot " + accion, servidor->sesionesActivas[sessionId].usuario, servidor->sesionesActivas[sessionId].nodoOrigen, exito ? "200" : "ERROR");
+    } catch (const std::exception &e) {
+        std::cerr << "Error registrarPeticion ConectarRobot: " << e.what() << std::endl;
+    }
 }
 
 std::string MetodoConectarRobot::help() {
@@ -269,6 +288,12 @@ void MetodoMoverRobot::execute(XmlRpcValue& params, XmlRpcValue& result) {
     
     servidor->registrarEvento("Movimiento robot X:" + std::to_string(x) + " Y:" + std::to_string(y) + " Z:" + std::to_string(z), 
                              it->second.usuario, it->second.nodoOrigen);
+    // Registrar petición en gestor de reportes
+    try {
+        if (servidor->gestorReportes) servidor->gestorReportes->registrarPeticion("G1 Move X:" + std::to_string(x) + " Y:" + std::to_string(y) + " Z:" + std::to_string(z), it->second.usuario, it->second.nodoOrigen, exito ? "200" : "ERROR");
+    } catch (const std::exception &e) {
+        std::cerr << "Error registrarPeticion MoverRobot: " << e.what() << std::endl;
+    }
 }
 
 std::string MetodoMoverRobot::help() {
@@ -305,6 +330,12 @@ void MetodoEjecutarGCode::execute(XmlRpcValue& params, XmlRpcValue& result) {
     }
     
     servidor->registrarEvento("Comando G-Code: " + comandoG, it->second.usuario, it->second.nodoOrigen);
+    // Registrar petición en gestor de reportes
+    try {
+        if (servidor->gestorReportes) servidor->gestorReportes->registrarPeticion(comandoG, it->second.usuario, it->second.nodoOrigen, exito ? "200" : "ERROR");
+    } catch (const std::exception &e) {
+        std::cerr << "Error registrarPeticion EjecutarGCode: " << e.what() << std::endl;
+    }
 }
 
 std::string MetodoEjecutarGCode::help() {
@@ -335,6 +366,11 @@ void MetodoConfigurarAccesoRemoto::execute(XmlRpcValue& params, XmlRpcValue& res
     servidor->registrarEvento("Acceso remoto " + std::string(habilitar ? "habilitado" : "deshabilitado"), 
                              servidor->sesionesActivas[sessionId].usuario, 
                              servidor->sesionesActivas[sessionId].nodoOrigen);
+    try {
+        if (servidor->gestorReportes) servidor->gestorReportes->registrarPeticion(std::string("Acceso remoto ") + (habilitar ? "habilitado" : "deshabilitado"), servidor->sesionesActivas[sessionId].usuario, servidor->sesionesActivas[sessionId].nodoOrigen, "200");
+    } catch (const std::exception &e) {
+        std::cerr << "Error registrarPeticion ConfigurarAccesoRemoto: " << e.what() << std::endl;
+    }
 }
 
 std::string MetodoConfigurarAccesoRemoto::help() {
@@ -372,6 +408,11 @@ void MetodoControlMotores::execute(XmlRpcValue& params, XmlRpcValue& result) {
     
     result["exito"] = exito;
     servidor->registrarEvento("Motores " + accion, it->second.usuario, it->second.nodoOrigen);
+    try {
+        if (servidor->gestorReportes) servidor->gestorReportes->registrarPeticion(std::string("Motores ") + accion, it->second.usuario, it->second.nodoOrigen, exito ? "200" : "ERROR");
+    } catch (const std::exception &e) {
+        std::cerr << "Error registrarPeticion ControlMotores: " << e.what() << std::endl;
+    }
 }
 
 std::string MetodoControlMotores::help() {
@@ -453,6 +494,12 @@ void MetodoReporteUsuario::execute(XmlRpcValue& params, XmlRpcValue& result) {
     
     auto pos = servidor->gestorRobot->obtenerPosicionActual();
     result["posicionActual"] = "X:" + std::to_string(pos.x) + " Y:" + std::to_string(pos.y) + " Z:" + std::to_string(pos.z);
+    // Incluir reporte general generado por GestorReportes
+    try {
+        if (servidor->gestorReportes) result["reporteGeneral"] = servidor->gestorReportes->reporteGeneral(sesion.usuario);
+    } catch (const std::exception &e) {
+        result["reporteGeneral"] = std::string("error: ") + e.what();
+    }
 }
 
 std::string MetodoReporteUsuario::help() {
@@ -495,6 +542,16 @@ void MetodoReporteAdmin::execute(XmlRpcValue& params, XmlRpcValue& result) {
         sesiones[indice++] = sesion;
     }
     result["sesiones"] = sesiones;
+    // Incluir reportes del GestorReportes: log completo y filtros simples
+    try {
+        if (servidor->gestorReportes) {
+            result["reporteAdmin"] = servidor->gestorReportes->reporteAdmin();
+            if (!filtro1.empty()) result["reportePorUsuario"] = servidor->gestorReportes->reporteAdminPorUsuario(filtro1);
+            if (!filtro2.empty()) result["reportePorCodigo"] = servidor->gestorReportes->reporteAdminPorCodigo(filtro2);
+        }
+    } catch (const std::exception &e) {
+        result["reporteAdmin"] = std::string("error: ") + e.what();
+    }
 }
 
 std::string MetodoReporteAdmin::help() {
@@ -577,6 +634,11 @@ void MetodoIrAOrigen::execute(XmlRpcValue& params, XmlRpcValue& result) {
     }
     
     servidor->registrarEvento("Ir a origen", it->second.usuario, it->second.nodoOrigen);
+    try {
+        if (servidor->gestorReportes) servidor->gestorReportes->registrarPeticion("G0 Ir a origen", it->second.usuario, it->second.nodoOrigen, exito ? "200" : "ERROR");
+    } catch (const std::exception &e) {
+        std::cerr << "Error registrarPeticion IrAOrigen: " << e.what() << std::endl;
+    }
 }
 
 std::string MetodoIrAOrigen::help() {
@@ -713,6 +775,11 @@ void MetodoSubirGCode::execute(XmlRpcValue& params, XmlRpcValue& result) {
         result["archivo"] = rutaCompleta;
         
         servidor->registrarEvento("Archivo subido: " + rutaCompleta, it->second.usuario, it->second.nodoOrigen);
+        try {
+            if (servidor->gestorReportes) servidor->gestorReportes->registrarPeticion(std::string("Archivo subido: ") + rutaCompleta, it->second.usuario, it->second.nodoOrigen, "200");
+        } catch (const std::exception &e) {
+            std::cerr << "Error registrarPeticion SubirGCode: " << e.what() << std::endl;
+        }
     } catch (const std::exception& e) {
         result["exito"] = false;
         result["mensaje"] = "Error guardando archivo: " + std::string(e.what());
@@ -762,6 +829,11 @@ void MetodoEjecutarArchivo::execute(XmlRpcValue& params, XmlRpcValue& result) {
     }
     
     servidor->registrarEvento("Ejecutar archivo: " + nombreArchivo, it->second.usuario, it->second.nodoOrigen);
+    try {
+        if (servidor->gestorReportes) servidor->gestorReportes->registrarPeticion(std::string("Ejecutar archivo: ") + nombreArchivo, it->second.usuario, it->second.nodoOrigen, exito ? "200" : "ERROR");
+    } catch (const std::exception &e) {
+        std::cerr << "Error registrarPeticion EjecutarArchivo: " << e.what() << std::endl;
+    }
 }
 
 std::string MetodoEjecutarArchivo::help() {

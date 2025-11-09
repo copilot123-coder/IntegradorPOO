@@ -1,105 +1,135 @@
 #include "GestorReportes.h"
-#include <iostream>
-#include <sstream>
 #include <fstream>
-#include <vector>
+#include <sstream>
+#include <chrono>
+#include <iomanip>
 
-static std::vector<std::vector<std::string>> readCSV(const std::string &path) {
-    std::vector<std::vector<std::string>> rows;
-    std::ifstream ifs(path);
-    if (!ifs.is_open()) return rows;
+GestorReportes::GestorReportes(const std::string &logPath) : logPath(logPath) {
+    tiempoInicio = nowTimestamp();
+}
+
+std::string GestorReportes::nowTimestamp() {
+    auto now = std::chrono::system_clock::now();
+    auto t = std::chrono::system_clock::to_time_t(now);
+    std::ostringstream ss;
+    ss << std::put_time(std::localtime(&t), "%Y-%m-%d %H:%M:%S");
+    return ss.str();
+}
+
+void GestorReportes::appendLogLine(const std::string &line) {
+    std::lock_guard<std::mutex> lk(mtx);
+    std::ofstream ofs(logPath, std::ios::app);
+    if (!ofs.is_open()) return;
+    ofs << line << "\n";
+}
+
+void GestorReportes::actualizarEstadoConexion(const std::string &estado) {
+    std::lock_guard<std::mutex> lk(mtx);
+    estadoConexion = estado;
+    tiempoInicio = nowTimestamp();
+}
+
+void GestorReportes::actualizarPosicion(const std::string &pos) {
+    std::lock_guard<std::mutex> lk(mtx);
+    posicion = pos;
+}
+
+void GestorReportes::actualizarEstadoActividad(const std::string &act) {
+    std::lock_guard<std::mutex> lk(mtx);
+    estadoActividad = act;
+}
+
+void GestorReportes::registrarPeticion(const std::string &detalle, const std::string &usuario,
+                                       const std::string &nodo, const std::string &codigo) {
+    std::ostringstream csv;
+    csv << "\"" << nowTimestamp() << "\",\"REQUEST\",\"" << detalle << "\",\"" << usuario << "\",\"" << nodo << "\",\"" << codigo << "\"";
+    appendLogLine(csv.str());
+
+    std::lock_guard<std::mutex> lk(mtx);
+    Orden o; o.detalle = detalle; o.resultado = codigo;
+    // store per-user
+    ordenesPorUsuario[usuario].push_back(o);
+}
+
+std::string GestorReportes::reporteGeneral(const std::string &usuario) {
+    std::lock_guard<std::mutex> lk(mtx);
+    std::ostringstream out;
+    out << "usuario," << usuario << "\n";
+    out << "estadoConexion," << estadoConexion << "\n";
+    out << "posicion," << posicion << "\n";
+    out << "estadoActividad," << estadoActividad << "\n";
+    std::string inicio = tiempoInicio;
+    if (tiempoInicioPorUsuario.find(usuario) != tiempoInicioPorUsuario.end()) inicio = tiempoInicioPorUsuario[usuario];
+    out << "inicioActividad," << inicio << "\n";
+
+    int total = 0, errores = 0;
+    out << "orden_detalle,resultado\n";
+    auto it = ordenesPorUsuario.find(usuario);
+    if (it != ordenesPorUsuario.end()) {
+        for (const auto &o : it->second) {
+            out << "\"" << o.detalle << "\"," << o.resultado << "\n";
+            ++total;
+            if (o.resultado != "200" && o.resultado != "OK") ++errores;
+        }
+    }
+    out << "total_ordenes," << total << "\n";
+    out << "ordenes_erroneas," << errores << "\n";
+    return out.str();
+}
+
+void GestorReportes::registrarConexionUsuario(const std::string &usuario) {
+    std::lock_guard<std::mutex> lk(mtx);
+    tiempoInicioPorUsuario[usuario] = nowTimestamp();
+    ordenesPorUsuario[usuario].clear();
+}
+
+std::string GestorReportes::reporteAdmin() {
+    std::ifstream ifs(logPath);
+    if (!ifs.is_open()) return "error,missing_log\n";
+    std::ostringstream ss;
+    std::string line;
+    while (std::getline(ifs, line)) ss << line << "\n";
+    return ss.str();
+}
+
+std::string GestorReportes::reporteLog(const std::string &desde, const std::string &hasta,
+                                       const std::string &usuarioFilter, const std::string &codigoFilter) {
+    std::ifstream ifs(logPath);
+    if (!ifs.is_open()) return "error,missing_log\n";
+    std::ostringstream out;
     std::string line;
     while (std::getline(ifs, line)) {
-        std::vector<std::string> cols;
-        std::istringstream ss(line);
-        std::string cell;
-        while (std::getline(ss, cell, ',')) cols.push_back(cell);
-        rows.push_back(cols);
-    }
-    return rows;
-}
-
-static std::string csv_join_row(const std::vector<std::string> &r) {
-    std::ostringstream oss;
-    for (size_t i = 0; i < r.size(); ++i) {
-        if (i) oss << ',';
-        oss << r[i];
-    }
-    return oss.str();
-}
-
-std::string GestorReportes::ReporteGeneral(){
-    // Leer users.csv y logs.csv (si existen) y construir un CSV resumen
-    const std::string usersPath = "users.csv";
-    const std::string logsPath = "logs.csv";
-
-    auto users = readCSV(usersPath);
-    auto logs = readCSV(logsPath);
-
-    std::ostringstream out;
-    out << "tipo,valor\n";
-    out << "total_usuarios," << users.size() << "\n";
-    out << "total_logs," << logs.size() << "\n";
-
-    // Añadir cabecera lista de usuarios (id,nombre,privilegios,activo)
-    out << "usuarios_id,nombre,privilegios,activo\n";
-    for (const auto &u : users) {
-        out << csv_join_row(u) << "\n";
-    }
-
-    return out.str();
-}
-
-std::string GestorReportes::ReporteAdmin(int idAdmin){
-    const std::string usersPath = "users.csv";
-    auto users = readCSV(usersPath);
-    std::ostringstream out;
-    out << "id_admin," << idAdmin << "\n";
-    out << "usuarios_asociados\n";
-    for (const auto &u : users) {
-        // Asumimos que si la columna privilegios contiene "admin:" seguida
-        // por el id o contiene 'admin' entonces está asociado.
-        if (u.size() >= 3) {
-            const std::string &priv = u[2];
-            if (priv.find("admin") != std::string::npos || priv.find(std::to_string(idAdmin)) != std::string::npos) {
-                out << csv_join_row(u) << "\n";
-            }
-        }
+        size_t p1 = line.find('"');
+        if (p1 == std::string::npos) continue;
+        size_t p2 = line.find('"', p1+1);
+        if (p2 == std::string::npos) continue;
+        std::string ts = line.substr(p1+1, p2-p1-1);
+        if (ts < desde || ts > hasta) continue;
+        if (!usuarioFilter.empty() && line.find("\"" + usuarioFilter + "\"") == std::string::npos) continue;
+        if (!codigoFilter.empty() && line.find("\"" + codigoFilter + "\"") == std::string::npos) continue;
+        out << line << "\n";
     }
     return out.str();
 }
 
-std::string GestorReportes::ReporteLog(const std::string &FechaDesde, const std::string &FechaHasta){
-    const std::string logsPath = "logs.csv";
-    auto logs = readCSV(logsPath);
-    std::ostringstream out;
-    out << "fecha,resto...\n";
-    for (const auto &r : logs) {
-        if (r.empty()) continue;
-        const std::string &fecha = r[0];
-        // Suponemos formato ISO YYYY-MM-DD para comparacion lexicografica
-        if (fecha >= FechaDesde && fecha <= FechaHasta) {
-            out << csv_join_row(r) << "\n";
-        }
-    }
-    return out.str();
+std::string GestorReportes::reporteAdminPorUsuario(const std::string &usuario) {
+    return reporteLog("0000-00-00 00:00:00", "9999-12-31 23:59:59", usuario, "");
 }
 
-std::string GestorReportes::Filtrar(const std::string &filtro){
-    std::ostringstream out;
-    // Buscar en users.csv y logs.csv
-    auto users = readCSV("users.csv");
-    auto logs = readCSV("logs.csv");
+std::string GestorReportes::reporteAdminPorCodigo(const std::string &codigo) {
+    return reporteLog("0000-00-00 00:00:00", "9999-12-31 23:59:59", "", codigo);
+}
 
-    out << "matches_users\n";
-    for (const auto &u : users) {
-        std::string row = csv_join_row(u);
-        if (row.find(filtro) != std::string::npos) out << row << "\n";
+void GestorReportes::registrarEvento(const std::string &mensaje, const std::string &usuario, const std::string &nodo, const std::string &modulo) {
+    std::ostringstream csv;
+    csv << "\"" << nowTimestamp() << "\",";
+    csv << "\"EVENTO\",";
+    csv << "\"" << mensaje << "\",";
+    csv << "\"" << usuario << "\",";
+    csv << "\"" << nodo << "\",";
+    csv << "\"\""; // codigo vacio
+    if (!modulo.empty()) {
+        csv << "," << modulo;
     }
-    out << "matches_logs\n";
-    for (const auto &r : logs) {
-        std::string row = csv_join_row(r);
-        if (row.find(filtro) != std::string::npos) out << row << "\n";
-    }
-    return out.str();
+    appendLogLine(csv.str());
 }
