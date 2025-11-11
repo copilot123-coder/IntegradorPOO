@@ -1,0 +1,3074 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="393.171mm" height="314.325mm"
+ viewBox="0 0 1486 1188"
+ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">
+<title>Qt SVG Document</title>
+<desc>Generated with Qt</desc>
+<defs>
+</defs>
+<g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel" >
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,16.1815,148.275)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffff" fill-opacity="1" stroke="none" transform="matrix(0.998319,0,0,0.998319,16.1815,148.275)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<rect x="-16.2088" y="-148.525" width="1488.21" height="1190"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,16.1815,148.275)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,16.1815,148.275)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,16.1815,148.275)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,16.1815,148.275)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#990000" stroke-opacity="1" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" transform="matrix(0.998319,0,0,0.998319,16.1815,148.275)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M652.791,443.673 L710,443.193"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,16.1815,148.275)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#990000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<rect vector-effect="non-scaling-stroke" x="0" y="0" width="761" height="432"/>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="700" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="700" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="700" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="319.297" y="14.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="700" font-style="normal" 
+ >ClienteRobotRPC</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="700" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="700" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="700" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#990000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<polyline fill="none" vector-effect="non-scaling-stroke" points="0,18 761,18 " />
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="32.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ tipo_usuario : object = None</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#990000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<polyline fill="none" vector-effect="non-scaling-stroke" points="0,36 761,36 " />
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="50.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ __init__(host : object, puerto : int = 8080) «constructor»</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="68.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ login(usuario : new_class_19, clave : new_class_20, nodo : object) : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="86.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ esta_conectado() : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="104.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ listar_comandos() : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="122.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ conectar_robot(accion : object) : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="140.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ mover_robot(x : new_class_21, y : new_class_22, z : new_class_23, velocidad : object = None) : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="158.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ ejecutar_gcode(comando : new_class_24) : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="176.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ reporte_usuario() : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="194.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ configurar_modo(modo_trabajo : new_class_25, modo_coordenadas : new_class_26) : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="212.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ ir_a_origen() : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="230.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ subir_archivo(nombre : new_class_27, contenido : new_class_28) : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="248.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ ejecutar_archivo(nombre_archivo : new_class_29) : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="266.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ configurar_acceso_remoto(habilitar : new_class_30) : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="284.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ control_motores(accion : new_class_31) : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="302.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ control_efector(accion : new_class_32) : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="320.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ aprender_trayectoria(accion : new_class_33, nombre : object = None, pos : object = None) : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="338.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ reporte_admin(filtro1 : object, filtro2 : object) : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="356.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ reporte_log_csv(desde : object, hasta : object, filtro_usuario : object, filtro_codigo : object) : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="374.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ iniciar_aprendizaje_trayectoria(nombre : new_class_34) : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="392.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ agregar_paso_trayectoria(x : new_class_35, y : new_class_36, z : new_class_37, velocidad : new_class_38) : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="410.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ finalizar_aprendizaje_trayectoria() : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="428.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ cancelar_aprendizaje_trayectoria() : bool</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,724.988,371.899)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#990000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<rect vector-effect="non-scaling-stroke" x="0" y="0" width="668" height="1188"/>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="700" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="700" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="700" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="319.75" y="14.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="700" font-style="normal" 
+ >App</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="700" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="700" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="700" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#990000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<polyline fill="none" vector-effect="non-scaling-stroke" points="0,18 668,18 " />
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="32.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ modo_actual : str = &quot;manual&quot;</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="50.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ coord_actual : str = &quot;absoluto&quot;</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="68.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ acceso_remoto_var : tk.BooleanVar = (value=True)</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="86.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ posicion_robot : dict = {'x':0.0,'y':0.0,'z':0.0}</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="104.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ efector_activo : bool = False</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="122.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ robot_conectado : bool = False</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="140.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ L1 : int = 150</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="158.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ L2 : int = 150</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="176.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ L3 : int = 100</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="194.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ altura_base : int = 50</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="212.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ R_MIN : int = 50</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="230.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ R_MAX : int = 400</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="248.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ Z_MIN : int = -50</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="266.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ Z_MAX : int = 350</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="284.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ ventana_visualizacion : object = None</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="302.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ figura_3d : object = None</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="320.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ canvas_3d : object = None</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="338.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ frame_control : ttk.Frame = (self)</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="356.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ status_var : tk.StringVar = (value=&quot;Por favor, inicie sesión.&quot;)</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="374.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ status_label : ttk.Label = (self,textvariable=self.status_var,relief=tk.SUNKEN,anchor=tk.W)</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#990000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<polyline fill="none" vector-effect="non-scaling-stroke" points="0,378 668,378 " />
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="392.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ >+ __init__() «constructor»</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="410.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># redirigir_stdout()</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="428.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># crear_widgets_login()</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="446.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># crear_widgets_control()</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="464.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># intentar_login(event : object = None) : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="482.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># conectar_robot()</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="500.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># ir_a_origen()</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="518.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># mover_robot()</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="536.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># mover_robot_sin_velocidad() : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="554.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># mover_robot_con_velocidad() : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="572.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># control_efector(accion : new_class)</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="590.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># control_motores(accion : new_class_1)</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="608.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># iniciar_trayectoria() : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="626.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># finalizar_trayectoria() : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="644.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># cancelar_trayectoria()</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="662.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># resetear_controles_trayectoria()</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="680.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># subir_archivo() : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="698.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># ejecutar_archivo() : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="716.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># mostrar_selector_archivos() : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="734.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># obtener_archivos_disponibles() : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="752.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># ver_reporte_usuario() : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="770.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># ver_reporte_admin() : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="788.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># ejecutar_reporte_admin(ventana_padre : new_class_2, tipo_reporte : new_class_3) : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="806.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># mostrar_filtros_csv_avanzados()</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="824.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># mostrar_ventana_reporte(tipo_reporte : new_class_4, filtros : new_class_5)</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="842.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># mostrar_ventana_reporte_csv(filtros_csv : new_class_6)</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="860.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># configurar_modo() : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="878.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># actualizar_interfaz_segun_modo(modo_trabajo : new_class_7)</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="896.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># habilitar_controles_manuales(habilitar : new_class_8)</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="914.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># habilitar_controles_automaticos(habilitar : new_class_9)</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="932.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># configurar_acceso_remoto() : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="950.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># crear_sonidos() : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="968.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># reproducir_sonido(tipo : new_class_10) : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="986.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># beep(frecuencia : new_class_11, duracion : new_class_12) : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="1004.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># mostrar_visualizacion_3d()</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="1022.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># crear_ventana_visualizacion()</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="1040.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># configurar_visualizacion_3d()</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="1058.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># dibujar_espacio_trabajo()</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="1076.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># dibujar_robot_3d()</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="1094.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># cambiar_vista(elevacion : new_class_13, azimut : new_class_14)</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="1112.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># actualizar_posicion_robot() : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="1130.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># iniciar_actualizacion_automatica()</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="1148.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># actualizar_posicion_desde_movimiento(x : new_class_15, y : new_class_16, z : new_class_17) : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="1166.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># redibujar_visualizacion()</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="5" y="1184.5" font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+ ># actualizar_estado_efector(activo : new_class_18) : str</text>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#ffffc0" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.998319,0,0,0.998319,0.998319,0.998319)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Ubuntu Sans" font-size="14.6667" font-weight="400" font-style="normal" 
+>
+</g>
+</g>
+</svg>
