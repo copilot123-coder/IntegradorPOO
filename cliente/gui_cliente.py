@@ -27,16 +27,22 @@ class App(tk.Tk):
         super().__init__()
 
         self.title("Panel de Control Robot RRR - Cliente POO")
-        self.geometry("500x550") 
+        # Geometría ajustada para los nuevos botones
+        self.geometry("600x600") 
         self.resizable(False, False)
 
         # Estado del modo de trabajo
         self.modo_actual = "manual"  # "manual" o "automatico"
         self.coord_actual = "absoluto"  # "absoluto" o "relativo"
 
+        # --- VARIABLE PARA ACCESO REMOTO (AÑADIDA) ---
+        self.acceso_remoto_var = tk.BooleanVar(value=True)
+        # ---------------------------------------------
+
         # 1. Instanciamos nuestro cliente RPC
         try:
-            self.cliente = ClienteRobotRPC()
+            # Usamos el constructor por defecto de robot_rpc.py
+            self.cliente = ClienteRobotRPC() 
         except SystemExit as e:
             messagebox.showerror("Error Fatal", "No se pudo conectar al servidor. Verifique que esté ejecutándose.")
             sys.exit(1)
@@ -52,7 +58,7 @@ class App(tk.Tk):
 
         # 4. Construimos las interfaces
         self._crear_widgets_login()
-        self._crear_widgets_control() # Esta función AHORA SÍ encontrará los callbacks
+        self._crear_widgets_control() 
 
         # 5. Redirigimos la salida de 'print'
         self._redirigir_stdout()
@@ -66,10 +72,9 @@ class App(tk.Tk):
             def __init__(self, status_var, status_label):
                 self.status_var = status_var
                 self.status_label = status_label
-                self.original_stdout = sys.__stdout__ # Guardamos stdout original
+                self.original_stdout = sys.__stdout__ 
 
             def write(self, message):
-                # Escribimos también a la terminal original
                 self.original_stdout.write(message) 
                 
                 msg = message.strip()
@@ -108,17 +113,38 @@ class App(tk.Tk):
     def _crear_widgets_control(self):
         """Construye la UI del panel de control principal."""
         
-        # --- Frame de Conexión (Admin) ---
+        # --- Frame de Conexión (Admin) - (MODIFICADO) ---
         self.frame_admin = ttk.LabelFrame(self.frame_control, text="Conexión y Admin")
         self.frame_admin.pack(fill=tk.X, padx=10, pady=10)
         
-        self.btn_conectar = ttk.Button(self.frame_admin, text="Conectar Robot", 
+        # Frame para botones de conexión (Izquierda)
+        frame_botones_conexion = ttk.Frame(self.frame_admin)
+        frame_botones_conexion.pack(side=tk.LEFT, padx=5, pady=5, expand=True, fill=tk.X)
+
+        self.btn_conectar = ttk.Button(frame_botones_conexion, text="Conectar Robot", 
                                        command=self._conectar_robot)
         self.btn_conectar.pack(side=tk.LEFT, padx=5, pady=5, expand=True)
         
-        self.btn_home = ttk.Button(self.frame_admin, text="Ir a Origen (Home)", 
+        self.btn_home = ttk.Button(frame_botones_conexion, text="Ir a Origen (Home)", 
                                    command=self._ir_a_origen)
         self.btn_home.pack(side=tk.LEFT, padx=5, pady=5, expand=True)
+
+        # --- Frame para Acceso Remoto (AÑADIDO) ---
+        frame_acceso = ttk.LabelFrame(self.frame_admin, text="Acceso Remoto")
+        frame_acceso.pack(side=tk.LEFT, padx=10, pady=5)
+        
+        self.radio_acceso_on = ttk.Radiobutton(frame_acceso, text="Habilitado", 
+                                               variable=self.acceso_remoto_var, 
+                                               value=True, 
+                                               command=self._configurar_acceso_remoto)
+        self.radio_acceso_on.pack(anchor=tk.W)
+        
+        self.radio_acceso_off = ttk.Radiobutton(frame_acceso, text="Deshabilitado", 
+                                                variable=self.acceso_remoto_var, 
+                                                value=False, 
+                                                command=self._configurar_acceso_remoto)
+        self.radio_acceso_off.pack(anchor=tk.W)
+        # --- FIN DE LA MODIFICACIÓN ---
 
         # --- Frame de Movimiento Manual ---
         frame_mov = ttk.LabelFrame(self.frame_control, text="Movimiento Manual")
@@ -236,11 +262,15 @@ class App(tk.Tk):
         usuario = self.entry_usuario.get()
         clave = self.entry_clave.get()
         
+        # --- NODO AHORA ES 'localhost' POR DEFECTO ---
+        nodo = "localhost" 
+
         if not usuario or not clave:
             messagebox.showwarning("Login", "Usuario y clave no pueden estar vacíos.")
             return
 
-        if self.cliente.login(usuario, clave):
+        # Enviamos el 'nodo' (localhost) al servidor
+        if self.cliente.login(usuario, clave, nodo): 
             self.status_var.set(f"✓ ¡Bienvenido {usuario}! Conectado.")
             self.frame_login.pack_forget()
             self.frame_control.pack(fill=tk.BOTH, expand=True)
@@ -252,6 +282,10 @@ class App(tk.Tk):
                 self.btn_motores_activar.config(state=tk.DISABLED)
                 self.btn_motores_desactivar.config(state=tk.DISABLED)
                 self.btn_reporte_admin.config(state=tk.DISABLED)
+                # --- LÍNEAS AÑADIDAS ---
+                self.radio_acceso_on.config(state=tk.DISABLED)
+                self.radio_acceso_off.config(state=tk.DISABLED)
+                # -----------------------
 
         else:
             messagebox.showerror("Login Fallido", self.status_var.get())
@@ -288,6 +322,10 @@ class App(tk.Tk):
             messagebox.showerror("Error de Entrada", "Coordenadas X, Y, Z deben ser números.")
             return
         
+        # Si estamos en modo aprendizaje, agregamos el paso
+        if self.btn_finalizar_tray.cget('state') == tk.NORMAL:
+             self.cliente.agregar_paso_aprendizaje_automatico(x, y, z, None)
+        
         self.cliente.mover_robot(x, y, z)
     
     def _mover_robot_con_velocidad(self):
@@ -304,6 +342,10 @@ class App(tk.Tk):
         except ValueError:
             messagebox.showerror("Error de Entrada", "Coordenadas X, Y, Z y velocidad deben ser números.")
             return
+        
+        # Si estamos en modo aprendizaje, agregamos el paso
+        if self.btn_finalizar_tray.cget('state') == tk.NORMAL:
+             self.cliente.agregar_paso_aprendizaje_automatico(x, y, z, velocidad)
         
         self.cliente.mover_robot(x, y, z, velocidad)
 
@@ -436,7 +478,7 @@ class App(tk.Tk):
         listbox.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         scrollbar.config(command=listbox.yview)
         
-        # Poblar lista con archivos (simulado - en la realidad se obtendría del servidor)
+        # Poblar lista con archivos
         archivos_disponibles = self._obtener_archivos_disponibles()
         for archivo in archivos_disponibles:
             listbox.insert(tk.END, archivo)
@@ -454,7 +496,6 @@ class App(tk.Tk):
         frame_botones.pack(pady=15)
         
         def ejecutar_seleccionado():
-            # Obtener archivo seleccionado o ingresado manualmente
             nombre_archivo = ""
             
             seleccion = listbox.curselection()
@@ -468,15 +509,12 @@ class App(tk.Tk):
             
             win_archivos.destroy()
             
-            # Confirmar ejecución
             if messagebox.askyesno("Confirmar Ejecución", f"¿Ejecutar archivo '{nombre_archivo}'?\n\nEsto iniciará el modo automático."):
                 self.cliente.ejecutar_archivo(nombre_archivo)
         
         def ejecutar_con_doble_clic(event):
-            """Ejecuta el archivo cuando se hace doble clic en la lista."""
             ejecutar_seleccionado()
         
-        # Configurar evento de doble clic en el listbox
         listbox.bind('<Double-Button-1>', ejecutar_con_doble_clic)
         
         ttk.Button(frame_botones, text="Ejecutar", command=ejecutar_seleccionado).pack(side=tk.LEFT, padx=5)
@@ -489,7 +527,6 @@ class App(tk.Tk):
             if resultado['exito']:
                 archivos = []
                 if 'archivos' in resultado:
-                    # Convertir XmlRpcValue a lista de Python
                     for i in range(resultado['totalArchivos']):
                         archivos.append(resultado['archivos'][i])
                 return archivos
@@ -497,8 +534,8 @@ class App(tk.Tk):
                 messagebox.showerror("Error", f"No se pudieron obtener los archivos: {resultado['mensaje']}")
                 return []
         except Exception as e:
-            messagebox.showerror("Error de Conexión", f"Error obteniendo lista de archivos: {e}")
-            return []
+            print(f"WARN: No se pudo llamar a ListarArchivos: {e}. Use entrada manual.")
+            return ["(Use entrada manual)"]
 
     def _ver_reporte_usuario(self):
         """Muestra el reporte de usuario en una ventana nueva."""
@@ -540,7 +577,6 @@ class App(tk.Tk):
             messagebox.showerror("Acceso Denegado", "Solo los administradores pueden ver este reporte.")
             return
 
-        # Ventana de selección de tipo de reporte
         win_seleccion = tk.Toplevel(self)
         win_seleccion.title("Seleccionar Tipo de Reporte")
         win_seleccion.geometry("400x300")
@@ -549,7 +585,6 @@ class App(tk.Tk):
         ttk.Label(win_seleccion, text="Reportes Administrativos", 
                   font=("Arial", 14, "bold")).pack(pady=10)
         
-        # Botones para diferentes tipos de reporte
         ttk.Button(win_seleccion, text="Reporte General de Sesiones", 
                    command=lambda: self._ejecutar_reporte_admin(win_seleccion, 'general')).pack(pady=5, padx=20, fill=tk.X)
         
@@ -572,31 +607,24 @@ class App(tk.Tk):
         filtros = {}
         
         if tipo_reporte == 'usuario':
-            # Solicitar usuario
             usuario = tk.simpledialog.askstring("Filtro por Usuario", "Ingrese nombre de usuario:")
-            if not usuario:
-                return
+            if not usuario: return
             filtros['filtro1'] = usuario
             filtros['filtro2'] = ''
             
         elif tipo_reporte == 'codigo':
-            # Solicitar código
             codigo = tk.simpledialog.askstring("Filtro por Código", "Ingrese código de respuesta (ej: 200, ERROR):")
-            if not codigo:
-                return
+            if not codigo: return
             filtros['filtro1'] = ''
             filtros['filtro2'] = codigo
             
         elif tipo_reporte == 'csv_avanzado':
-            # Mostrar ventana de filtros avanzados
             self._mostrar_filtros_csv_avanzados()
             return
         else:
-            # Reporte general
             filtros['filtro1'] = ''
             filtros['filtro2'] = ''
         
-        # Mostrar ventana de reporte
         self._mostrar_ventana_reporte(tipo_reporte, filtros)
     
     def _mostrar_filtros_csv_avanzados(self):
@@ -608,37 +636,32 @@ class App(tk.Tk):
         ttk.Label(win_filtros, text="Configurar Filtros", 
                   font=("Arial", 12, "bold")).pack(pady=10)
         
-        # Frame para los campos de entrada
         frame_campos = ttk.Frame(win_filtros)
         frame_campos.pack(padx=20, pady=10, fill=tk.X)
         
-        # Campos de entrada
-        ttk.Label(frame_campos, text="Fecha desde (YYYY-MM-DD HH:MM:SS):").pack(anchor=tk.W)
+        ttk.Label(frame_campos, text="Filtro 1 (ej: fecha, usuario, 'ERROR'):").pack(anchor=tk.W)
         entry_desde = ttk.Entry(frame_campos, width=40)
         entry_desde.pack(pady=(0,10), fill=tk.X)
         
-        ttk.Label(frame_campos, text="Fecha hasta (YYYY-MM-DD HH:MM:SS):").pack(anchor=tk.W)
+        ttk.Label(frame_campos, text="Filtro 2 (ej: 'admin', 'Login'):").pack(anchor=tk.W)
         entry_hasta = ttk.Entry(frame_campos, width=40)
         entry_hasta.pack(pady=(0,10), fill=tk.X)
         
-        ttk.Label(frame_campos, text="Usuario:").pack(anchor=tk.W)
-        entry_usuario = ttk.Entry(frame_campos, width=40)
+        ttk.Label(frame_campos, text="Usuario: (obsoleto, usar Filtro 1 o 2)").pack(anchor=tk.W)
+        entry_usuario = ttk.Entry(frame_campos, width=40, state=tk.DISABLED)
         entry_usuario.pack(pady=(0,10), fill=tk.X)
         
-        ttk.Label(frame_campos, text="Código de respuesta:").pack(anchor=tk.W)
-        entry_codigo = ttk.Entry(frame_campos, width=40)
+        ttk.Label(frame_campos, text="Código de respuesta: (obsoleto, usar Filtro 1 o 2)").pack(anchor=tk.W)
+        entry_codigo = ttk.Entry(frame_campos, width=40, state=tk.DISABLED)
         entry_codigo.pack(pady=(0,10), fill=tk.X)
         
-        # Botones
         frame_botones = ttk.Frame(win_filtros)
         frame_botones.pack(pady=20)
         
         def aplicar_filtros():
             filtros_csv = {
-                'desde': entry_desde.get(),
-                'hasta': entry_hasta.get(),
-                'filtro_usuario': entry_usuario.get(),
-                'filtro_codigo': entry_codigo.get()
+                'filtro1': entry_desde.get(),
+                'filtro2': entry_hasta.get(),
             }
             win_filtros.destroy()
             self._mostrar_ventana_reporte_csv(filtros_csv)
@@ -670,7 +693,6 @@ class App(tk.Tk):
         old_stdout = sys.stdout
         sys.stdout = ConsolaReporte(txt_reporte)
         
-        # Ejecutar el reporte correspondiente
         self.cliente.reporte_admin(filtros.get('filtro1', ''), filtros.get('filtro2', ''))
         
         sys.stdout = old_stdout
@@ -699,11 +721,12 @@ class App(tk.Tk):
         old_stdout = sys.stdout
         sys.stdout = ConsolaReporte(txt_reporte)
         
-        # Ejecutar el reporte CSV con filtros avanzados
-        self.cliente.reporte_log_csv(
-            filtros_csv['desde'], filtros_csv['hasta'],
-            filtros_csv['filtro_usuario'], filtros_csv['filtro_codigo']
-        )
+        try:
+            self.cliente.reporte_log_csv(
+                filtros_csv['filtro1'], filtros_csv['filtro2']
+            )
+        except AttributeError:
+            print("Error: La función 'reporte_log_csv' no está implementada en robot_rpc.py")
         
         sys.stdout = old_stdout
 
@@ -713,7 +736,6 @@ class App(tk.Tk):
             self.status_var.set("✗ Error: No ha iniciado sesión.")
             return
         
-        # Ventana de configuración de modo
         win_modo = tk.Toplevel(self)
         win_modo.title("Configurar Modo de Trabajo")
         win_modo.geometry("450x350")
@@ -722,7 +744,6 @@ class App(tk.Tk):
         ttk.Label(win_modo, text="Configuración del Robot", 
                   font=("Arial", 14, "bold")).pack(pady=15)
         
-        # Frame para modo de trabajo
         frame_trabajo = ttk.LabelFrame(win_modo, text="Modo de Trabajo")
         frame_trabajo.pack(padx=20, pady=10, fill=tk.X)
         
@@ -732,7 +753,6 @@ class App(tk.Tk):
         ttk.Radiobutton(frame_trabajo, text="Automático - Ejecución de archivos G-Code", 
                        variable=var_trabajo, value="automatico").pack(anchor=tk.W, padx=10, pady=5)
         
-        # Frame para modo de coordenadas
         frame_coord = ttk.LabelFrame(win_modo, text="Modo de Coordenadas")
         frame_coord.pack(padx=20, pady=10, fill=tk.X)
         
@@ -742,7 +762,6 @@ class App(tk.Tk):
         ttk.Radiobutton(frame_coord, text="Relativo - Coordenadas respecto a posición actual", 
                        variable=var_coord, value="relativo").pack(anchor=tk.W, padx=10, pady=5)
         
-        # Frame para botones
         frame_botones = ttk.Frame(win_modo)
         frame_botones.pack(pady=20)
         
@@ -753,8 +772,6 @@ class App(tk.Tk):
             if self.cliente.configurar_modo(modo_trabajo, modo_coord):
                 win_modo.destroy()
                 self.status_var.set(f"✓ Modo configurado: {modo_trabajo}/{modo_coord}")
-                
-                # Actualizar interfaz según el modo seleccionado
                 self._actualizar_interfaz_segun_modo(modo_trabajo)
             else:
                 messagebox.showerror("Error", "No se pudo configurar el modo")
@@ -767,12 +784,10 @@ class App(tk.Tk):
         self.modo_actual = modo_trabajo
         
         if modo_trabajo == "manual":
-            # Habilitar controles manuales
             self._habilitar_controles_manuales(True)
             self._habilitar_controles_automaticos(False)
             self.status_var.set("Modo Manual - Control directo disponible")
         else:
-            # Deshabilitar controles manuales y habilitar automáticos
             self._habilitar_controles_manuales(False)
             self._habilitar_controles_automaticos(True)
             self.status_var.set("Modo Automático - Solo ejecución de archivos G-Code")
@@ -781,7 +796,6 @@ class App(tk.Tk):
         """Habilita o deshabilita los controles del modo manual."""
         estado = tk.NORMAL if habilitar else tk.DISABLED
         
-        # Controles de movimiento manual
         self.entry_x.config(state=estado)
         self.entry_y.config(state=estado)
         self.entry_z.config(state=estado)
@@ -790,20 +804,34 @@ class App(tk.Tk):
         self.btn_mover_con_vel.config(state=estado)
         self.btn_home.config(state=estado)
         
-        # Controles de trayectoria (solo en modo manual)
         self.entry_nombre_tray.config(state=estado)
         self.btn_iniciar_tray.config(state=estado)
         if not habilitar:
-            # Si se deshabilita manual, resetear controles de trayectoria
             self._resetear_controles_trayectoria()
     
     def _habilitar_controles_automaticos(self, habilitar):
         """Habilita o deshabilita los controles del modo automático."""
         estado = tk.NORMAL if habilitar else tk.DISABLED
-        
-        # En modo automático solo se puede ejecutar archivos
-        # Los controles de subir archivo están disponibles en ambos modos
         pass  # La funcionalidad de archivos está disponible en ambos modos
+
+    # --- FUNCIÓN DE CALLBACK PARA ACCESO REMOTO (AÑADIDA) ---
+    def _configurar_acceso_remoto(self):
+        """Callback para los botones de radio de Acceso Remoto."""
+        if not self.cliente.esta_conectado():
+            self.status_var.set("✗ Error: No ha iniciado sesión.")
+            return
+        
+        if self.cliente.tipo_usuario != 'admin':
+            messagebox.showerror("Acceso Denegado", "Solo los administradores pueden cambiar esta configuración.")
+            return
+
+        try:
+            habilitar = self.acceso_remoto_var.get()
+            # La función en robot_rpc.py ya imprime el resultado en la barra de estado
+            self.cliente.configurar_acceso_remoto(habilitar)
+        except Exception as e:
+            messagebox.showerror("Error", f"No se pudo cambiar la configuración: {e}")
+    # --- FIN DE LA FUNCIÓN AÑADIDA ---
 
 
 if __name__ == "__main__":

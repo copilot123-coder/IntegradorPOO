@@ -100,23 +100,37 @@ bool ServidorRpc::estaActivo() const {
 }
 
 bool ServidorRpc::validarUsuario(const std::string& usuario, const std::string& clave, const std::string& nodoOrigen) {
-    if (!accesoRemotoHabilitado && nodoOrigen != "localhost" && nodoOrigen != "127.0.0.1") {
-        registrarEvento("Acceso remoto denegado desde " + nodoOrigen, usuario, nodoOrigen);
-        return false;
-    }
     
-    // Validar contra la base de datos
+    // 1. Validar contra la base de datos PRIMERO
     auto usuarioObj = gestorBBDD->obtenerUsuarioPorNombre(usuario);
     if (!usuarioObj) {
         registrarEvento("Usuario no encontrado: " + usuario, usuario, nodoOrigen);
         return false;
     }
     
+    // 2. Comprobamos si es administrador
+    bool esAdmin = (usuarioObj->getTipo() == "admin");
+
+    // 3. APLICAMOS LA NUEVA REGLA DE ACCESO REMOTO
+    // Si el acceso está deshabilitado Y el usuario que intenta entrar NO es admin...
+    if (!accesoRemotoHabilitado && !esAdmin) {
+        // ...lo bloqueamos (sin importar si es 'localhost' o no).
+        registrarEvento("Acceso remoto denegado para usuario no-admin: " + usuario, usuario, nodoOrigen);
+        return false;
+    }
+
+    // Si llegamos aquí, es porque:
+    // 1. El acceso está HABILITADO (cualquiera puede intentar loguearse)
+    // O
+    // 2. El acceso está DESHABILITADO, PERO el usuario es 'admin' (se le permite para que pueda volver a habilitarlo)
+
+    // 4. Validar la clave
     if (!usuarioObj->validar(clave)) {
         registrarEvento("Credenciales inválidas para: " + usuario, usuario, nodoOrigen);
         return false;
     }
     
+    // Si la clave es correcta, el login es exitoso
     return true;
 }
 
