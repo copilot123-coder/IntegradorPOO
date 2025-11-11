@@ -8,6 +8,28 @@ from tkinter import ttk  # Usamos los widgets "tematizados" (se ven mejor)
 from tkinter import messagebox, filedialog, scrolledtext, simpledialog
 import sys
 import os
+import math
+import threading
+import time
+
+# Librerías para visualización 3D
+try:
+    import matplotlib.pyplot as plt
+    from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
+    from mpl_toolkits.mplot3d import Axes3D
+    import numpy as np
+    VISUALIZATION_AVAILABLE = True
+except ImportError:
+    print("Advertencia: matplotlib no disponible. Visualización 3D deshabilitada.")
+    VISUALIZATION_AVAILABLE = False
+
+# Librerías para sonido (opcional)
+try:
+    import pygame
+    SOUND_AVAILABLE = True
+except ImportError:
+    print("Advertencia: pygame no disponible. Efectos de sonido deshabilitados.")
+    SOUND_AVAILABLE = False
 
 # Importamos la librería de comunicación que ya creamos y probamos
 try:
@@ -38,6 +60,37 @@ class App(tk.Tk):
         # --- VARIABLE PARA ACCESO REMOTO (AÑADIDA) ---
         self.acceso_remoto_var = tk.BooleanVar(value=True)
         # ---------------------------------------------
+
+        # Variables para visualización del robot
+        self.posicion_robot = {'x': 0.0, 'y': 0.0, 'z': 0.0}  # Posición actual del efector final
+        self.efector_activo = False
+        self.robot_conectado = False
+        
+        # Parámetros del robot (basados en la imagen)
+        self.L1 = 150  # Longitud del primer eslabón (mm)
+        self.L2 = 150  # Longitud del segundo eslabón (mm) 
+        self.L3 = 100  # Longitud del tercer eslabón (mm)
+        self.altura_base = 50  # Altura de la base (mm)
+        
+        # Límites del espacio de trabajo
+        self.R_MIN = 50   # Radio mínimo alcanzable
+        self.R_MAX = 400  # Radio máximo alcanzable  
+        self.Z_MIN = -50  # Altura mínima
+        self.Z_MAX = 350  # Altura máxima
+        
+        # Ventana de visualización
+        self.ventana_visualizacion = None
+        self.figura_3d = None
+        self.canvas_3d = None
+        
+        # Inicializar pygame para sonidos si está disponible
+        if SOUND_AVAILABLE:
+            try:
+                pygame.mixer.init()
+                self._crear_sonidos()
+            except Exception as e:
+                print(f"Error inicializando pygame: {e}")
+                # No podemos cambiar la variable global desde aquí
 
         # 1. Instanciamos nuestro cliente RPC
         try:
@@ -254,6 +307,13 @@ class App(tk.Tk):
         
         ttk.Button(frame_reportes, text="Configurar Modo", 
                    command=self._configurar_modo).pack(side=tk.LEFT, padx=5, pady=5, expand=True)
+        
+        # Nueva fila para visualización 3D
+        frame_visualizacion = ttk.Frame(frame_reportes)
+        frame_visualizacion.pack(fill=tk.X, pady=(5,0))
+        
+        ttk.Button(frame_visualizacion, text="[3D] Visualización Robot", 
+                   command=self._mostrar_visualizacion_3d).pack(side=tk.LEFT, padx=5, expand=True)
 
     # --- Lógica de la Aplicación (Callbacks de botones) ---
 
@@ -300,7 +360,11 @@ class App(tk.Tk):
     def _ir_a_origen(self):
         """Callback del botón 'Ir a Origen'."""
         if self.cliente.esta_conectado():
-            self.cliente.ir_a_origen()
+            if self.cliente.ir_a_origen():
+                # Actualizar visualización a posición de origen (0,0,0)
+                self._actualizar_posicion_desde_movimiento(0, 0, 0)
+                # Reproducir sonido de arranque/home
+                self._reproducir_sonido("arranque")
         else:
             self.status_var.set("✗ Error: No ha iniciado sesión.")
 
@@ -326,7 +390,9 @@ class App(tk.Tk):
         if self.btn_finalizar_tray.cget('state') == tk.NORMAL:
              self.cliente.agregar_paso_aprendizaje_automatico(x, y, z, None)
         
-        self.cliente.mover_robot(x, y, z)
+        if self.cliente.mover_robot(x, y, z):
+            # Actualizar visualización si el movimiento fue exitoso
+            self._actualizar_posicion_desde_movimiento(x, y, z)
     
     def _mover_robot_con_velocidad(self):
         """Callback para mover robot especificando velocidad."""
@@ -347,12 +413,17 @@ class App(tk.Tk):
         if self.btn_finalizar_tray.cget('state') == tk.NORMAL:
              self.cliente.agregar_paso_aprendizaje_automatico(x, y, z, velocidad)
         
-        self.cliente.mover_robot(x, y, z, velocidad)
+        if self.cliente.mover_robot(x, y, z, velocidad):
+            # Actualizar visualización si el movimiento fue exitoso
+            self._actualizar_posicion_desde_movimiento(x, y, z)
 
     def _control_efector(self, accion):
         """Callback para botones de efector."""
         if self.cliente.esta_conectado():
-            self.cliente.control_efector(accion)
+            if self.cliente.control_efector(accion):
+                # Actualizar estado del efector en la visualización
+                activo = (accion == "activar")
+                self._actualizar_estado_efector(activo)
         else:
             self.status_var.set("✗ Error: No ha iniciado sesión.")
 
@@ -832,6 +903,336 @@ class App(tk.Tk):
         except Exception as e:
             messagebox.showerror("Error", f"No se pudo cambiar la configuración: {e}")
     # --- FIN DE LA FUNCIÓN AÑADIDA ---
+
+    # === MÉTODOS DE VISUALIZACIÓN 3D Y SONIDOS ===
+    
+    def _crear_sonidos(self):
+        """Crea los efectos de sonido usando pygame."""
+        global SOUND_AVAILABLE
+        if not SOUND_AVAILABLE:
+            return
+        try:
+            # Verificar que pygame esté funcionando
+            pygame.mixer.get_init()
+            print("✓ Efectos de sonido habilitados")
+        except Exception as e:
+            print(f"Error configurando sonidos: {e}")
+            SOUND_AVAILABLE = False
+    
+    def _reproducir_sonido(self, tipo):
+        """Reproduce un sonido específico."""
+        if not SOUND_AVAILABLE:
+            return
+        
+        # Evitar reproducir el mismo sonido repetidamente
+        current_time = time.time()
+        if hasattr(self, '_ultimo_sonido') and hasattr(self, '_tiempo_ultimo_sonido'):
+            if (self._ultimo_sonido == tipo and 
+                current_time - self._tiempo_ultimo_sonido < 1.0):  # 1 segundo de cooldown
+                return
+        
+        self._ultimo_sonido = tipo
+        self._tiempo_ultimo_sonido = current_time
+        
+        try:
+            print(f"🔊 Reproduciendo: {tipo}")
+            # Usar threading para no bloquear la GUI
+            def play():
+                if tipo == "arranque":
+                    self._beep(440, 0.5)
+                elif tipo == "parada":
+                    self._beep(220, 0.3)
+                elif tipo == "movimiento":
+                    self._beep(330, 0.2)
+                elif tipo == "efector_on":
+                    self._beep(500, 0.3)
+                elif tipo == "efector_off":
+                    self._beep(300, 0.3)
+                elif tipo == "alarma":
+                    self._beep(1000, 0.8)
+            
+            threading.Thread(target=play, daemon=True).start()
+        except Exception as e:
+            print(f"Error reproduciendo sonido: {e}")
+    
+    def _beep(self, frecuencia, duracion):
+        """Genera un beep usando pygame."""
+        if not SOUND_AVAILABLE:
+            return
+        
+        try:
+            sample_rate = 22050
+            frames = int(duracion * sample_rate)
+            arr = np.sin(2 * np.pi * frecuencia * np.linspace(0, duracion, frames))
+            arr = (arr * 32767).astype(np.int16)
+            
+            stereo_arr = np.zeros((frames, 2), dtype=np.int16)
+            stereo_arr[:, 0] = arr  
+            stereo_arr[:, 1] = arr
+            
+            sound = pygame.sndarray.make_sound(stereo_arr)
+            sound.play()
+            # No hacer sleep aquí para evitar bloquear la GUI
+            pygame.time.wait(int(duracion * 1000))  # Usar pygame.time.wait en su lugar
+        except Exception as e:
+            print(f"Error generando beep: {e}")
+    
+    def _mostrar_visualizacion_3d(self):
+        """Abre la ventana de visualización 3D del robot."""
+        if not VISUALIZATION_AVAILABLE:
+            messagebox.showwarning("Visualización no disponible", 
+                                 "matplotlib no está instalado. Para habilitar la visualización 3D, instale:\npip install matplotlib numpy")
+            return
+        
+        if self.ventana_visualizacion is None or not self.ventana_visualizacion.winfo_exists():
+            self._crear_ventana_visualizacion()
+        else:
+            self.ventana_visualizacion.lift()
+    
+    def _crear_ventana_visualizacion(self):
+        """Crea la ventana de visualización 3D."""
+        self.ventana_visualizacion = tk.Toplevel(self)
+        self.ventana_visualizacion.title("Visualización 3D - Robot RRR")
+        self.ventana_visualizacion.geometry("800x600")
+        
+        # Crear figura matplotlib
+        self.figura_3d = plt.Figure(figsize=(10, 8), dpi=80)
+        self.ax_3d = self.figura_3d.add_subplot(111, projection='3d')
+        
+        # Configurar canvas
+        self.canvas_3d = FigureCanvasTkAgg(self.figura_3d, self.ventana_visualizacion)
+        self.canvas_3d.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+        
+        # Agregar toolbar de navegación
+        toolbar = NavigationToolbar2Tk(self.canvas_3d, self.ventana_visualizacion)
+        toolbar.update()
+        
+        # Panel de control de visualización
+        frame_control = ttk.Frame(self.ventana_visualizacion)
+        frame_control.pack(side=tk.BOTTOM, fill=tk.X, padx=5, pady=5)
+        
+        ttk.Button(frame_control, text="Actualizar Posición", 
+                  command=self._actualizar_posicion_robot).pack(side=tk.LEFT, padx=5)
+        ttk.Button(frame_control, text="Vista Frontal", 
+                  command=lambda: self._cambiar_vista(0, 0)).pack(side=tk.LEFT, padx=5)
+        ttk.Button(frame_control, text="Vista Superior", 
+                  command=lambda: self._cambiar_vista(90, 0)).pack(side=tk.LEFT, padx=5)
+        ttk.Button(frame_control, text="Vista Isométrica", 
+                  command=lambda: self._cambiar_vista(30, 45)).pack(side=tk.LEFT, padx=5)
+        
+        # Configurar la visualización inicial
+        self._configurar_visualizacion_3d()
+        self._dibujar_robot_3d()
+        
+        # Actualizar automáticamente cada 2 segundos
+        self._iniciar_actualizacion_automatica()
+    
+    def _configurar_visualizacion_3d(self):
+        """Configura los ejes y límites de la visualización 3D."""
+        self.ax_3d.clear()
+        
+        # Configurar límites basados en el espacio de trabajo
+        limite = max(self.R_MAX, self.Z_MAX) * 1.1
+        self.ax_3d.set_xlim([-limite, limite])
+        self.ax_3d.set_ylim([-limite, limite])
+        self.ax_3d.set_zlim([self.Z_MIN - 50, self.Z_MAX + 50])
+        
+        # Etiquetas y título
+        self.ax_3d.set_xlabel('X (mm)')
+        self.ax_3d.set_ylabel('Y (mm)')
+        self.ax_3d.set_zlabel('Z (mm)')
+        self.ax_3d.set_title('Robot RRR - Espacio de Trabajo y Posición Actual')
+        
+        # Dibujar espacio de trabajo
+        self._dibujar_espacio_trabajo()
+    
+    def _dibujar_espacio_trabajo(self):
+        """Dibuja el espacio de trabajo del robot."""
+        # Dibujar cilindro del espacio de trabajo
+        theta = np.linspace(0, 2*np.pi, 50)
+        
+        # Círculo exterior (R_MAX)
+        x_max = self.R_MAX * np.cos(theta)
+        y_max = self.R_MAX * np.sin(theta)
+        z_max_inf = np.full_like(theta, self.Z_MIN)
+        z_max_sup = np.full_like(theta, self.Z_MAX)
+        
+        # Círculo interior (R_MIN)
+        x_min = self.R_MIN * np.cos(theta)
+        y_min = self.R_MIN * np.sin(theta)
+        z_min_inf = np.full_like(theta, self.Z_MIN)
+        z_min_sup = np.full_like(theta, self.Z_MAX)
+        
+        # Dibujar límites
+        self.ax_3d.plot(x_max, y_max, z_max_inf, 'b--', alpha=0.5, label='Límite exterior (inferior)')
+        self.ax_3d.plot(x_max, y_max, z_max_sup, 'b--', alpha=0.5, label='Límite exterior (superior)')
+        self.ax_3d.plot(x_min, y_min, z_min_inf, 'r--', alpha=0.5, label='Límite interior (inferior)')
+        self.ax_3d.plot(x_min, y_min, z_min_sup, 'r--', alpha=0.5, label='Límite interior (superior)')
+        
+        # Líneas verticales de conexión (algunas muestras)
+        for i in range(0, len(theta), 10):
+            self.ax_3d.plot([x_max[i], x_max[i]], [y_max[i], y_max[i]], 
+                          [self.Z_MIN, self.Z_MAX], 'b-', alpha=0.3)
+            self.ax_3d.plot([x_min[i], x_min[i]], [y_min[i], y_min[i]], 
+                          [self.Z_MIN, self.Z_MAX], 'r-', alpha=0.3)
+    
+    def _dibujar_robot_3d(self):
+        """Dibuja el robot en la visualización 3D."""
+        # Obtener posición actual
+        x, y, z = self.posicion_robot['x'], self.posicion_robot['y'], self.posicion_robot['z']
+        
+        # Base del robot
+        self.ax_3d.plot([0], [0], [0], 'ko', markersize=15, label='Base')
+        
+        # Primer eslabón (vertical)
+        eslabon1_z = self.altura_base
+        self.ax_3d.plot([0, 0], [0, 0], [0, eslabon1_z], 'g-', linewidth=8, label='Eslabón 1')
+        
+        # Calcular posiciones intermedias (cinemática aproximada)
+        r = math.sqrt(x**2 + y**2)
+        if r > 0:
+            # Ángulos aproximados
+            theta1 = math.atan2(y, x)  # Rotación base
+            
+            # Posición del segundo joint (aproximada)
+            x2 = (r * 0.6) * math.cos(theta1)
+            y2 = (r * 0.6) * math.sin(theta1)
+            z2 = eslabon1_z + (z - eslabon1_z) * 0.6
+            
+            # Segundo eslabón
+            self.ax_3d.plot([0, x2], [0, y2], [eslabon1_z, z2], 'b-', linewidth=6, label='Eslabón 2')
+            
+            # Tercer eslabón (al efector final)
+            self.ax_3d.plot([x2, x], [y2, y], [z2, z], 'm-', linewidth=4, label='Eslabón 3')
+            
+            # Joints
+            self.ax_3d.plot([0], [0], [eslabon1_z], 'ro', markersize=8)
+            self.ax_3d.plot([x2], [y2], [z2], 'ro', markersize=8)
+        
+        # Efector final
+        color_efector = 'red' if self.efector_activo else 'gray'
+        marker_efector = 'o' if self.efector_activo else 's'
+        self.ax_3d.plot([x], [y], [z], marker_efector, color=color_efector, 
+                       markersize=12, label=f'Efector {"ACTIVO" if self.efector_activo else "inactivo"}')
+        
+        # Verificar si está fuera del espacio de trabajo
+        r_actual = math.sqrt(x**2 + y**2)
+        fuera_espacio = (r_actual < self.R_MIN or r_actual > self.R_MAX or 
+                        z < self.Z_MIN or z > self.Z_MAX)
+        
+        if fuera_espacio:
+            # Dibujar alarma visual (sin emojis para evitar problemas de font)
+            mensaje_alarma = f"*** FUERA DE RANGO ***\nR={r_actual:.1f} (min:{self.R_MIN}, max:{self.R_MAX})\nZ={z:.1f} (min:{self.Z_MIN}, max:{self.Z_MAX})"
+            self.ax_3d.text(x, y, z + 20, mensaje_alarma, color='red', 
+                           fontsize=10, weight='bold', ha='center')
+            # Reproducir alarma sonora solo una vez por posición
+            pos_key = f"{x:.1f},{y:.1f},{z:.1f}"
+            if not hasattr(self, '_ultima_alarma_pos') or self._ultima_alarma_pos != pos_key:
+                self._ultima_alarma_pos = pos_key
+                self._reproducir_sonido("alarma")
+        else:
+            # Resetear alarma si volvemos al espacio válido
+            if hasattr(self, '_ultima_alarma_pos'):
+                self._ultima_alarma_pos = None
+        
+        # Mostrar coordenadas
+        self.ax_3d.text2D(0.02, 0.98, f'Posición: X={x:.1f}, Y={y:.1f}, Z={z:.1f}', 
+                         transform=self.ax_3d.transAxes, verticalalignment='top',
+                         bbox=dict(boxstyle="round,pad=0.3", facecolor="yellow", alpha=0.7))
+        
+        # Leyenda
+        self.ax_3d.legend(loc='upper right')
+    
+    def _cambiar_vista(self, elevacion, azimut):
+        """Cambia la vista 3D."""
+        self.ax_3d.view_init(elev=elevacion, azim=azimut)
+        self.canvas_3d.draw()
+    
+    def _actualizar_posicion_robot(self):
+        """Actualiza la posición del robot desde el servidor."""
+        if not self.cliente.esta_conectado():
+            return
+        
+        try:
+            # Obtener las coordenadas actuales de los entry widgets
+            try:
+                x = float(self.entry_x.get() or 0)
+                y = float(self.entry_y.get() or 0) 
+                z = float(self.entry_z.get() or 0)
+                self._actualizar_posicion_desde_movimiento(x, y, z)
+            except ValueError:
+                pass  # Si no hay valores válidos, mantener posición actual
+                
+        except Exception as e:
+            print(f"Error actualizando posición: {e}")
+    
+    def _iniciar_actualizacion_automatica(self):
+        """Inicia la actualización automática de la visualización."""
+        def actualizar():
+            if (self.ventana_visualizacion and 
+                self.ventana_visualizacion.winfo_exists() and 
+                self.cliente.esta_conectado()):
+                
+                self._actualizar_posicion_robot()
+                
+                # Programar próxima actualización
+                self.ventana_visualizacion.after(3000, actualizar)
+        
+        # Iniciar el ciclo
+        if self.ventana_visualizacion:
+            self.ventana_visualizacion.after(1000, actualizar)
+    
+    def _actualizar_posicion_desde_movimiento(self, x, y, z):
+        """Actualiza la posición cuando se mueve el robot."""
+        # Solo actualizar si la posición realmente cambió
+        if (hasattr(self, 'posicion_robot') and 
+            self.posicion_robot['x'] == float(x) and 
+            self.posicion_robot['y'] == float(y) and 
+            self.posicion_robot['z'] == float(z)):
+            return  # No hay cambio, no hacer nada
+            
+        self.posicion_robot['x'] = float(x)
+        self.posicion_robot['y'] = float(y) 
+        self.posicion_robot['z'] = float(z)
+        
+        # Reproducir sonido de movimiento
+        self._reproducir_sonido("movimiento")
+        
+        # Actualizar visualización si está abierta
+        if (self.ventana_visualizacion and 
+            self.ventana_visualizacion.winfo_exists()):
+            self._redibujar_visualizacion()
+    
+    def _redibujar_visualizacion(self):
+        """Redibuja solo la visualización sin reconfigurar todo."""
+        if (self.ventana_visualizacion and 
+            self.ventana_visualizacion.winfo_exists() and
+            hasattr(self, 'ax_3d')):
+            try:
+                self._configurar_visualizacion_3d()
+                self._dibujar_robot_3d()
+                self.canvas_3d.draw()
+            except Exception as e:
+                print(f"Error redibujando visualización: {e}")
+    
+    def _actualizar_estado_efector(self, activo):
+        """Actualiza el estado del efector final."""
+        # Solo actualizar si el estado cambió
+        if hasattr(self, 'efector_activo') and self.efector_activo == activo:
+            return  # No hay cambio
+            
+        self.efector_activo = activo
+        
+        # Reproducir sonido
+        if activo:
+            self._reproducir_sonido("efector_on")
+        else:
+            self._reproducir_sonido("efector_off")
+        
+        # Actualizar visualización si está abierta
+        if (self.ventana_visualizacion and 
+            self.ventana_visualizacion.winfo_exists()):
+            self._redibujar_visualizacion()
 
 
 if __name__ == "__main__":
