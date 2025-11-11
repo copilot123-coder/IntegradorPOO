@@ -16,7 +16,8 @@ GestorCodigoG::GestorCodigoG(const std::string& puertoSerial)
       posicionOrigen_(0, 0, 0),
       velocidadActual_(1000.0),
       efectorActivo_(false),
-      robotConectado_(false) {
+      robotConectado_(false),
+      aprendiendoTrayectoria_(false) {
     
     // Inicializar comunicación serie
     if (!serial_->abrirPuerto()) {
@@ -140,9 +141,23 @@ double GestorCodigoG::calcularDistanciaRadial(double x, double y) const {
 }
 
 bool GestorCodigoG::validarComandoG(const std::string& comando) const {
-    // Validación básica de formato G-Code
+    // Extraer solo la parte del comando antes del comentario
+    std::string comandoLimpio = comando;
+    size_t pos = comandoLimpio.find(';');
+    if (pos != std::string::npos) {
+        comandoLimpio = comandoLimpio.substr(0, pos);
+    }
+    
+    // Remover espacios al final
+    comandoLimpio.erase(comandoLimpio.find_last_not_of(" \t\r\n") + 1);
+    
+    if (comandoLimpio.empty()) {
+        return false;
+    }
+    
+    // Validación básica de formato G-Code (más flexible)
     std::regex gcode_pattern(R"(^[GM]\d+(\s+[XYZFES][-+]?\d*\.?\d*)*\s*$)");
-    return std::regex_match(comando, gcode_pattern);
+    return std::regex_match(comandoLimpio, gcode_pattern);
 }
 
 ComandoG GestorCodigoG::parsearComandoG(const std::string& comando) const {
@@ -154,6 +169,13 @@ ComandoG GestorCodigoG::parsearComandoG(const std::string& comando) const {
         return cmd;
     }
     
+    // Extraer solo la parte del comando antes del comentario para el parseo
+    std::string comandoLimpio = comando;
+    size_t pos = comandoLimpio.find(';');
+    if (pos != std::string::npos) {
+        comandoLimpio = comandoLimpio.substr(0, pos);
+    }
+    
     // Extraer coordenadas usando regex
     std::regex x_pattern(R"(X\s*([-+]?\d*\.?\d+))");
     std::regex y_pattern(R"(Y\s*([-+]?\d*\.?\d+))");
@@ -162,28 +184,30 @@ ComandoG GestorCodigoG::parsearComandoG(const std::string& comando) const {
     
     std::smatch match;
     
-    if (std::regex_search(comando, match, x_pattern)) {
+    if (std::regex_search(comandoLimpio, match, x_pattern)) {
         cmd.posicion.x = std::stod(match[1]);
     }
-    if (std::regex_search(comando, match, y_pattern)) {
+    if (std::regex_search(comandoLimpio, match, y_pattern)) {
         cmd.posicion.y = std::stod(match[1]);
     }
-    if (std::regex_search(comando, match, z_pattern)) {
+    if (std::regex_search(comandoLimpio, match, z_pattern)) {
         cmd.posicion.z = std::stod(match[1]);
     }
-    if (std::regex_search(comando, match, f_pattern)) {
+    if (std::regex_search(comandoLimpio, match, f_pattern)) {
         cmd.velocidad = std::stod(match[1]);
     }
     
     // Determinar descripción del comando
-    if (comando.find("G28") != std::string::npos) {
+    if (comandoLimpio.find("G28") != std::string::npos) {
         cmd.descripcion = "Home - Ir a origen";
-    } else if (comando.find("G1") != std::string::npos || comando.find("G0") != std::string::npos) {
+    } else if (comandoLimpio.find("G1") != std::string::npos || comandoLimpio.find("G0") != std::string::npos) {
         cmd.descripcion = "Movimiento lineal";
-    } else if (comando.find("M3") != std::string::npos) {
+    } else if (comandoLimpio.find("M3") != std::string::npos) {
         cmd.descripcion = "Activar efector";
-    } else if (comando.find("M5") != std::string::npos) {
+    } else if (comandoLimpio.find("M5") != std::string::npos) {
         cmd.descripcion = "Desactivar efector";
+    } else if (comandoLimpio.find("G90") != std::string::npos) {
+        cmd.descripcion = "Modo absoluto";
     } else {
         cmd.descripcion = "Comando G-Code";
     }
@@ -300,7 +324,7 @@ bool GestorCodigoG::irAPosicionOrigen() {
     }
     
     std::cout << "Enviando robot a posición de origen..." << std::endl;
-    if (enviarComandoConEspera("G28", 4000)) { // 4 segundos para homing
+    if (enviarComandoConEspera("G28", 5000)) { // 5 segundos para homing
         posicionActual_ = posicionOrigen_;
         return true;
     }
@@ -329,6 +353,16 @@ bool GestorCodigoG::moverEfectorConVelocidad(double x, double y, double z, doubl
     if (enviarComandoConEspera(comando, 1000)) { // 1 segundo para movimientos
         posicionActual_ = nuevaPos;
         velocidadActual_ = velocidad;
+        
+        // Si estamos aprendiendo, capturar automáticamente el comando
+        if (aprendiendoTrayectoria_) {
+            ComandoG cmd = parsearComandoG(comando + " ; Movimiento aprendido");
+            if (cmd.valido) {
+                trayectoriaAprendida_.push_back(cmd);
+                std::cout << "Comando capturado: " << comando << std::endl;
+            }
+        }
+        
         return true;
     }
     
@@ -348,6 +382,16 @@ bool GestorCodigoG::activarEfectorFinal() {
     if (enviarComandoConEspera("M3", 1000)) { // 1 segundo para activar efector
         efectorActivo_ = true;
         std::cout << "Efector final activado" << std::endl;
+        
+        // Si estamos aprendiendo, capturar automáticamente el comando
+        if (aprendiendoTrayectoria_) {
+            ComandoG cmd = parsearComandoG("M3 ; Activar efector");
+            if (cmd.valido) {
+                trayectoriaAprendida_.push_back(cmd);
+                std::cout << "Comando capturado: M3" << std::endl;
+            }
+        }
+        
         return true;
     }
     
@@ -362,6 +406,16 @@ bool GestorCodigoG::desactivarEfectorFinal() {
     if (enviarComandoConEspera("M5", 1000)) { // 1 segundo para desactivar efector
         efectorActivo_ = false;
         std::cout << "Efector final desactivado" << std::endl;
+        
+        // Si estamos aprendiendo, capturar automáticamente el comando
+        if (aprendiendoTrayectoria_) {
+            ComandoG cmd = parsearComandoG("M5 ; Desactivar efector");
+            if (cmd.valido) {
+                trayectoriaAprendida_.push_back(cmd);
+                std::cout << "Comando capturado: M5" << std::endl;
+            }
+        }
+        
         return true;
     }
     
@@ -376,7 +430,9 @@ bool GestorCodigoG::iniciarAprendizajeTrayectoria(const std::string& nombreTraye
     
     trayectoriaAprendida_.clear();
     nombreTrayectoriaActual_ = nombreTrayectoria;
+    aprendiendoTrayectoria_ = true;
     std::cout << "Iniciando aprendizaje de trayectoria: " << nombreTrayectoria << std::endl;
+    std::cout << "Todos los comandos enviados serán capturados automáticamente" << std::endl;
     return true;
 }
 
@@ -425,7 +481,7 @@ bool GestorCodigoG::agregarComandoGTrayectoria(const std::string& comandoG) {
     return ejecutarComandoGDirecto(comandoG);
 }
 
-bool GestorCodigoG::finalizarAprendizajeTrayectoria() {
+bool GestorCodigoG::finalizarAprendizajeTrayectoria(const std::string& usuario) {
     if (nombreTrayectoriaActual_.empty()) {
         std::cerr << "Error: No hay trayectoria en progreso" << std::endl;
         return false;
@@ -436,10 +492,17 @@ bool GestorCodigoG::finalizarAprendizajeTrayectoria() {
         return false;
     }
     
-    if (guardarTrayectoria(nombreTrayectoriaActual_)) {
-        std::cout << "Trayectoria '" << nombreTrayectoriaActual_ 
+    // Agregar sufijo del usuario al nombre del archivo
+    std::string nombreCompleto = nombreTrayectoriaActual_;
+    if (!usuario.empty()) {
+        nombreCompleto += "_" + usuario;
+    }
+    
+    if (guardarTrayectoria(nombreCompleto)) {
+        std::cout << "Trayectoria '" << nombreCompleto 
                   << "' guardada con " << trayectoriaAprendida_.size() << " pasos" << std::endl;
         nombreTrayectoriaActual_.clear();
+        aprendiendoTrayectoria_ = false;
         return true;
     }
     
@@ -449,6 +512,7 @@ bool GestorCodigoG::finalizarAprendizajeTrayectoria() {
 bool GestorCodigoG::cancelarAprendizajeTrayectoria() {
     trayectoriaAprendida_.clear();
     nombreTrayectoriaActual_.clear();
+    aprendiendoTrayectoria_ = false;
     std::cout << "Aprendizaje de trayectoria cancelado" << std::endl;
     return true;
 }
@@ -590,4 +654,67 @@ void GestorCodigoG::limpiarTrayectoriaActual() {
     trayectoriaAprendida_.clear();
     nombreTrayectoriaActual_.clear();
     std::cout << "Trayectoria actual limpiada" << std::endl;
+}
+
+bool GestorCodigoG::ejecutarTrayectoriaCargada() {
+    if (modoTrabajo_ != ModoTrabajo::AUTOMATICO) {
+        std::cerr << "Error: Debe estar en modo automático para ejecutar trayectorias" << std::endl;
+        return false;
+    }
+    
+    if (!robotConectado_) {
+        std::cerr << "Error: Robot no conectado" << std::endl;
+        return false;
+    }
+    
+    if (trayectoriaAprendida_.empty()) {
+        std::cerr << "Error: No hay trayectoria cargada para ejecutar" << std::endl;
+        return false;
+    }
+    
+    std::cout << "Iniciando ejecución de trayectoria (" << trayectoriaAprendida_.size() << " comandos)..." << std::endl;
+    
+    for (size_t i = 0; i < trayectoriaAprendida_.size(); ++i) {
+        const ComandoG& cmd = trayectoriaAprendida_[i];
+        
+        std::cout << "Ejecutando comando " << (i + 1) << "/" << trayectoriaAprendida_.size() 
+                  << ": " << cmd.comando << std::endl;
+        
+        // Validar comando antes de enviarlo
+        if (!cmd.valido) {
+            std::cerr << "Advertencia: Comando inválido omitido: " << cmd.comando << std::endl;
+            continue;
+        }
+        
+        // Validar posición si es un comando de movimiento
+        if (cmd.comando.find("G1") != std::string::npos || cmd.comando.find("G0") != std::string::npos) {
+            if (!validarPosicion(cmd.posicion)) {
+                std::cerr << "Error: Posición inválida en comando: " << cmd.comando << std::endl;
+                return false;
+            }
+        }
+        
+        // Determinar tiempo de espera según el tipo de comando
+        int tiempoEspera = 2000; // 2 segundos por defecto
+        if (cmd.comando.find("G28") != std::string::npos) {
+            tiempoEspera = 5000; // 5 segundos para homing
+        }
+        
+        // Enviar comando y esperar confirmación
+        if (!enviarComandoConEspera(cmd.comando, tiempoEspera)) {
+            std::cerr << "Error ejecutando comando: " << cmd.comando << std::endl;
+            return false;
+        }
+        
+        // Actualizar posición actual si es comando de movimiento
+        if (cmd.comando.find("G1") != std::string::npos || cmd.comando.find("G0") != std::string::npos) {
+            posicionActual_ = cmd.posicion;
+        }
+        
+        // Pequeña pausa entre comandos para estabilidad
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    }
+    
+    std::cout << "✓ Trayectoria ejecutada exitosamente" << std::endl;
+    return true;
 }

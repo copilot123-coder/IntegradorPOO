@@ -4,6 +4,7 @@
 #include <chrono>
 #include <iomanip>
 #include <sstream>
+#include <dirent.h>
 
 using namespace Rpc;
 using namespace XmlRpc;
@@ -62,6 +63,7 @@ void ServidorRpc::iniciarServidor() {
         new MetodoSubirGCode(servidor, this);
         new MetodoEjecutarArchivo(servidor, this);
         new MetodoReporteLogCsv(servidor, this);
+        new MetodoListarArchivos(servidor, this);
         
         XmlRpc::setVerbosity(1);
         
@@ -481,7 +483,8 @@ void MetodoListarComandos::execute(XmlRpcValue& params, XmlRpcValue& result) {
         comandos["ConfigurarAccesoRemoto"] = "Acceso remoto: [sessionId, habilitar]";
         comandos["ControlMotores"] = "Control motores: [sessionId, accion]";
         comandos["ReporteAdmin"] = "Reporte admin: [sessionId, filtro1, filtro2]";
-        comandos["ReporteLogCsv"] = "Log CSV filtrado: [sessionId, desde, hasta, filtroUsuario, filtroCodigo, filtroTexto1, filtroTexto2]";
+        comandos["ReporteLogCsv"] = "Log CSV filtrado: [sessionId, desde, hasta, filtroUsuario, filtroCodigo]";
+        comandos["ListarArchivos"] = "Listar archivos G-Code: [sessionId]";
     }
     
     result["exito"] = true;
@@ -765,7 +768,7 @@ void MetodoAprenderTrayectoria::execute(XmlRpcValue& params, XmlRpcValue& result
         exito = servidor->gestorRobot->agregarPasoTrayectoria(x, y, z, vel);
         result["mensaje"] = exito ? "Paso agregado" : "Error agregando paso";
     } else if (accion == "finalizar") {
-        exito = servidor->gestorRobot->finalizarAprendizajeTrayectoria();
+        exito = servidor->gestorRobot->finalizarAprendizajeTrayectoria(it->second.usuario);
         result["mensaje"] = exito ? "Trayectoria guardada" : "Error guardando trayectoria";
     } else {
         result["mensaje"] = "Acción inválida: usar 'iniciar', 'agregar' o 'finalizar'";
@@ -853,10 +856,31 @@ void MetodoEjecutarArchivo::execute(XmlRpcValue& params, XmlRpcValue& result) {
         }
     }
     
-    bool exito = servidor->gestorRobot->cargarArchivoGCode(nombreArchivo);
+    // Primero verificar que el robot esté en modo automático
+    if (servidor->gestorRobot->obtenerModoTrabajo() != ModoTrabajo::AUTOMATICO) {
+        result["exito"] = false;
+        result["mensaje"] = "Error: El robot debe estar en modo automático para ejecutar archivos";
+        return;
+    }
+    
+    // Cargar y ejecutar archivo
+    bool cargaExitosa = servidor->gestorRobot->cargarArchivoGCode(nombreArchivo);
+    bool ejecucionExitosa = false;
+    
+    if (cargaExitosa) {
+        ejecucionExitosa = servidor->gestorRobot->ejecutarTrayectoriaCargada();
+    }
+    
+    bool exito = cargaExitosa && ejecucionExitosa;
     
     result["exito"] = exito;
-    result["mensaje"] = exito ? "Archivo ejecutado correctamente" : "Error ejecutando archivo";
+    if (exito) {
+        result["mensaje"] = "Archivo cargado y ejecutado correctamente";
+    } else if (!cargaExitosa) {
+        result["mensaje"] = "Error cargando archivo: " + nombreArchivo;
+    } else {
+        result["mensaje"] = "Error ejecutando archivo: " + nombreArchivo;
+    }
     
     if (exito) {
         it->second.comandosEjecutados++;
@@ -907,22 +931,6 @@ void MetodoReporteLogCsv::execute(XmlRpcValue& params, XmlRpcValue& result) {
             result["filtros"]["hasta"] = hasta;
             result["filtros"]["usuario"] = filtroUsuario;
             result["filtros"]["codigo"] = filtroCodigo;
-            
-            // También proporcionar filtrado por texto libre
-            if (params.size() > 5) {
-                std::string filtro1 = std::string(params[5]);
-                std::string filtro2 = (params.size() > 6) ? std::string(params[6]) : "";
-                
-                std::vector<std::string> lineasFiltradas = servidor->gestorReportes->filtrarLog(filtro1, filtro2);
-                
-                XmlRpcValue lineas;
-                for (size_t i = 0; i < lineasFiltradas.size(); ++i) {
-                    lineas[static_cast<int>(i)] = lineasFiltradas[i];
-                }
-                result["lineasFiltradas"] = lineas;
-                result["filtros"]["texto1"] = filtro1;
-                result["filtros"]["texto2"] = filtro2;
-            }
         } else {
             result["exito"] = false;
             result["mensaje"] = "Gestor de reportes no disponible";
@@ -934,5 +942,73 @@ void MetodoReporteLogCsv::execute(XmlRpcValue& params, XmlRpcValue& result) {
 }
 
 std::string MetodoReporteLogCsv::help() {
-    return "Obtener log CSV filtrado (solo admin). Parámetros: [sessionId, desde, hasta, filtroUsuario, filtroCodigo, filtroTexto1, filtroTexto2]";
+    return "Obtener log CSV filtrado (solo admin). Parámetros: [sessionId, desde, hasta, filtroUsuario, filtroCodigo]";
+}
+
+// Implementación de MetodoListarArchivos
+void MetodoListarArchivos::execute(XmlRpcValue& params, XmlRpcValue& result) {
+    if (params.size() < 1) {
+        result["exito"] = false;
+        result["mensaje"] = "Parámetros insuficientes: [sessionId]";
+        return;
+    }
+    
+    std::string sessionId = params[0];
+    auto it = servidor->sesionesActivas.find(sessionId);
+    if (it == servidor->sesionesActivas.end()) {
+        result["exito"] = false;
+        result["mensaje"] = "Sesión inválida";
+        return;
+    }
+    
+    const SesionUsuario& sesion = it->second;
+    bool esAdmin = servidor->esAdministrador(sessionId);
+    
+    try {
+        std::vector<std::string> archivos;
+        
+        // Buscar archivos .gcode en el directorio actual
+        DIR* dir = opendir(".");
+        if (dir) {
+            struct dirent* entry;
+            while ((entry = readdir(dir)) != nullptr) {
+                std::string nombre = entry->d_name;
+                
+                // Solo archivos .gcode
+                if (nombre.length() > 6 && nombre.substr(nombre.length() - 6) == ".gcode") {
+                    // Si es admin, puede ver todos los archivos
+                    if (esAdmin) {
+                        archivos.push_back(nombre);
+                    } else {
+                        // Usuario normal solo ve sus propios archivos
+                        std::string sufijo = "_" + sesion.usuario + ".gcode";
+                        if (nombre.length() >= sufijo.length() && 
+                            nombre.substr(nombre.length() - sufijo.length()) == sufijo) {
+                            archivos.push_back(nombre);
+                        }
+                    }
+                }
+            }
+            closedir(dir);
+        }
+        
+        // Convertir a XmlRpcValue
+        XmlRpcValue listaArchivos;
+        for (size_t i = 0; i < archivos.size(); ++i) {
+            listaArchivos[static_cast<int>(i)] = archivos[i];
+        }
+        
+        result["exito"] = true;
+        result["archivos"] = listaArchivos;
+        result["totalArchivos"] = static_cast<int>(archivos.size());
+        result["esAdmin"] = esAdmin;
+        
+    } catch (const std::exception& e) {
+        result["exito"] = false;
+        result["mensaje"] = std::string("Error listando archivos: ") + e.what();
+    }
+}
+
+std::string MetodoListarArchivos::help() {
+    return "Listar archivos G-Code disponibles. Parámetros: [sessionId]";
 }

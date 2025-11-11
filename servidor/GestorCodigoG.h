@@ -62,6 +62,7 @@ private:
     
     std::vector<ComandoG> trayectoriaAprendida_;
     std::string nombreTrayectoriaActual_;
+    bool aprendiendoTrayectoria_;
     
     // Métodos de validación
     bool validarPosicion(const Posicion& pos) const;
@@ -108,12 +109,13 @@ public:
     bool iniciarAprendizajeTrayectoria(const std::string& nombreTrayectoria);
     bool agregarPasoTrayectoria(double x, double y, double z, double velocidad = 0);
     bool agregarComandoGTrayectoria(const std::string& comandoG);
-    bool finalizarAprendizajeTrayectoria();
+    bool finalizarAprendizajeTrayectoria(const std::string& usuario = "");
     bool cancelarAprendizajeTrayectoria();
     
     // Modo Automático - Ejecución de secuencias
     bool cargarSecuenciaTrabajo(const std::string& nombreArchivo, const std::string& usuario = "");
     bool ejecutarSecuenciaCompleta();
+    bool ejecutarTrayectoriaCargada(); // Nuevo método para ejecutar línea por línea
     bool ejecutarPasoAPaso();
     bool pausarEjecucion();
     bool reanudarEjecucion();

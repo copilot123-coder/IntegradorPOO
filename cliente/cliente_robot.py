@@ -130,6 +130,72 @@ def _manejar_ejecutar_archivo(cliente):
         return
     cliente.ejecutar_archivo(nombre_servidor)
 
+def _manejar_aprender_trayectoria(cliente):
+    """Opción 9: Aprender trayectoria paso a paso"""
+    print("\n--- Aprendizaje de Trayectoria (Modo Manual) ---")
+    
+    nombre_trayectoria = input("Nombre de la trayectoria: ")
+    if not nombre_trayectoria:
+        print("✗ Error: Debe proporcionar un nombre.")
+        return
+    
+    if not cliente.iniciar_aprendizaje_trayectoria(nombre_trayectoria):
+        return
+    
+    print("\n=== APRENDIZAJE INICIADO ===")
+    print("Comandos disponibles:")
+    print("  'paso' - Agregar paso con coordenadas actuales")
+    print("  'mover X Y Z V' - Mover y agregar paso (ej: mover 100 200 150 1000)")
+    print("  'finalizar' - Terminar y guardar trayectoria")
+    print("  'cancelar' - Cancelar aprendizaje")
+    
+    while True:
+        comando = input("\nComando > ").strip().lower()
+        
+        if comando == 'finalizar':
+            if cliente.finalizar_aprendizaje_trayectoria():
+                print("✓ Trayectoria guardada exitosamente.")
+                break
+            else:
+                print("✗ Error guardando trayectoria.")
+                
+        elif comando == 'cancelar':
+            if cliente.cancelar_aprendizaje_trayectoria():
+                print("✓ Aprendizaje cancelado.")
+                break
+                
+        elif comando.startswith('mover '):
+            try:
+                partes = comando.split()
+                if len(partes) >= 4:
+                    x = float(partes[1])
+                    y = float(partes[2])
+                    z = float(partes[3])
+                    v = float(partes[4]) if len(partes) > 4 else 1000.0
+                    
+                    if cliente.agregar_paso_trayectoria(x, y, z, v):
+                        print(f"✓ Paso agregado: X={x}, Y={y}, Z={z}, V={v}")
+                    else:
+                        print("✗ Error agregando paso.")
+                else:
+                    print("Uso: mover X Y Z [velocidad]")
+            except ValueError:
+                print("✗ Error: Coordenadas deben ser números.")
+                
+        elif comando == 'paso':
+            x = _get_input_tipo("Coordenada X: ", float)
+            y = _get_input_tipo("Coordenada Y: ", float)
+            z = _get_input_tipo("Coordenada Z: ", float)
+            v = _get_input_tipo("Velocidad (opcional, Enter para default): ", float)
+            
+            if cliente.agregar_paso_trayectoria(x, y, z, v if v else 1000):
+                print(f"✓ Paso agregado: X={x}, Y={y}, Z={z}, V={v if v else 1000}")
+            else:
+                print("✗ Error agregando paso.")
+                
+        else:
+            print("Comando no reconocido. Use: 'paso', 'mover X Y Z V', 'finalizar', 'cancelar'")
+
 # --- Funciones de Administrador ---
 
 def _manejar_conectar_robot(cliente):
@@ -203,6 +269,7 @@ def mostrar_menu_principal(tipo_usuario):
     print(" 6. Activar/Desactivar efector (Gripper)")
     print(" 7. Subir archivo G-Code local")
     print(" 8. Ejecutar archivo G-Code en servidor")
+    print(" 9. Aprender trayectoria paso a paso")
     
     if tipo_usuario == 'admin':
         print("\n--- ZONA ADMINISTRADOR ---")
@@ -255,6 +322,9 @@ def main():
             
             elif opcion == '8':
                 _manejar_ejecutar_archivo(cliente)
+            
+            elif opcion == '9':
+                _manejar_aprender_trayectoria(cliente)
                 
             # Opciones de Administrador
             elif opcion == 'A1' and cliente.tipo_usuario == 'admin':

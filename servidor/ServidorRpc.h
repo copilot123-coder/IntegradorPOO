@@ -240,6 +240,21 @@ namespace Rpc {
         void execute(XmlRpc::XmlRpcValue& params, XmlRpc::XmlRpcValue& result);
         std::string help();
     };
+
+    /**
+     * @class MetodoListarArchivos
+     * @brief Método RPC para listar archivos G-Code disponibles.
+     */
+    class MetodoListarArchivos : public XmlRpc::XmlRpcServerMethod {
+    private:
+        ServidorRpc* servidor;
+    public:
+        MetodoListarArchivos(XmlRpc::XmlRpcServer* s, ServidorRpc* srv)
+            : XmlRpc::XmlRpcServerMethod("ListarArchivos", s), servidor(srv) {}
+
+        void execute(XmlRpc::XmlRpcValue& params, XmlRpc::XmlRpcValue& result);
+        std::string help();
+    };
     // --- FIN DE LA NUEVA CLASE ---
 
 } // namespace Rpc

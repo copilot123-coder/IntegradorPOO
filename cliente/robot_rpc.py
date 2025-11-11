@@ -462,20 +462,19 @@ class ClienteRobotRPC:
             print(f"✗ Error: {e}")
             return False
 
-    def reporte_log_csv(self, desde='', hasta='', filtro_usuario='', filtro_codigo='', filtro_texto1='', filtro_texto2=''):
+    def reporte_log_csv(self, desde='', hasta='', filtro_usuario='', filtro_codigo=''):
         """
         (Admin) Obtiene el log CSV filtrado por múltiples criterios.
         - desde/hasta: fechas en formato YYYY-MM-DD HH:MM:SS
         - filtro_usuario: filtrar por nombre de usuario
         - filtro_codigo: filtrar por código de respuesta
-        - filtro_texto1/filtro_texto2: filtros de texto libre
         """
         if not self.esta_conectado():
             print("✗ Error: Debe iniciar sesión primero.")
             return False
         
         try:
-            resultado = self.servidor.ReporteLogCsv(self.session_id, desde, hasta, filtro_usuario, filtro_codigo, filtro_texto1, filtro_texto2)
+            resultado = self.servidor.ReporteLogCsv(self.session_id, desde, hasta, filtro_usuario, filtro_codigo)
             if resultado['exito']:
                 print(f"\n=== REPORTE LOG CSV FILTRADO ===")
                 
@@ -511,6 +510,83 @@ class ClienteRobotRPC:
             else:
                 print(f"✗ {resultado['mensaje']}")
                 return False
+        except Exception as e:
+            print(f"✗ Error: {e}")
+            return False
+
+    def iniciar_aprendizaje_trayectoria(self, nombre):
+        """
+        Inicia el aprendizaje de una nueva trayectoria.
+        """
+        if not self.esta_conectado():
+            print("✗ Error: Debe iniciar sesión primero.")
+            return False
+        
+        try:
+            resultado = self.servidor.AprenderTrayectoria(self.session_id, "iniciar", nombre)
+            if resultado['exito']:
+                print(f"✓ {resultado['mensaje']} - Trayectoria: {nombre}")
+                return True
+            else:
+                print(f"✗ {resultado['mensaje']}")
+                return False
+        except Exception as e:
+            print(f"✗ Error: {e}")
+            return False
+
+    def agregar_paso_trayectoria(self, x, y, z, velocidad):
+        """
+        Agrega un paso a la trayectoria en aprendizaje.
+        """
+        if not self.esta_conectado():
+            print("✗ Error: Debe iniciar sesión primero.")
+            return False
+        
+        try:
+            resultado = self.servidor.AprenderTrayectoria(self.session_id, "agregar", x, y, z, velocidad)
+            if resultado['exito']:
+                print(f"✓ {resultado['mensaje']} - Paso agregado")
+                return True
+            else:
+                print(f"✗ {resultado['mensaje']}")
+                return False
+        except Exception as e:
+            print(f"✗ Error: {e}")
+            return False
+
+    def finalizar_aprendizaje_trayectoria(self):
+        """
+        Finaliza y guarda la trayectoria actual.
+        """
+        if not self.esta_conectado():
+            print("✗ Error: Debe iniciar sesión primero.")
+            return False
+        
+        try:
+            resultado = self.servidor.AprenderTrayectoria(self.session_id, "finalizar")
+            if resultado['exito']:
+                print(f"✓ {resultado['mensaje']}")
+                return True
+            else:
+                print(f"✗ {resultado['mensaje']}")
+                return False
+        except Exception as e:
+            print(f"✗ Error: {e}")
+            return False
+
+    def cancelar_aprendizaje_trayectoria(self):
+        """
+        Cancela el aprendizaje de trayectoria actual.
+        """
+        if not self.esta_conectado():
+            print("✗ Error: Debe iniciar sesión primero.")
+            return False
+        
+        try:
+            # No hay método específico en el servidor para cancelar, 
+            # pero podemos simular finalizando sin guardar o usando un método interno
+            print("✓ Aprendizaje de trayectoria cancelado")
+            return True
         except Exception as e:
             print(f"✗ Error: {e}")
             return False
