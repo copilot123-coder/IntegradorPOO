@@ -61,6 +61,7 @@ void ServidorRpc::iniciarServidor() {
         new MetodoAprenderTrayectoria(servidor, this);
         new MetodoSubirGCode(servidor, this);
         new MetodoEjecutarArchivo(servidor, this);
+        new MetodoReporteLogCsv(servidor, this);
         
         XmlRpc::setVerbosity(1);
         
@@ -236,6 +237,22 @@ void MetodoConectarRobot::execute(XmlRpcValue& params, XmlRpcValue& result) {
     }
     
     result["exito"] = exito;
+    
+    // Actualizar estado de conexión en el gestor de reportes
+    try {
+        if (servidor->gestorReportes) {
+            if (accion == "conectar" && exito) {
+                servidor->gestorReportes->actualizarEstadoConexion("robot_conectado");
+                servidor->gestorReportes->actualizarEstadoActividad("listo");
+            } else if (accion == "desconectar" && exito) {
+                servidor->gestorReportes->actualizarEstadoConexion("robot_desconectado");
+                servidor->gestorReportes->actualizarEstadoActividad("inactivo");
+            }
+        }
+    } catch (const std::exception &e) {
+        std::cerr << "Error actualizando estado conexión: " << e.what() << std::endl;
+    }
+    
     servidor->registrarEvento("Robot " + accion, servidor->sesionesActivas[sessionId].usuario, servidor->sesionesActivas[sessionId].nodoOrigen);
     // Registrar petición en gestor de reportes
     try {
@@ -282,6 +299,15 @@ void MetodoMoverRobot::execute(XmlRpcValue& params, XmlRpcValue& result) {
     
     if (exito) {
         it->second.comandosEjecutados++;
+        // Actualizar posición en el gestor de reportes
+        try {
+            if (servidor->gestorReportes) {
+                servidor->gestorReportes->actualizarPosicion("X:" + std::to_string(x) + " Y:" + std::to_string(y) + " Z:" + std::to_string(z));
+                servidor->gestorReportes->actualizarEstadoActividad("moviendo");
+            }
+        } catch (const std::exception &e) {
+            std::cerr << "Error actualizando posición: " << e.what() << std::endl;
+        }
     } else {
         it->second.comandosErroneos++;
     }
@@ -455,6 +481,7 @@ void MetodoListarComandos::execute(XmlRpcValue& params, XmlRpcValue& result) {
         comandos["ConfigurarAccesoRemoto"] = "Acceso remoto: [sessionId, habilitar]";
         comandos["ControlMotores"] = "Control motores: [sessionId, accion]";
         comandos["ReporteAdmin"] = "Reporte admin: [sessionId, filtro1, filtro2]";
+        comandos["ReporteLogCsv"] = "Log CSV filtrado: [sessionId, desde, hasta, filtroUsuario, filtroCodigo, filtroTexto1, filtroTexto2]";
     }
     
     result["exito"] = true;
@@ -629,6 +656,15 @@ void MetodoIrAOrigen::execute(XmlRpcValue& params, XmlRpcValue& result) {
     
     if (exito) {
         it->second.comandosEjecutados++;
+        // Actualizar posición en el gestor de reportes
+        try {
+            if (servidor->gestorReportes) {
+                servidor->gestorReportes->actualizarPosicion("X:0.0 Y:0.0 Z:0.0 (origen)");
+                servidor->gestorReportes->actualizarEstadoActividad("en_origen");
+            }
+        } catch (const std::exception &e) {
+            std::cerr << "Error actualizando posición origen: " << e.what() << std::endl;
+        }
     } else {
         it->second.comandosErroneos++;
     }
@@ -838,4 +874,65 @@ void MetodoEjecutarArchivo::execute(XmlRpcValue& params, XmlRpcValue& result) {
 
 std::string MetodoEjecutarArchivo::help() {
     return "Ejecutar archivo G-Code en modo automático. Parámetros: [sessionId, nombreArchivo]";
+}
+
+// Implementación de MetodoReporteLogCsv
+void MetodoReporteLogCsv::execute(XmlRpcValue& params, XmlRpcValue& result) {
+    if (params.size() < 1) {
+        result["exito"] = false;
+        result["mensaje"] = "Parámetros insuficientes: [sessionId, desde, hasta, filtroUsuario, filtroCodigo]";
+        return;
+    }
+    
+    std::string sessionId = params[0];
+    if (!servidor->esAdministrador(sessionId)) {
+        result["exito"] = false;
+        result["mensaje"] = "Acceso denegado: Solo administradores";
+        return;
+    }
+    
+    // Parámetros opcionales
+    std::string desde = (params.size() > 1) ? std::string(params[1]) : "1900-01-01 00:00:00";
+    std::string hasta = (params.size() > 2) ? std::string(params[2]) : "2099-12-31 23:59:59";
+    std::string filtroUsuario = (params.size() > 3) ? std::string(params[3]) : "";
+    std::string filtroCodigo = (params.size() > 4) ? std::string(params[4]) : "";
+    
+    try {
+        if (servidor->gestorReportes) {
+            std::string logFiltrado = servidor->gestorReportes->reporteLog(desde, hasta, filtroUsuario, filtroCodigo);
+            
+            result["exito"] = true;
+            result["logCsv"] = logFiltrado;
+            result["filtros"]["desde"] = desde;
+            result["filtros"]["hasta"] = hasta;
+            result["filtros"]["usuario"] = filtroUsuario;
+            result["filtros"]["codigo"] = filtroCodigo;
+            
+            // También proporcionar filtrado por texto libre
+            if (params.size() > 5) {
+                std::string filtro1 = std::string(params[5]);
+                std::string filtro2 = (params.size() > 6) ? std::string(params[6]) : "";
+                
+                std::vector<std::string> lineasFiltradas = servidor->gestorReportes->filtrarLog(filtro1, filtro2);
+                
+                XmlRpcValue lineas;
+                for (size_t i = 0; i < lineasFiltradas.size(); ++i) {
+                    lineas[static_cast<int>(i)] = lineasFiltradas[i];
+                }
+                result["lineasFiltradas"] = lineas;
+                result["filtros"]["texto1"] = filtro1;
+                result["filtros"]["texto2"] = filtro2;
+            }
+        } else {
+            result["exito"] = false;
+            result["mensaje"] = "Gestor de reportes no disponible";
+        }
+    } catch (const std::exception& e) {
+        result["exito"] = false;
+        result["mensaje"] = std::string("Error obteniendo log: ") + e.what();
+    }
+}
+
+std::string MetodoReporteLogCsv::help() {
+    return "Obtener log CSV filtrado (solo admin). Parámetros: [sessionId, desde, hasta, filtroUsuario, filtroCodigo, filtroTexto1, filtroTexto2]";
 }

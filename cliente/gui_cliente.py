@@ -5,7 +5,7 @@ Cliente GUI (Tkinter) para el control del Robot RRR.
 
 import tkinter as tk
 from tkinter import ttk  # Usamos los widgets "tematizados" (se ven mejor)
-from tkinter import messagebox, filedialog, scrolledtext
+from tkinter import messagebox, filedialog, scrolledtext, simpledialog
 import sys
 import os
 
@@ -332,7 +332,7 @@ class App(tk.Tk):
         sys.stdout = old_stdout
 
     def _ver_reporte_admin(self):
-        """Muestra el reporte admin en una ventana nueva."""
+        """Muestra ventana de selección de reporte administrativo."""
         if not self.cliente.esta_conectado():
             self.status_var.set("✗ Error: No ha iniciado sesión.")
             return
@@ -340,11 +340,129 @@ class App(tk.Tk):
             messagebox.showerror("Acceso Denegado", "Solo los administradores pueden ver este reporte.")
             return
 
-        win_reporte = tk.Toplevel(self)
-        win_reporte.title("Reporte Administrativo")
-        win_reporte.geometry("450x300")
+        # Ventana de selección de tipo de reporte
+        win_seleccion = tk.Toplevel(self)
+        win_seleccion.title("Seleccionar Tipo de Reporte")
+        win_seleccion.geometry("400x300")
+        win_seleccion.resizable(False, False)
         
-        txt_reporte = scrolledtext.ScrolledText(win_reporte, wrap=tk.WORD, width=60, height=15)
+        ttk.Label(win_seleccion, text="Reportes Administrativos", 
+                  font=("Arial", 14, "bold")).pack(pady=10)
+        
+        # Botones para diferentes tipos de reporte
+        ttk.Button(win_seleccion, text="Reporte General de Sesiones", 
+                   command=lambda: self._ejecutar_reporte_admin(win_seleccion, 'general')).pack(pady=5, padx=20, fill=tk.X)
+        
+        ttk.Button(win_seleccion, text="Reporte Filtrado por Usuario", 
+                   command=lambda: self._ejecutar_reporte_admin(win_seleccion, 'usuario')).pack(pady=5, padx=20, fill=tk.X)
+        
+        ttk.Button(win_seleccion, text="Reporte Filtrado por Código", 
+                   command=lambda: self._ejecutar_reporte_admin(win_seleccion, 'codigo')).pack(pady=5, padx=20, fill=tk.X)
+        
+        ttk.Button(win_seleccion, text="Log CSV con Filtros Avanzados", 
+                   command=lambda: self._ejecutar_reporte_admin(win_seleccion, 'csv_avanzado')).pack(pady=5, padx=20, fill=tk.X)
+        
+        ttk.Button(win_seleccion, text="Cerrar", 
+                   command=win_seleccion.destroy).pack(pady=20)
+
+    def _ejecutar_reporte_admin(self, ventana_padre, tipo_reporte):
+        """Ejecuta el reporte administrativo seleccionado."""
+        ventana_padre.destroy()
+        
+        filtros = {}
+        
+        if tipo_reporte == 'usuario':
+            # Solicitar usuario
+            usuario = tk.simpledialog.askstring("Filtro por Usuario", "Ingrese nombre de usuario:")
+            if not usuario:
+                return
+            filtros['filtro1'] = usuario
+            filtros['filtro2'] = ''
+            
+        elif tipo_reporte == 'codigo':
+            # Solicitar código
+            codigo = tk.simpledialog.askstring("Filtro por Código", "Ingrese código de respuesta (ej: 200, ERROR):")
+            if not codigo:
+                return
+            filtros['filtro1'] = ''
+            filtros['filtro2'] = codigo
+            
+        elif tipo_reporte == 'csv_avanzado':
+            # Mostrar ventana de filtros avanzados
+            self._mostrar_filtros_csv_avanzados()
+            return
+        else:
+            # Reporte general
+            filtros['filtro1'] = ''
+            filtros['filtro2'] = ''
+        
+        # Mostrar ventana de reporte
+        self._mostrar_ventana_reporte(tipo_reporte, filtros)
+    
+    def _mostrar_filtros_csv_avanzados(self):
+        """Muestra ventana para configurar filtros CSV avanzados."""
+        win_filtros = tk.Toplevel(self)
+        win_filtros.title("Filtros CSV Avanzados")
+        win_filtros.geometry("450x400")
+        
+        ttk.Label(win_filtros, text="Configurar Filtros", 
+                  font=("Arial", 12, "bold")).pack(pady=10)
+        
+        # Frame para los campos de entrada
+        frame_campos = ttk.Frame(win_filtros)
+        frame_campos.pack(padx=20, pady=10, fill=tk.X)
+        
+        # Campos de entrada
+        ttk.Label(frame_campos, text="Fecha desde (YYYY-MM-DD HH:MM:SS):").pack(anchor=tk.W)
+        entry_desde = ttk.Entry(frame_campos, width=40)
+        entry_desde.pack(pady=(0,10), fill=tk.X)
+        
+        ttk.Label(frame_campos, text="Fecha hasta (YYYY-MM-DD HH:MM:SS):").pack(anchor=tk.W)
+        entry_hasta = ttk.Entry(frame_campos, width=40)
+        entry_hasta.pack(pady=(0,10), fill=tk.X)
+        
+        ttk.Label(frame_campos, text="Usuario:").pack(anchor=tk.W)
+        entry_usuario = ttk.Entry(frame_campos, width=40)
+        entry_usuario.pack(pady=(0,10), fill=tk.X)
+        
+        ttk.Label(frame_campos, text="Código de respuesta:").pack(anchor=tk.W)
+        entry_codigo = ttk.Entry(frame_campos, width=40)
+        entry_codigo.pack(pady=(0,10), fill=tk.X)
+        
+        ttk.Label(frame_campos, text="Filtro de texto 1:").pack(anchor=tk.W)
+        entry_texto1 = ttk.Entry(frame_campos, width=40)
+        entry_texto1.pack(pady=(0,10), fill=tk.X)
+        
+        ttk.Label(frame_campos, text="Filtro de texto 2:").pack(anchor=tk.W)
+        entry_texto2 = ttk.Entry(frame_campos, width=40)
+        entry_texto2.pack(pady=(0,10), fill=tk.X)
+        
+        # Botones
+        frame_botones = ttk.Frame(win_filtros)
+        frame_botones.pack(pady=20)
+        
+        def aplicar_filtros():
+            filtros_csv = {
+                'desde': entry_desde.get(),
+                'hasta': entry_hasta.get(),
+                'filtro_usuario': entry_usuario.get(),
+                'filtro_codigo': entry_codigo.get(),
+                'filtro_texto1': entry_texto1.get(),
+                'filtro_texto2': entry_texto2.get()
+            }
+            win_filtros.destroy()
+            self._mostrar_ventana_reporte_csv(filtros_csv)
+        
+        ttk.Button(frame_botones, text="Aplicar Filtros", command=aplicar_filtros).pack(side=tk.LEFT, padx=5)
+        ttk.Button(frame_botones, text="Cancelar", command=win_filtros.destroy).pack(side=tk.LEFT, padx=5)
+
+    def _mostrar_ventana_reporte(self, tipo_reporte, filtros):
+        """Muestra la ventana con el reporte generado."""
+        win_reporte = tk.Toplevel(self)
+        win_reporte.title(f"Reporte Administrativo - {tipo_reporte}")
+        win_reporte.geometry("600x400")
+        
+        txt_reporte = scrolledtext.ScrolledText(win_reporte, wrap=tk.WORD, width=70, height=20)
         txt_reporte.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
         txt_reporte.config(state=tk.DISABLED)
 
@@ -355,13 +473,48 @@ class App(tk.Tk):
                 self.texto_widget.config(state=tk.NORMAL)
                 self.texto_widget.insert(tk.END, message)
                 self.texto_widget.config(state=tk.DISABLED)
+                self.texto_widget.see(tk.END)
             def flush(self):
                 pass
         
         old_stdout = sys.stdout
         sys.stdout = ConsolaReporte(txt_reporte)
         
-        self.cliente.reporte_admin()
+        # Ejecutar el reporte correspondiente
+        self.cliente.reporte_admin(filtros.get('filtro1', ''), filtros.get('filtro2', ''))
+        
+        sys.stdout = old_stdout
+
+    def _mostrar_ventana_reporte_csv(self, filtros_csv):
+        """Muestra la ventana con el reporte CSV filtrado."""
+        win_reporte = tk.Toplevel(self)
+        win_reporte.title("Reporte CSV con Filtros Avanzados")
+        win_reporte.geometry("700x500")
+        
+        txt_reporte = scrolledtext.ScrolledText(win_reporte, wrap=tk.WORD, width=80, height=25)
+        txt_reporte.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
+        txt_reporte.config(state=tk.DISABLED)
+
+        class ConsolaReporte:
+            def __init__(self, texto_widget):
+                self.texto_widget = texto_widget
+            def write(self, message):
+                self.texto_widget.config(state=tk.NORMAL)
+                self.texto_widget.insert(tk.END, message)
+                self.texto_widget.config(state=tk.DISABLED)
+                self.texto_widget.see(tk.END)
+            def flush(self):
+                pass
+        
+        old_stdout = sys.stdout
+        sys.stdout = ConsolaReporte(txt_reporte)
+        
+        # Ejecutar el reporte CSV con filtros avanzados
+        self.cliente.reporte_log_csv(
+            filtros_csv['desde'], filtros_csv['hasta'],
+            filtros_csv['filtro_usuario'], filtros_csv['filtro_codigo'],
+            filtros_csv['filtro_texto1'], filtros_csv['filtro_texto2']
+        )
         
         sys.stdout = old_stdout
 

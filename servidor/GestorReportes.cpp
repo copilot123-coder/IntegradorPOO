@@ -57,7 +57,7 @@ void GestorReportes::actualizarEstadoActividad(const std::string &act) {
 void GestorReportes::registrarPeticion(const std::string &detalle, const std::string &usuario,
                                        const std::string &nodo, const std::string &codigo) {
     std::ostringstream line;
-    line << "\"" << nowTimestamp() << "\",\"REQUEST\",\"" << detalle << "\",\"" << usuario << "\",\"" << nodo << "\",\"" << codigo << "\"";
+    line << "\"" << nowTimestamp() << "\",\"REQUEST\",\"" << detalle << "\",\"" << usuario << "\",\"" << nodo << "\",\"" << codigo << "\",\"RPC\"";
     appendLogLine(line.str());
 
     std::lock_guard<std::mutex> lk(mtx);
@@ -137,9 +137,13 @@ std::string GestorReportes::reporteAdminPorCodigo(const std::string &codigo) {
 
 void GestorReportes::registrarEvento(const std::string &mensaje, const std::string &usuario, const std::string &nodo, const std::string &modulo) {
     std::ostringstream line;
-    line << "\"" << nowTimestamp() << "\",\"EVENTO\",\"" << mensaje << "\",\"" << usuario << "\",\"" << nodo << "\",\"\"";
+    line << "\"" << nowTimestamp() << "\",\"EVENTO\",\"" << mensaje << "\",\"" 
+         << (usuario.empty() ? "SISTEMA" : usuario) << "\",\"" 
+         << (nodo.empty() ? "localhost" : nodo) << "\",\"\"";
     if (!modulo.empty()) {
-        line << "," << modulo;
+        line << ",\"" << modulo << "\"";
+    } else {
+        line << ",\"SERVIDOR\"";
     }
     appendLogLine(line.str());
 }

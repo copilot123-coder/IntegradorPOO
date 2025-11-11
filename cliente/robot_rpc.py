@@ -155,13 +155,74 @@ class ClienteRobotRPC:
         try:
             resultado = self.servidor.ReporteUsuario(self.session_id)
             if resultado['exito']:
-                print(f"\n=== REPORTE DE ACTIVIDAD ===")
+                print(f"\n=== REPORTE DE ACTIVIDAD PERSONAL ===")
                 print(f"  Usuario: {resultado['usuario']}")
-                print(f"  Comandos ejecutados: {resultado['comandosEjecutados']}")
-                print(f"  Comandos erróneos: {resultado['comandosErroneos']}")
-                print(f"  Tiempo conexión: {resultado['tiempoConexion'].strip()}")
-                print(f"  Estado robot: {resultado['estadoRobot']}")
+                print(f"  Tiempo de conexión: {resultado['tiempoConexion'].strip()}")
+                print(f"  Estado del robot: {resultado['estadoRobot']}")
                 print(f"  Posición actual: {resultado['posicionActual']}")
+                print(f"  Comandos ejecutados en sesión: {resultado['comandosEjecutados']}")
+                print(f"  Comandos erróneos en sesión: {resultado['comandosErroneos']}")
+                
+                # Mostrar el reporte detallado del GestorReportes si está disponible
+                if 'reporteGeneral' in resultado:
+                    print(f"\n=== DETALLE DE ACTIVIDAD ===")
+                    reporte_csv = resultado['reporteGeneral']
+                    
+                    # Parsear el CSV y mostrarlo de forma más legible
+                    lineas = reporte_csv.strip().split('\n')
+                    ordenes = []
+                    info_general = {}
+                    
+                    capturando_ordenes = False
+                    
+                    for linea in lineas:
+                        if ',' in linea:
+                            partes = linea.split(',', 1)
+                            clave = partes[0].strip()
+                            valor = partes[1].strip() if len(partes) > 1 else ""
+                            
+                            if clave == "orden_detalle":
+                                capturando_ordenes = True
+                                continue
+                            elif clave in ["total_ordenes", "ordenes_erroneas"]:
+                                capturando_ordenes = False
+                                info_general[clave] = valor
+                            elif capturando_ordenes and clave.strip('"'):
+                                # Es una orden ejecutada
+                                ordenes.append((clave.strip('"'), valor))
+                            elif not capturando_ordenes:
+                                info_general[clave] = valor
+                    
+                    # Mostrar información general estructurada
+                    if "estadoConexion" in info_general:
+                        print(f"  Estado de conexión: {info_general['estadoConexion']}")
+                    if "posicion" in info_general:
+                        print(f"  Posición registrada: {info_general['posicion']}")
+                    if "estadoActividad" in info_general:
+                        print(f"  Estado de actividad: {info_general['estadoActividad']}")
+                    if "inicioActividad" in info_general:
+                        print(f"  Inicio de actividad: {info_general['inicioActividad']}")
+                    
+                    # Mostrar órdenes ejecutadas
+                    if ordenes:
+                        print(f"\n  === ÓRDENES EJECUTADAS DESDE LA ÚLTIMA CONEXIÓN ===")
+                        for i, (detalle, resultado_op) in enumerate(ordenes, 1):
+                            estado = "✓ OK" if resultado_op in ["200", "OK"] else f"✗ ERROR ({resultado_op})"
+                            print(f"    {i:2d}. {detalle} - {estado}")
+                    
+                    # Mostrar resumen
+                    if "total_ordenes" in info_general or "ordenes_erroneas" in info_general:
+                        total = int(info_general.get("total_ordenes", 0))
+                        errores = int(info_general.get("ordenes_erroneas", 0))
+                        exitosas = total - errores
+                        print(f"\n  === RESUMEN ===")
+                        print(f"    Total de órdenes: {total}")
+                        print(f"    Órdenes exitosas: {exitosas}")
+                        print(f"    Órdenes con error: {errores}")
+                        if total > 0:
+                            porcentaje_exito = (exitosas * 100.0) / total
+                            print(f"    Porcentaje de éxito: {porcentaje_exito:.1f}%")
+                
                 return True
             else:
                 print(f"✗ {resultado['mensaje']}")
@@ -366,8 +427,86 @@ class ClienteRobotRPC:
                 print(f"\n=== REPORTE ADMINISTRATIVO ===")
                 print(f"  Sesiones activas: {resultado['totalSesiones']}")
                 if 'sesiones' in resultado:
-                    for i, sesion in enumerate(resultado['sesiones']):
+                    for i in range(len(resultado['sesiones'])):
+                        sesion = resultado['sesiones'][i]
                         print(f"  Sesión {i+1}: {sesion['usuario']}@{sesion['nodo']} (Cmds: {sesion['comandos']}, Errs: {sesion['errores']})")
+                
+                # Mostrar filtros aplicados
+                if filtro1 or filtro2:
+                    print(f"\n  Filtros aplicados: Usuario='{filtro1}', Código='{filtro2}'")
+                
+                # Mostrar reportes específicos si se aplicaron filtros
+                if 'reportePorUsuario' in resultado:
+                    print(f"\n--- LOG FILTRADO POR USUARIO '{filtro1}' ---")
+                    print(resultado['reportePorUsuario'])
+                
+                if 'reportePorCodigo' in resultado:
+                    print(f"\n--- LOG FILTRADO POR CÓDIGO '{filtro2}' ---")
+                    print(resultado['reportePorCodigo'])
+                
+                # Mostrar reporte completo si no hay filtros específicos
+                if not filtro1 and not filtro2 and 'reporteAdmin' in resultado:
+                    print(f"\n--- LOG COMPLETO DEL SERVIDOR ---")
+                    lineas = resultado['reporteAdmin'].split('\n')
+                    # Mostrar solo las últimas 10 líneas para no saturar la consola
+                    print("(Mostrando últimas 10 entradas)")
+                    for linea in lineas[-10:]:
+                        if linea.strip():
+                            print(linea)
+                
+                return True
+            else:
+                print(f"✗ {resultado['mensaje']}")
+                return False
+        except Exception as e:
+            print(f"✗ Error: {e}")
+            return False
+
+    def reporte_log_csv(self, desde='', hasta='', filtro_usuario='', filtro_codigo='', filtro_texto1='', filtro_texto2=''):
+        """
+        (Admin) Obtiene el log CSV filtrado por múltiples criterios.
+        - desde/hasta: fechas en formato YYYY-MM-DD HH:MM:SS
+        - filtro_usuario: filtrar por nombre de usuario
+        - filtro_codigo: filtrar por código de respuesta
+        - filtro_texto1/filtro_texto2: filtros de texto libre
+        """
+        if not self.esta_conectado():
+            print("✗ Error: Debe iniciar sesión primero.")
+            return False
+        
+        try:
+            resultado = self.servidor.ReporteLogCsv(self.session_id, desde, hasta, filtro_usuario, filtro_codigo, filtro_texto1, filtro_texto2)
+            if resultado['exito']:
+                print(f"\n=== REPORTE LOG CSV FILTRADO ===")
+                
+                # Mostrar filtros aplicados
+                filtros = resultado['filtros']
+                print(f"Período: {filtros['desde']} a {filtros['hasta']}")
+                if filtros['usuario']:
+                    print(f"Usuario: {filtros['usuario']}")
+                if filtros['codigo']:
+                    print(f"Código: {filtros['codigo']}")
+                if 'texto1' in filtros and filtros['texto1']:
+                    print(f"Filtro texto 1: {filtros['texto1']}")
+                if 'texto2' in filtros and filtros['texto2']:
+                    print(f"Filtro texto 2: {filtros['texto2']}")
+                
+                # Mostrar el log CSV
+                if 'logCsv' in resultado and resultado['logCsv']:
+                    print(f"\n--- LOG CSV ---")
+                    lineas = resultado['logCsv'].split('\n')
+                    for linea in lineas:
+                        if linea.strip():
+                            print(linea)
+                else:
+                    print("No se encontraron registros con los criterios especificados.")
+                
+                # Mostrar resultados de filtro de texto si están presentes
+                if 'lineasFiltradas' in resultado:
+                    print(f"\n--- FILTRADO POR TEXTO ---")
+                    for i in range(len(resultado['lineasFiltradas'])):
+                        print(resultado['lineasFiltradas'][i])
+                
                 return True
             else:
                 print(f"✗ {resultado['mensaje']}")

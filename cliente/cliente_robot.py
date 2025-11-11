@@ -152,6 +152,43 @@ def _manejar_control_motores(cliente):
     )
     cliente.control_motores(accion)
 
+def _manejar_reportes_admin(cliente):
+    """Opción A3: Reportes administrativos avanzados"""
+    print("\n--- Reportes Administrativos ---")
+    print("1. Reporte general de sesiones")
+    print("2. Reporte filtrado por usuario")
+    print("3. Reporte filtrado por código de respuesta")
+    print("4. Log CSV con filtros avanzados")
+    
+    tipo_reporte = _get_input_tipo(
+        "Seleccione tipo de reporte (1-4): ",
+        str,
+        ['1', '2', '3', '4']
+    )
+    
+    if tipo_reporte == '1':
+        # Reporte general
+        cliente.reporte_admin()
+    elif tipo_reporte == '2':
+        # Filtrado por usuario
+        usuario = input("Ingrese nombre de usuario a filtrar: ")
+        cliente.reporte_admin(usuario, '')
+    elif tipo_reporte == '3':
+        # Filtrado por código
+        codigo = input("Ingrese código de respuesta a filtrar (ej: 200, ERROR): ")
+        cliente.reporte_admin('', codigo)
+    elif tipo_reporte == '4':
+        # Log CSV con filtros avanzados
+        print("\nFiltros disponibles (deje en blanco para omitir):")
+        desde = input("Fecha desde (YYYY-MM-DD HH:MM:SS): ")
+        hasta = input("Fecha hasta (YYYY-MM-DD HH:MM:SS): ")
+        filtro_usuario = input("Usuario: ")
+        filtro_codigo = input("Código de respuesta: ")
+        filtro_texto1 = input("Filtro de texto 1: ")
+        filtro_texto2 = input("Filtro de texto 2: ")
+        
+        cliente.reporte_log_csv(desde, hasta, filtro_usuario, filtro_codigo, filtro_texto1, filtro_texto2)
+
 # --- Menú Principal ---
 
 def mostrar_menu_principal(tipo_usuario):
@@ -171,7 +208,7 @@ def mostrar_menu_principal(tipo_usuario):
         print("\n--- ZONA ADMINISTRADOR ---")
         print(" A1. Conectar/Desconectar robot")
         print(" A2. Habilitar/Deshabilitar motores")
-        print(" A3. Ver reporte administrativo")
+        print(" A3. Reportes administrativos avanzados")
         
     print("\n S. Salir")
     print("="*40)
@@ -227,7 +264,7 @@ def main():
                 _manejar_control_motores(cliente)
                 
             elif opcion == 'A3' and cliente.tipo_usuario == 'admin':
-                cliente.reporte_admin()
+                _manejar_reportes_admin(cliente)
                 
             # Salida
             elif opcion == 'S':
