@@ -702,7 +702,7 @@ class App(tk.Tk):
         """Muestra ventana para configurar filtros CSV avanzados."""
         win_filtros = tk.Toplevel(self)
         win_filtros.title("Filtros CSV Avanzados")
-        win_filtros.geometry("450x400")
+        win_filtros.geometry("450x350")
         
         ttk.Label(win_filtros, text="Configurar Filtros", 
                   font=("Arial", 12, "bold")).pack(pady=10)
@@ -710,20 +710,22 @@ class App(tk.Tk):
         frame_campos = ttk.Frame(win_filtros)
         frame_campos.pack(padx=20, pady=10, fill=tk.X)
         
-        ttk.Label(frame_campos, text="Filtro 1 (ej: fecha, usuario, 'ERROR'):").pack(anchor=tk.W)
-        entry_desde = ttk.Entry(frame_campos, width=40)
-        entry_desde.pack(pady=(0,10), fill=tk.X)
+        ttk.Label(frame_campos, text="Fecha (desde) - formato: YYYY-MM-DD HH:MM:SS:").pack(anchor=tk.W)
+        entry_fecha_desde = ttk.Entry(frame_campos, width=40)
+        entry_fecha_desde.pack(pady=(0,10), fill=tk.X)
+        entry_fecha_desde.insert(0, "2024-01-01 00:00:00")
         
-        ttk.Label(frame_campos, text="Filtro 2 (ej: 'admin', 'Login'):").pack(anchor=tk.W)
-        entry_hasta = ttk.Entry(frame_campos, width=40)
-        entry_hasta.pack(pady=(0,10), fill=tk.X)
+        ttk.Label(frame_campos, text="Fecha (hasta) - formato: YYYY-MM-DD HH:MM:SS:").pack(anchor=tk.W)
+        entry_fecha_hasta = ttk.Entry(frame_campos, width=40)
+        entry_fecha_hasta.pack(pady=(0,10), fill=tk.X)
+        entry_fecha_hasta.insert(0, "2025-12-31 23:59:59")
         
-        ttk.Label(frame_campos, text="Usuario: (obsoleto, usar Filtro 1 o 2)").pack(anchor=tk.W)
-        entry_usuario = ttk.Entry(frame_campos, width=40, state=tk.DISABLED)
+        ttk.Label(frame_campos, text="Usuario (opcional):").pack(anchor=tk.W)
+        entry_usuario = ttk.Entry(frame_campos, width=40)
         entry_usuario.pack(pady=(0,10), fill=tk.X)
         
-        ttk.Label(frame_campos, text="Código de respuesta: (obsoleto, usar Filtro 1 o 2)").pack(anchor=tk.W)
-        entry_codigo = ttk.Entry(frame_campos, width=40, state=tk.DISABLED)
+        ttk.Label(frame_campos, text="Código (opcional):").pack(anchor=tk.W)
+        entry_codigo = ttk.Entry(frame_campos, width=40)
         entry_codigo.pack(pady=(0,10), fill=tk.X)
         
         frame_botones = ttk.Frame(win_filtros)
@@ -731,8 +733,10 @@ class App(tk.Tk):
         
         def aplicar_filtros():
             filtros_csv = {
-                'filtro1': entry_desde.get(),
-                'filtro2': entry_hasta.get(),
+                'fecha_desde': entry_fecha_desde.get(),
+                'fecha_hasta': entry_fecha_hasta.get(),
+                'usuario': entry_usuario.get(),
+                'codigo': entry_codigo.get()
             }
             win_filtros.destroy()
             self._mostrar_ventana_reporte_csv(filtros_csv)
@@ -794,7 +798,10 @@ class App(tk.Tk):
         
         try:
             self.cliente.reporte_log_csv(
-                filtros_csv['filtro1'], filtros_csv['filtro2']
+                filtros_csv['fecha_desde'], 
+                filtros_csv['fecha_hasta'],
+                filtros_csv['usuario'],
+                filtros_csv['codigo']
             )
         except AttributeError:
             print("Error: La función 'reporte_log_csv' no está implementada en robot_rpc.py")
